@@ -96,6 +96,30 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     <Link href="/sign-in" className="hidden sm:block px-3 py-2 font-semibold heading-text">
                         Sign in
                     </Link>
+                    <div className="flex items-center gap-2">
+                    <button
+                        type="button"
+                        onClick={toggleMode}
+                        className="px-3 py-2"
+                        aria-label="Toggle theme"
+                    >
+                        {mode === 'light' ? '🌙' : '☀️'}
+                    </button>
+
+                    <Link
+                        href="/sign-in"
+                        className="hidden sm:block px-3 py-2 font-semibold heading-text"
+                    >
+                        Sign in
+                    </Link>
+
+                    <Button
+                        variant="solid"
+                        onClick={() => router.push('/sign-up')}
+                    >
+                        Start Free Trial
+                    </Button>
+                </div>
                     <Button variant="solid" onClick={() => router.push('/sign-up')}>
                         Start Free Trial
                     </Button>
