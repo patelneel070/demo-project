@@ -93,10 +93,6 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     <NavList tabs={navMenu} />
                 </div>
                 <div className="flex items-center gap-2">
-                    <Link href="/sign-in" className="hidden sm:block px-3 py-2 font-semibold heading-text">
-                        Sign in
-                    </Link>
-                    <div className="flex items-center gap-2">
                     <button
                         type="button"
                         onClick={toggleMode}
@@ -119,11 +115,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     >
                         Start Free Trial
                     </Button>
-                </div>
-                    <Button variant="solid" onClick={() => router.push('/sign-up')}>
-                        Start Free Trial
-                    </Button>
-                </div>
+                    </div>
             </div>
         </div>
     )
