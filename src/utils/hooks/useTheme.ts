@@ -2,7 +2,6 @@
 
 import { useContext } from 'react'
 import ThemeContext from '@/components/template/Theme/ThemeContext'
-import { MODE_DARK, MODE_LIGHT } from '@/constants/theme.constant'
 import presetThemeSchemaConfig from '@/configs/preset-theme-schema.config'
 import applyTheme from '@/utils/applyThemeSchema'
 import type { Mode, Direction, LayoutType, Theme } from '@/@types/theme'
@@ -32,10 +31,6 @@ const useTheme = <T>(selector: (state: UseThemeReturnType) => T): T => {
 
         setMode: (mode: Mode) => {
             context.setTheme((prevTheme) => ({ ...prevTheme, mode }))
-            const root = window.document.documentElement
-            const isEnabled = mode === MODE_DARK
-            root.classList.remove(isEnabled ? MODE_LIGHT : MODE_DARK)
-            root.classList.add(isEnabled ? MODE_DARK : MODE_LIGHT)
         },
         setSideNavCollapse: (sideNavCollapse: boolean) => {
             context.setTheme((prevTheme) => ({

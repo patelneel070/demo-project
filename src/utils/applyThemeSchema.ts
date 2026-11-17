@@ -23,20 +23,19 @@ const applyTheme = (
             '--neutral': variables.neutral || '',
         }
     }
-    if (presetThemeSchemaConfig[theme][mode]) {
-        const themeObject = mapTheme(presetThemeSchemaConfig[theme][mode])
-        if (!themeObject) return
+    const variables = presetThemeSchemaConfig[theme]?.[mode]
+    if (!variables) return
 
-        const root = document.documentElement
+    const themeObject = mapTheme(variables)
+    const root = document.documentElement
 
-        Object.keys(themeObject).forEach((property) => {
-            if (property === 'name') {
-                return
-            }
+    Object.keys(themeObject).forEach((property) => {
+        if (property === 'name') {
+            return
+        }
 
-            root.style.setProperty(property, themeObject[property])
-        })
-    }
+        root.style.setProperty(property, themeObject[property])
+    })
 }
 
 export default applyTheme

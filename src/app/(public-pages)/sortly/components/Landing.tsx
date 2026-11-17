@@ -22,7 +22,6 @@ const Landing = () => {
     return () => {
         applyTheme(schema || 'default', mode, presetThemeSchemaConfig)
     }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mode])
 
     return (

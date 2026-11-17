@@ -5,7 +5,7 @@ import Drawer from '@/components/ui/Drawer'
 import classNames from '@/utils/classNames'
 import useScrollTop from '@/utils/hooks/useScrollTop'
 import Image from 'next/image'
-import { TbMenu2 } from 'react-icons/tb'
+import { TbMenu2, TbMoon, TbSun } from 'react-icons/tb'
 import Link from 'next/link'
 import type { Mode } from '@/@types/theme'
 import { useRouter } from 'next/navigation'
@@ -54,6 +54,8 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                 )}
             >
                 <button
+                    type="button"
+                    aria-label="Open menu"
                     onClick={openDrawer}
                     className="flex lg:hidden items-center gap-4"
                 >
@@ -89,19 +91,37 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                         />
                     )}
                 </Link>
-                <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200 [perspective:1000px] overflow-auto sm:overflow-visible no-visible-scrollbar">
-                    <NavList tabs={navMenu} />
+
+                {/*
+                    FIX 1: this layer is `absolute inset-0`, so on laptop screens
+                    (lg and up) it covers the WHOLE navbar, including the buttons on
+                    the right. `pointer-events-none` makes the empty layer click-through;
+                    the inner wrapper switches pointer events back on for the tabs only.
+                */}
+                <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200 [perspective:1000px] overflow-auto sm:overflow-visible no-visible-scrollbar pointer-events-none">
+                    <div className="pointer-events-auto flex items-center">
+                        <NavList tabs={navMenu} />
+                    </div>
                 </div>
-                <div className="flex items-center gap-2">
+
+                {/*
+                    FIX 2: `relative z-10` puts the buttons in a higher stacking layer
+                    than the overlay above, so they stay clickable even if the overlay
+                    is ever changed.
+                */}
+                <div className="relative z-10 flex items-center gap-2">
                     <button
                         type="button"
                         onClick={toggleMode}
-                        className="px-3 py-2"
+                        className="flex items-center justify-center rounded-xl p-2 text-neutral-500 hover:bg-gray-100 dark:hover:bg-gray-700"
                         aria-label="Toggle theme"
                     >
-                        {mode === 'light' ? '🌙' : '☀️'}
+                        {mode === 'light' ? (
+                            <TbMoon size={20} />
+                        ) : (
+                            <TbSun size={20} />
+                        )}
                     </button>
-
                     <Link
                         href="/sign-in"
                         className="hidden sm:block px-3 py-2 font-semibold heading-text"
@@ -115,7 +135,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     >
                         Start Free Trial
                     </Button>
-                    </div>
+                </div>
             </div>
         </div>
     )

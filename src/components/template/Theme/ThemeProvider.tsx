@@ -1,8 +1,9 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ThemeContext from './ThemeContext'
 import ConfigProvider from '@/components/ui/ConfigProvider'
 import appConfig from '@/configs/app.config'
+import { MODE_DARK, MODE_LIGHT } from '@/constants/theme.constant'
 import applyTheme from '@/utils/applyThemeSchema'
 import { setTheme as setThemeCookies } from '@/server/actions/theme'
 import presetThemeSchemaConfig from '@/configs/preset-theme-schema.config'
@@ -16,6 +17,17 @@ interface ThemeProviderProps extends CommonProps {
 
 const ThemeProvider = ({ children, theme, locale }: ThemeProviderProps) => {
     const [themeState, setThemeState] = useState<Theme>(theme)
+
+    useEffect(() => {
+        document.documentElement.classList.toggle(
+            'dark',
+            themeState.mode === MODE_DARK,
+        )
+        document.documentElement.classList.toggle(
+            'light',
+            themeState.mode === MODE_LIGHT,
+        )
+    }, [themeState.mode])
 
     const handleSetTheme = async (payload: (param: Theme) => Theme | Theme) => {
         const setTheme = async (theme: Theme) => {
@@ -38,12 +50,12 @@ const ThemeProvider = ({ children, theme, locale }: ThemeProviderProps) => {
                 setTheme: handleSetTheme,
             }}
         >
-            <ConfigProvider
+           <ConfigProvider
                 value={{
-                    ...theme,
-                    locale: locale || appConfig.locale,
+                 ...themeState,
+                locale: locale || appConfig.locale,
                 }}
-            >
+        >
                 {children}
             </ConfigProvider>
             <script

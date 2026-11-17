@@ -13,7 +13,7 @@ const TechStack = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     return (
-        <div id="demos" className="relative z-20 py-10 md:py-40">
+        <div id="integrations" className="relative z-20 py-10 md:py-40">
             <motion.div
                 className="text-center mb-12"
                 initial={{ opacity: 0, y: 40 }}
