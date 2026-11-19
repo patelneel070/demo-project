@@ -11,7 +11,6 @@ import {
 
 /**
  * ALL DUMMY CONTENT FOR THE /invenka LANDING PAGE LIVES HERE.
- * Replace the text below with your real copy later.
  * Image paths point to /public/img/invenka/... (see the image list).
  */
 
@@ -23,8 +22,9 @@ export type NavLink = { title: string; href: string }
 
 // Plain navbar links. "Features" is handled separately (mega dropdown).
 export const navLinks: NavLink[] = [
+    // { title: 'Features', href: `${BASE_PATH}/features` },
     { title: 'Integrations', href: `${BASE_PATH}/integrations` },
-    { title: 'Mobile App', href: `${BASE_PATH}/mobile-app` },
+    { title: 'Solutions', href: `${BASE_PATH}/Solutions` },
     { title: 'Contact', href: `${BASE_PATH}/contact` },
 ]
 

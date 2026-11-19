@@ -1,5 +1,5 @@
 'use client'
-
+// Handles the theme and stacks sections in order .
 import { useEffect } from 'react'
 import NavigationBar from './NavigationBar'
 import HeroContent from './HeroContent'
