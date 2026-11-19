@@ -108,7 +108,7 @@ export const hero = {
     primaryCta: 'Start Free Trial',
     secondaryCta: 'See All Features',
     imageLight: '/img/invenka/hero/hero-light.png',
-    imageDark: '/img/invenka/hero/hero-dark.webp',
+    imageDark: '/img/invenka/hero/hero-dark.webp', 
     imageAlt: 'Invenka inventory list',
 }
 

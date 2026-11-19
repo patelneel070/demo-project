@@ -17,6 +17,6 @@ export const protectedRoutes: Routes = {
 
 // export const publicRoutes: Routes = {}
 export const publicRoutes: Routes = {
-    '/sortly': { key: 'sortly', authority: [] },
+    '/invenka': { key: 'invenka', authority: [] },
 }
 export const authRoutes = authRoute

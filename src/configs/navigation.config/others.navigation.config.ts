@@ -33,8 +33,8 @@ const othersNavigationConfig: NavigationTree[] = [
             },
             {
                 key: 'others.landing',
-                path: `/sortly`, 
-                title: 'Sortly',
+                path: `/invenka`, 
+                title: 'Invenka',
                 translateKey: 'nav.others.landing',
                 icon: 'landing',
                 type: NAV_ITEM_TYPE_ITEM,
