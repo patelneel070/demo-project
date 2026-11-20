@@ -100,13 +100,12 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
             <div
                 style={{ transition: 'all 0.2s ease-in-out' }}
                 className={classNames(
-                    'w-full fixed inset-x-0 z-[50]',
-                    isSticky ? 'top-4' : 'top-0',
+                    'w-full fixed inset-x-0 top-0 bg-white  z-[50]',
                 )}
             >
                 <div
                     className={classNames(
-                        'flex flex-row self-start items-center justify-between py-3 max-w-7xl mx-auto px-4 rounded-xl relative z-[60] w-full transition duration-200',
+                        'flex flex-row self-start items-center justify-between py-3 px-4 w-full relative z-[60] transition duration-200',
                         isSticky || isFeaturesOpen
                             ? 'bg-white dark:bg-gray-800 shadow-lg'
                             : 'bg-transparent dark:bg-transparent',
@@ -186,16 +185,16 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     <Link href="/invenka">
                         {mode === 'light' && (
                             <Image
-                                src="/img/logo/logo-light-full.png"
+                                src="/img/logo/invenka logo-png.png"
                                 width={120}
-                                height={40}
+                                height={120}
                                 alt="logo"
                             />
                         )}
                         {mode === 'dark' && (
                             <Image
-                                src="/img/logo/logo-dark-full.png"
-                                width={120}
+                                src="/img/logo/i-logo-white-png.png"
+                                width={60}
                                 height={40}
                                 alt="logo"
                             />
@@ -286,21 +285,16 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     id="features-mega-menu"
                     role="region"
                     aria-label="Features"
-                    className={classNames(
-                        'fixed left-1/2 z-[55] hidden w-[min(1152px,calc(100vw-2rem))] -translate-x-1/2 overflow-y-auto rounded-3xl border border-gray-200 bg-white p-6 shadow-2xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 lg:block',
-                        'min-h-[420px] max-h-[calc(100vh-7.5rem)]',
-                        isSticky ? 'top-[5.5rem]' : 'top-[4.5rem]',
+                   className={classNames(
+                        'absolute left-0 top-full z-[55] hidden w-full overflow-y-auto border-y border-gray-200 bg-white shadow-2xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 lg:block','min-h-[320px] max-h-[45vh]',
                         isFeaturesOpen
                             ? 'visible translate-y-0 opacity-100'
                             : 'invisible -translate-y-2 opacity-0',
                     )}
                 >
-                    <div className="grid grid-cols-[1fr_340px] gap-8">
-                        <div>
-                            <p className="mb-4 px-3 text-xs font-semibold uppercase tracking-wider text-muted dark:text-muted-dark">
-                                Explore features
-                            </p>
-                            <ul className="grid grid-cols-2 gap-2 xl:grid-cols-3">
+                    <div className="w-full">
+                        <div className="mx-auto w-full max-w-[1200px] px-6 py-6">
+                            <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
                                 {featureItems.map(
                                     ({ title, slug, description, Icon }) => (
                                         <li key={slug}>
@@ -327,34 +321,21 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                         </li>
                                     ),
                                 )}
+                                <li>
+                                     <Link
+                                            href={featuresPageHref}
+                                            onClick={closeFeatures}
+                                            className={classNames(
+                                                'mt-auto flex items-center gap-1 pt-4 font-semibold text-primary',
+                                                focusRingClass,
+                                            )}
+                                            >
+                                        {featuresMenuPromo.cta}
+                                        <TbArrowRight size={16} aria-hidden="true" />
+                                    </Link>
+                                </li>
                             </ul>
-                        </div>
-
-                        <div className="flex flex-col rounded-2xl bg-gray-100 p-4 dark:bg-gray-900">
-                            <div className="overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-black">
-                                <img
-                                    src={featuresMenuPromo.image}
-                                    alt={featuresMenuPromo.title}
-                                    className="w-full"
-                                />
-                            </div>
-                            <h4 className="mt-4 text-lg font-semibold">
-                                {featuresMenuPromo.title}
-                            </h4>
-                            <p className="mt-1 text-sm text-muted dark:text-muted-dark">
-                                {featuresMenuPromo.text}
-                            </p>
-                            <Link
-                                href={featuresPageHref}
-                                onClick={closeFeatures}
-                                className={classNames(
-                                    'mt-auto flex items-center gap-1 pt-4 font-semibold text-primary',
-                                    focusRingClass,
-                                )}
-                            >
-                                {featuresMenuPromo.cta}
-                                <TbArrowRight size={16} aria-hidden="true" />
-                            </Link>
+                           
                         </div>
                     </div>
                 </div>

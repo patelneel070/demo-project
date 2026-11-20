@@ -4,9 +4,6 @@ import {
     TbBell,
     TbChartLine,
     TbDeviceMobile,
-    TbPhoto,
-    TbPlugConnected,
-    TbShoppingCart,
 } from 'react-icons/tb'
 
 /**
@@ -43,21 +40,14 @@ export const featureItems: FeatureItem[] = [
         title: 'Mobile App',
         slug: 'mobile-app',
         description:
-            'Manage stock from your phone, even offline. Everything syncs the moment you reconnect.',
+            'Manage stock from your phone, even offline.',
         Icon: TbDeviceMobile,
-    },
-    {
-        title: 'Inventory Photos',
-        slug: 'inventory-photos',
-        description:
-            'Attach photos to every item so your team can spot the right product at a glance.',
-        Icon: TbPhoto,
     },
     {
         title: 'Alerts',
         slug: 'alerts',
         description:
-            'Get notified before stock runs out, with low-level and expiry alerts you control.',
+            'Get notified with low-level and expiry alerts you control.',
         Icon: TbBell,
     },
     {
@@ -68,25 +58,11 @@ export const featureItems: FeatureItem[] = [
         Icon: TbBarcode,
     },
     {
-        title: 'Integrations',
-        slug: 'integrations',
+        title: 'Inventory Prediction',
+        slug: 'inventory-prediction',
         description:
-            'Connect Invenka to the tools your team already uses, with no code required.',
-        Icon: TbPlugConnected,
-    },
-    {
-        title: 'Sales Prediction',
-        slug: 'sales-prediction',
-        description:
-            'Forecast demand from past sales so you always know what will move next.',
+            'Forecast demand from past inventory data so you always know what will can be done next.',
         Icon: TbChartLine,
-    },
-    {
-        title: 'Buying Prediction',
-        slug: 'buying-prediction',
-        description:
-            'Smart reorder suggestions tell you what to buy, how much and when.',
-        Icon: TbShoppingCart,
     },
 ]
 
@@ -112,20 +88,6 @@ export const hero = {
     imageAlt: 'Invenka inventory list',
 }
 
-/* ------------------------------ Integrations ------------------------------- */
-
-export const integrationsSection = {
-    title: 'Plays nicely with your favourite tools',
-    text: 'Link your inventory to the apps your team opens every day.',
-    cta: 'Explore integrations',
-    items: [
-        { id: 'partner-1', title: 'LinkFlow', description: 'Automate workflows between thousands of apps.' },
-        { id: 'partner-2', title: 'TeamPing', description: 'Post low-stock alerts straight into team channels.' },
-        { id: 'partner-3', title: 'CloudVault', description: 'Store exports and reports in a shared folder.' },
-        { id: 'partner-4', title: 'ClientHub', description: 'Keep customer and order data in sync.' },
-    ].map((item) => ({ ...item, image: `/img/invenka/integrations/${item.id}.png` })),
-}
-
 /* ------------------------------ Feature rows ------------------------------- */
 
 export const featureRows = [
@@ -137,7 +99,7 @@ export const featureRows = [
             'Group items by location, category and more.',
             'Add custom fields for the details you need.',
         ],
-        image: '/img/invenka/sections/organize.webp',
+        image: '/img/invenka/sections/OrganizeImage.png',
     },
     {
         title: 'Track everything from one app',
@@ -147,17 +109,17 @@ export const featureRows = [
             'Add photos so every item is easy to recognise.',
             'Receive alerts when levels drop.',
         ],
-        image: '/img/invenka/sections/track.webp',
+        image: '/img/invenka/sections/inventorApp.png',
     },
     {
-        title: 'See live reports and insights',
-        text: 'Turn raw inventory data into reports for audits, budgets and planning.',
+        title: 'See inventory insights',
+        text: 'Turn raw inventory data into report, budgets and planning stock refill.',
         points: [
-            'Detailed data on items, folders and activity.',
+            'data on items, folders and activity.',
             'Export custom PDF or CSV reports.',
-            'Built for audits, budgeting and forecasting.',
+            'Built for budgeting and future stock prediction.',
         ],
-        image: '/img/invenka/sections/reports.webp',
+        image: '/img/invenka/sections/insights.png',
     },
     {
         title: 'Stay in sync on every device',
@@ -167,7 +129,7 @@ export const featureRows = [
             'Update stock from anywhere.',
             'Works for teams of any size.',
         ],
-        image: '/img/invenka/sections/sync.webp',
+        image: '/img/invenka/sections/sync.png',
     },
 ]
 

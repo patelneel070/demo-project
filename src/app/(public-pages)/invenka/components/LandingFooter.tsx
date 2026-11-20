@@ -44,7 +44,7 @@ const LandingFooter = ({ mode }: { mode: Mode }) => {
                         <div className="col-span-2 md:col-span-1">
                             <Link href="/">
                                 {mode === MODE_LIGHT && (
-                                    <img src="/img/logo/logo-light-full.png" width={120} height={40} alt="logo" />
+                                    <img src="/img/logo/invenka logo-png.png" width={120} height={40} alt="logo" />
                                 )}
                                 {mode === MODE_DARK && (
                                     <img src="/img/logo/logo-dark-full.png" width={120} height={40} alt="logo" />

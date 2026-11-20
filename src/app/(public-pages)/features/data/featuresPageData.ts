@@ -12,7 +12,6 @@ import {
     BASE_PATH,
     featureItems,
     featureRows,
-    integrationsSection,
 } from '../../invenka/components/data/landingData'
 
 /**
@@ -66,17 +65,6 @@ export const featureCategories: FeatureCategory[] = [
         ],
     },
     {
-        id: 'customize',
-        label: 'Customize',
-        heading: 'Customize every item', // NEW
-        description: 'Keep the details that matter in custom fields, and add photos to every item.', // NEW (built from existing copy)
-        points: [],
-        cards: [
-            { title: 'Custom fields', description: organizeRow.points[2], Icon: TbListDetails }, // NEW title
-            fromItem('inventory-photos'),
-        ],
-    },
-    {
         id: 'manage',
         label: 'Manage',
         heading: syncRow.title,
@@ -105,23 +93,7 @@ export const featureCategories: FeatureCategory[] = [
         cards: [
             { title: 'Detailed data', description: reportRow.points[0], Icon: TbReportAnalytics }, // NEW title
             { title: 'PDF & CSV export', description: reportRow.points[1], Icon: TbFileExport }, // NEW title
-            fromItem('sales-prediction'),
-            fromItem('buying-prediction'),
+            fromItem('inventory-prediction'),
         ],
-    },
-    {
-        id: 'integrations',
-        label: 'Integrations',
-        heading: integrationsSection.title,
-        description: integrationsSection.text,
-        points: [],
-        cards: [
-            fromItem('integrations'),
-            ...integrationsSection.items.map((item) => ({
-                title: item.title,
-                description: item.description,
-                image: item.image,
-            })),
-        ],
-    },
+    }
 ]

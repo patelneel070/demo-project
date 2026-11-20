@@ -2,7 +2,7 @@ import appConfig from '@/configs/app.config'
 import { redirect } from 'next/navigation'
 
 const Page = () => {
-    redirect(appConfig.authenticatedEntryPath)
+    redirect('/invenka')
 }
 
 export default Page

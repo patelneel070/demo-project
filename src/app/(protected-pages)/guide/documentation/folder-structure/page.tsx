@@ -48,7 +48,7 @@ const Page = () => {
 │   │   ├── └── ...               # Public pages
 │   │   ├── api                   # API endpoint
 │   │   |   └── ...               # API route & files
-│   │   favicon.ico               # Favicon
+│   │   favicon.png               # Favicon
 │   │   layout.tsx                # Root layout
 │   │   not-found.tsx             # Empty page for 404
 │   │   page.tsx                  # Entry page
@@ -126,7 +126,7 @@ const Page = () => {
 │   │   ├── └── ...               # Public pages
 │   │   ├── api                   # API endpoint
 │   │   |   └── ...               # API route & files
-│   │   favicon.ico               # Favicon
+│   │   favicon.png               # Favicon
 │   │   layout.jsx                # Root layout
 │   │   not-found.jsx             # Empty page for 404
 │   │   page.jsx                  # Entry page

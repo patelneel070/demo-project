@@ -15,9 +15,9 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-between">
+        <div className="max-w-7xl bg-gray-100 mx-auto px-4 pb-10 flex flex-col items-center justify-between">
             <div className="flex flex-col pt-28 md:pt-36 relative overflow-hidden">
-                <div>
+                <div >
                     <TextGenerateEffect
                         wordClassName="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-center mt-6 relative z-10"
                         words={hero.title}
@@ -45,14 +45,14 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
                         <Button onClick={handleSeeFeatures}>{hero.secondaryCta}</Button>
                     </motion.div>
                 </div>
-                <div className="p-2 lg:p-4 border border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-700 rounded-2xl lg:rounded-[32px] mt-16 relative">
-                    <div className="absolute inset-x-0 bottom-0 h-40 w-full bg-gradient-to-b from-transparent via-white to-white dark:via-black/50 dark:to-black scale-[1.1] pointer-events-none" />
-                    <div className="bg-white dark:bg-black dark:border-gray-700 border border-gray-200 rounded-[24px]">
+                <div className="bg-gray-300 dark:bg-gray-700 dark:border-gray-700 rounded-2xl mt-16 relative">
+                    <div className="absolute inset-x-0 bottom-0 h-40 w-full" />
+                    <div className="bg-white dark:bg-black">
                         {mode === MODE_LIGHT && (
-                            <Image className="rounded-2xl lg:rounded-[24px]" src={hero.imageLight} width={1800} height={1080} alt={hero.imageAlt} />
+                            <Image src={hero.imageLight} width={1800} height={1080} alt={hero.imageAlt} />
                         )}
                         {mode === MODE_DARK && (
-                            <Image className="rounded-2xl lg:rounded-[24px]" src={hero.imageDark} width={1800} height={1080} alt={hero.imageAlt} />
+                            <Image src={hero.imageDark} width={1800} height={1080} alt={hero.imageAlt} />
                         )}
                     </div>
                 </div>
