@@ -4,7 +4,6 @@ import {
     TbFileExport,
     TbFileImport,
     TbFolder,
-    TbListDetails,
     TbReportAnalytics,
     TbUsers,
 } from 'react-icons/tb'
