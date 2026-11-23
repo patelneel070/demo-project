@@ -5,18 +5,18 @@ import { MODE_DARK, MODE_LIGHT } from '@/constants/theme.constant'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import type { Mode } from '@/@types/theme'
-import { hero, featuresPageHref } from './data/landingData'
+import { hero} from './data/landingData'
 
 const HeroContent = ({ mode }: { mode: Mode }) => {
     const router = useRouter()
 
-    const handleSeeFeatures = () => {
-        router.push(featuresPageHref)
+    const handlePlans = () => {
+        router.push('/plans')
     }
 
     return (
-        <div className="max-w-7xl bg-gray-100 mx-auto px-4 pb-10 flex flex-col items-center justify-between">
-            <div className="flex flex-col pt-28 md:pt-36 relative overflow-hidden">
+        <div className="w-full bg-gray-100 mx-auto px-4 pb-10 flex flex-col items-center justify-between">
+            <div className="w-full max-w-7xl mx-auto flex flex-col pt-28 md:pt-36 relative overflow-hidden">
                 <div >
                     <TextGenerateEffect
                         wordClassName="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-center mt-6 relative z-10"
@@ -42,7 +42,7 @@ const HeroContent = ({ mode }: { mode: Mode }) => {
                         <Button variant="solid" onClick={() => router.push('/sign-up')}>
                             {hero.primaryCta}
                         </Button>
-                        <Button onClick={handleSeeFeatures}>{hero.secondaryCta}</Button>
+                        <Button onClick={handlePlans}>{hero.secondaryCta}</Button>
                     </motion.div>
                 </div>
                 <div className="bg-gray-300 dark:bg-gray-700 dark:border-gray-700 rounded-2xl mt-16 relative">

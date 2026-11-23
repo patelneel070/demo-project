@@ -17,7 +17,6 @@ import { usePathname, useRouter } from 'next/navigation'
 import Button from '@/components/ui/Button'
 import {
     featureItems,
-    featuresMenuPromo,
     featuresPageHref,
     navLinks,
 } from './data/landingData'
@@ -285,57 +284,89 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     id="features-mega-menu"
                     role="region"
                     aria-label="Features"
-                   className={classNames(
-                        'absolute left-0 top-full z-[55] hidden w-full overflow-y-auto border-y border-gray-200 bg-white shadow-2xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 lg:block','min-h-[320px] max-h-[45vh]',
+                    className={classNames(
+                        'fixed left-0 z-[55] hidden w-full overflow-y-auto border-y border-gray-200 bg-white shadow-2xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 lg:block',
+                        'min-h-[320px] max-h-[45vh]',
+                        isSticky ? 'top-[5.5rem]' : 'top-[4.5rem]',
                         isFeaturesOpen
                             ? 'visible translate-y-0 opacity-100'
                             : 'invisible -translate-y-2 opacity-0',
                     )}
                 >
                     <div className="w-full">
-                        <div className="mx-auto w-full max-w-[1200px] px-6 py-6">
-                            <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-                                {featureItems.map(
-                                    ({ title, slug, description, Icon }) => (
-                                        <li key={slug}>
-                                            <Link
-                                                href={`${featuresPageHref}/${slug}`}
-                                                onClick={closeFeatures}
-                                                className={classNames(
-                                                    'flex h-full flex-col gap-3 rounded-2xl p-4 transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-700',
-                                                    focusRingClass,
-                                                )}
-                                            >
-                                                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-subtle text-primary">
-                                                    <Icon size={22} aria-hidden="true" />
-                                                </span>
-                                                <span>
-                                                    <span className="block text-base font-semibold heading-text">
-                                                        {title}
+                        <div className="grid grid-cols-1 lg:grid-cols-3">
+
+                            {/* LEFT — Features */}
+                            <div className="lg:col-span-2 p-6 lg:p-8">
+                                <ul className="grid grid-cols-2 xl:grid-cols-3 gap-2">
+                                    {featureItems.map(
+                                        ({ title, slug, description, Icon }) => (
+                                            <li key={slug}>
+                                                <Link
+                                                    href={`${featuresPageHref}/${slug}`}
+                                                    onClick={closeFeatures}
+                                                    className={classNames(
+                                                        'flex h-full flex-col gap-3 rounded-2xl p-4 transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-700',
+                                                        focusRingClass,
+                                                    )}
+                                                >
+                                                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-subtle text-primary">
+                                                        <Icon
+                                                            size={22}
+                                                            aria-hidden="true"
+                                                        />
                                                     </span>
-                                                    <span className="mt-1 block text-sm text-muted dark:text-muted-dark line-clamp-2">
-                                                        {description}
+
+                                                    <span>
+                                                        <span className="block text-base font-semibold heading-text">
+                                                            {title}
+                                                        </span>
+
+                                                        <span className="mt-1 block text-sm text-muted dark:text-muted-dark line-clamp-2">
+                                                            {description}
+                                                        </span>
                                                     </span>
-                                                </span>
-                                            </Link>
-                                        </li>
-                                    ),
-                                )}
-                                <li>
-                                     <Link
-                                            href={featuresPageHref}
-                                            onClick={closeFeatures}
-                                            className={classNames(
-                                                'mt-auto flex items-center gap-1 pt-4 font-semibold text-primary',
-                                                focusRingClass,
-                                            )}
-                                            >
-                                        {featuresMenuPromo.cta}
-                                        <TbArrowRight size={16} aria-hidden="true" />
-                                    </Link>
-                                </li>
-                            </ul>
-                           
+                                                </Link>
+                                            </li>
+                                        ),
+                                    )}
+                                </ul>
+                            </div>
+
+                            {/* RIGHT — Image + Text */}
+                            <div className="border-l border-gray-200 dark:border-gray-700 p-6 lg:p-8 flex flex-col justify-center">
+
+                                <div className="overflow-hidden rounded-2xl mb-5">
+                                    <img
+                                        src="/img/invenka/nav/features-preview.png"
+                                        alt="Invenka features"
+                                        className="w-full h-40 object-cover"
+                                    />
+                                </div>
+
+                                <h3 className="text-xl font-semibold heading-text">
+                                    Manage your inventory with ease
+                                </h3>
+
+                                <p className="mt-2 text-sm text-muted dark:text-muted-dark">
+                                    Track stock, manage items, get alerts and keep your
+                                    entire inventory organized from one place.
+                                </p>
+
+                                <Link
+                                    href={featuresPageHref}
+                                    onClick={closeFeatures}
+                                    className={classNames(
+                                        'mt-5 flex items-center gap-1 font-semibold text-primary',
+                                        focusRingClass,
+                                    )}
+                                >
+                                    See All Features
+                                    <TbArrowRight size={16} aria-hidden="true" />
+                                </Link>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>

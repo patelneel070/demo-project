@@ -1,12 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import type { KeyboardEvent } from 'react'
+import { useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { AnimatePresence, motion } from 'framer-motion'
-import { TbCircleCheck } from 'react-icons/tb'
-import Button from '@/components/ui/Button'
+import { motion } from 'framer-motion'
 import useTheme from '@/utils/hooks/useTheme'
 import applyTheme from '@/utils/applyThemeSchema'
 import presetThemeSchemaConfig from '@/configs/preset-theme-schema.config'
@@ -17,244 +13,241 @@ import NavigationBar from '../../invenka/components/NavigationBar'
 import LandingFooter from '../../invenka/components/LandingFooter'
 import { hero } from '../../invenka/components/data/landingData'
 import { featureCategories } from '../data/featuresPageData'
-import type { FeatureCard } from '../data/featuresPageData'
 
 const focusRingClass =
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
 
-const cardClass =
-    'group flex h-full min-w-0 flex-col gap-3 break-words rounded-2xl border border-gray-200 bg-white p-4 transition duration-200 dark:border-gray-800 dark:bg-gray-950 sm:gap-4 sm:p-5'
-
-const CardBody = ({ card }: { card: FeatureCard }) => (
-    <>
-        <span className="flex h-11 w-11 shrink-0 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-primary-subtle text-primary">
-            {card.Icon && <card.Icon size={24} aria-hidden="true" />}
-            {card.image && (
-                <img src={card.image} alt="" className="max-h-7" />
-            )}
-        </span>
-        <span>
-            <span className="block text-base font-semibold heading-text sm:text-lg">
-                {card.title}
-            </span>
-            <span className="mt-1 block text-muted dark:text-muted-dark">
-                {card.description}
-            </span>
-        </span>
-    </>
-)
-
 const FeaturesPage = () => {
-    const router = useRouter()
+
     const mode = useTheme((state) => state.mode)
     const setMode = useTheme((state) => state.setMode)
     const schema = useTheme((state) => state.themeSchema)
 
-    const [activeId, setActiveId] = useState(featureCategories[0].id)
-    const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
-    const contentRef = useRef<HTMLDivElement>(null)
-    const hasInteracted = useRef(false)
-
-    // Same theme handling as the landing page
     useEffect(() => {
         applyTheme('red', mode, presetThemeSchemaConfig)
+
         return () => {
-            applyTheme(schema || 'default', mode, presetThemeSchemaConfig)
+            applyTheme(
+                schema || 'default',
+                mode,
+                presetThemeSchemaConfig,
+            )
         }
-    }, [mode])
-
-    const activeIndex = featureCategories.findIndex((c) => c.id === activeId)
-    const active = featureCategories[activeIndex]
-
-    // On small screens the content is BELOW the category list, so after a tap
-    // bring the content into view (the list is vertical on every screen size)
-    useEffect(() => {
-        if (!hasInteracted.current) return
-        if (window.matchMedia('(min-width: 1024px)').matches) return
-        contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, [activeIndex])
-
-    const selectTab = (index: number) => {
-        hasInteracted.current = true
-        setActiveId(featureCategories[index].id)
-    }
-
-    // Arrow keys / Home / End move between tabs
-    const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-        const last = featureCategories.length - 1
-        let next = -1
-        if (event.key === 'ArrowDown' || event.key === 'ArrowRight')
-            next = activeIndex === last ? 0 : activeIndex + 1
-        if (event.key === 'ArrowUp' || event.key === 'ArrowLeft')
-            next = activeIndex === 0 ? last : activeIndex - 1
-        if (event.key === 'Home') next = 0
-        if (event.key === 'End') next = last
-        if (next < 0) return
-        event.preventDefault()
-        selectTab(next)
-        tabRefs.current[next]?.focus()
-    }
+    }, [mode, schema])
 
     return (
-        <main className="px-4 lg:px-0 text-base bg-white dark:bg-gray-900">
+        <main className="text-base bg-white dark:bg-gray-900">
             <NavigationBar
                 mode={mode}
-                toggleMode={() => setMode(mode === MODE_LIGHT ? MODE_DARK : MODE_LIGHT)}
+                toggleMode={() =>
+                    setMode(
+                        mode === MODE_LIGHT
+                            ? MODE_DARK
+                            : MODE_LIGHT,
+                    )
+                }
             />
 
-            <div className="relative">
-                <div
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='50' height='50' fill='none' stroke='${mode === MODE_LIGHT ? 'rgb(0 0 0 / 0.04)' : 'rgb(255 255 255 / 0.04)'}'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
-                    }}
-                    className="absolute inset-0 [mask-image:linear-gradient(to_bottom,white_5%,transparent_70%)] pointer-events-none select-none"
-                />
+            {/* ===================== HERO ===================== */}
 
-                <section className="relative z-10 pt-24 pb-6 sm:pt-28 md:pt-36 md:pb-10">
+            <div className="relative overflow-hidden">
+                
+
+                <section className="relative z-10 pb-12 pt-24 sm:pt-28 md:pb-16 md:pt-36">
                     <Container>
                         <motion.div
                             className="mx-auto max-w-3xl text-center"
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3 }}
+                            initial={{
+                                opacity: 0,
+                                y: 24,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                y: 0,
+                            }}
+                            transition={{
+                                duration: 0.3,
+                            }}
                         >
                             <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
                                 Features
                             </h1>
+
                             <p className="mt-4 text-base text-muted dark:text-muted-dark md:mt-6 md:text-xl">
                                 {hero.subtitle}
                             </p>
                         </motion.div>
-                    </Container>
-                </section>
-            </div>
+                        <motion.div
+                        className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-3xl"
+                        initial={{
+                            opacity: 0,
+                            y: 30,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
+                        transition={{
+                            duration: 0.4,
+                            delay: 0.1,
+                        }}
+                    >
+                        <video
+                            className="h-auto w-full"
+                            controls
+                            playsInline
+                            preload="metadata"
+                        >
+                            <source
+                                src="/img/features/feature-video.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                        </video>
+                    </motion.div>
+                 </Container>
+            </section>
+        </div>
 
-            {/* --------------------- Vertical nav + tab content --------------------- */}
-            <section className="relative z-20 pb-10 md:pb-20">
-                <Container>
-                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
-                        {/* Category navigation: vertical on every screen size */}
-                        <div className="lg:sticky lg:top-28 lg:self-start">
-                            <div
-                                role="tablist"
-                                aria-label="Feature categories"
-                                aria-orientation="vertical"
-                                onKeyDown={handleKeyDown}
-                                className="flex flex-col border-l border-gray-200 dark:border-gray-800"
-                            >
-                                {featureCategories.map((category, index) => {
-                                    const isActive = category.id === activeId
-                                    return (
-                                        <button
-                                            key={category.id}
-                                            ref={(el) => {
-                                                tabRefs.current[index] = el
-                                            }}
-                                            type="button"
-                                            role="tab"
-                                            id={`tab-${category.id}`}
-                                            aria-selected={isActive}
-                                            aria-controls={`panel-${category.id}`}
-                                            tabIndex={isActive ? 0 : -1}
-                                            onClick={() => selectTab(index)}
-                                            className={classNames(
-                                                'relative w-full px-4 py-3 text-left text-base font-semibold transition-colors duration-200 sm:px-5 lg:py-3.5 lg:text-lg',
-                                                isActive
-                                                    ? 'text-primary'
-                                                    : 'text-muted hover:text-gray-900 dark:text-muted-dark dark:hover:text-gray-100',
-                                                focusRingClass,
-                                            )}
-                                        >
+            {/* ===================== FEATURE SECTIONS ===================== */}
+
+            <section id="features">
+                {featureCategories.map((category, index) => {
+                    const isGray = index % 2 === 0
+
+                    return (
+                        <section
+                            key={category.id}
+                            className={
+                                isGray
+                                    ? 'bg-gray-100 dark:bg-gray-800'
+                                    : 'bg-white dark:bg-gray-900'
+                            }
+                        >
+                            <Container>
+                                <motion.div
+                                    initial={{
+                                        opacity: 0,
+                                        y: 35,
+                                    }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        y: 0,
+                                    }}
+                                    transition={{
+                                        duration: 0.35,
+                                        type: 'spring',
+                                        bounce: 0.1,
+                                    }}
+                                    viewport={{
+                                        once: true,
+                                        amount: 0.15,
+                                    }}
+                                    className="py-14 sm:py-16 md:py-20 lg:py-24"
+                                >
+                                    {/* ===================== INTRO ===================== */}
+
+                                    <div className="mx-auto max-w-3xl text-center">
+                                        <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
                                             {category.label}
-                                            {isActive && (
-                                                <motion.span
-                                                    layoutId="featuresTabIndicator"
-                                                    className="absolute -left-px inset-y-2 w-0.5 rounded-full bg-primary"
-                                                    transition={{ type: 'spring', bounce: 0.15, duration: 0.4 }}
-                                                />
-                                            )}
-                                        </button>
-                                    )
-                                })}
-                            </div>
-                        </div>
+                                        </p>
 
-                        {/* Tab content */}
-                        <div ref={contentRef} className="min-w-0 scroll-mt-24">
-                        <AnimatePresence mode="wait" initial={false}>
-                            <motion.div
-                                key={active.id}
-                                role="tabpanel"
-                                id={`panel-${active.id}`}
-                                aria-labelledby={`tab-${active.id}`}
-                                tabIndex={0}
-                                initial={{ opacity: 0, y: 16 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -8 }}
-                                transition={{ duration: 0.25 }}
-                                className="grid grid-cols-1 items-start gap-6 rounded-3xl bg-gray-100 px-4 py-6 focus-visible:outline-none dark:bg-gray-800 sm:gap-8 sm:px-6 sm:py-8 md:px-10 md:py-10 xl:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] xl:gap-10"
-                            >
-                                {/* Left: category info */}
-                                <div className="min-w-0">
-                                    <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-                                        {active.label}
-                                    </p>
-                                    <h2 className="mt-3 break-words text-2xl sm:text-3xl md:text-4xl">
-                                        {active.heading}
-                                    </h2>
-                                    <p className="mt-4 max-w-[550px] text-base sm:mt-6 sm:text-lg">
-                                        {active.description}
-                                    </p>
-                                    {active.points.length > 0 && (
-                                        <ul className="mt-6 flex flex-col gap-3 sm:mt-8 sm:gap-4">
-                                            {active.points.map((point) => (
-                                                <li key={point} className="flex items-start gap-2">
-                                                    <TbCircleCheck className="mt-0.5 shrink-0 text-xl text-primary" />
-                                                    <span>{point}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                    <div className="mt-6 sm:mt-8 [&>button]:w-full sm:[&>button]:w-auto">
-                                        <Button variant="solid" onClick={() => router.push('/sign-up')}>
-                                            Start Free Trial
-                                        </Button>
+                                        <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                                            {category.heading}
+                                        </h2>
+
+                                        <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted dark:text-muted-dark sm:text-lg">
+                                            {category.description}
+                                        </p>
                                     </div>
-                                </div>
 
-                                {/* Right: feature cards */}
-                                <ul className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-1">
-                                    {active.cards.map((card, index) => (
-                                        <motion.li
-                                            key={card.title}
-                                            initial={{ opacity: 0, y: 16 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.25, delay: 0.05 + index * 0.05 }}
-                                        >
-                                            {card.href ? (
-                                                <Link
-                                                    href={card.href}
-                                                    className={classNames(
-                                                        cardClass,
-                                                        'hover:border-primary',
-                                                        focusRingClass,
-                                                    )}
-                                                >
-                                                    <CardBody card={card} />
-                                                </Link>
-                                            ) : (
-                                                <div className={cardClass}>
-                                                    <CardBody card={card} />
-                                                </div>
-                                            )}
-                                        </motion.li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        </AnimatePresence>
-                        </div>
-                    </div>
-                </Container>
+                                    {/* ===================== IMAGE CARDS ===================== */}
+
+                                    <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:gap-6">
+                                        {category.cards.map(
+                                            (card, cardIndex) => {
+                                                const cardContent = (
+                                                    <div
+                                                        className={classNames(
+                                                            'group h-full overflow-hidden rounded-3xl border border-gray-200 bg-white transition-all duration-300 dark:border-gray-700 dark:bg-gray-900',
+                                                            card.href &&
+                                                                'hover:-translate-y-1 hover:border-primary hover:shadow-xl',
+                                                            focusRingClass,
+                                                        )}
+                                                    >
+                                                        {/* Image */}
+
+                                                        <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-800 sm:h-52 lg:h-56">
+                                                            <img
+                                                                src={
+                                                                    card.image
+                                                                }
+                                                                alt=""
+                                                                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                                                            />
+                                                        </div>
+
+                                                        {/* Content */}
+
+                                                        <div className="p-5 sm:p-6">
+                                                            <h3 className="text-lg font-semibold heading-text sm:text-xl">
+                                                                {card.title}
+                                                            </h3>
+
+                                                            <p className="mt-2 text-sm leading-6 text-muted dark:text-muted-dark sm:text-base">
+                                                                {
+                                                                    card.description
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                )
+
+                                                return (
+                                                    <motion.div
+                                                        key={card.title}
+                                                        initial={{
+                                                            opacity: 0,
+                                                            y: 20,
+                                                        }}
+                                                        whileInView={{
+                                                            opacity: 1,
+                                                            y: 0,
+                                                        }}
+                                                        transition={{
+                                                            duration: 0.3,
+                                                            delay:
+                                                                cardIndex *
+                                                                0.06,
+                                                        }}
+                                                        viewport={{
+                                                            once: true,
+                                                            amount: 0.2,
+                                                        }}
+                                                    >
+                                                        {card.href ? (
+                                                            <Link
+                                                                href={
+                                                                    card.href
+                                                                }
+                                                                className="block h-full"
+                                                                aria-label={`Learn more about ${card.title}`}
+                                                            >
+                                                                {cardContent}
+                                                            </Link>
+                                                        ) : (
+                                                            cardContent
+                                                        )}
+                                                    </motion.div>
+                                                )
+                                            },
+                                        )}
+                                    </div>
+                                </motion.div>
+                            </Container>
+                        </section>
+                    )
+                })}
             </section>
 
             <LandingFooter mode={mode} />

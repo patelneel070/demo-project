@@ -21,8 +21,10 @@ export type NavLink = { title: string; href: string }
 export const navLinks: NavLink[] = [
     // { title: 'Features', href: `${BASE_PATH}/features` },
     { title: 'Integrations', href: `${BASE_PATH}/integrations` },
-    { title: 'Solutions', href: `${BASE_PATH}/Solutions` },
-    { title: 'Contact', href: `${BASE_PATH}/contact` },
+    { title: 'Solutions', href: `${BASE_PATH}/solutions` },
+    { title: 'Industries', href: `${BASE_PATH}/industries` },
+    { title: 'Pricing', href: `${BASE_PATH}/pricing` },
+    { title: 'Resources', href: `${BASE_PATH}/resources` },
 ]
 
 export const featuresPageHref = `/features`
@@ -82,7 +84,7 @@ export const hero = {
     subtitle:
         'A simple way for growing teams to keep track of supplies, parts, tools and equipment, all in one place.',
     primaryCta: 'Start Free Trial',
-    secondaryCta: 'See All Features',
+    secondaryCta: 'See All plans',
     imageLight: '/img/invenka/hero/hero-light.png',
     imageDark: '/img/invenka/hero/hero-dark.webp', 
     imageAlt: 'Invenka inventory list',

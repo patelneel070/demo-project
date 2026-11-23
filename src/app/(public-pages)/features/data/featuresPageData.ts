@@ -1,31 +1,13 @@
-import type { IconType } from 'react-icons'
-import {
-    TbCloud,
-    TbFileExport,
-    TbFileImport,
-    TbFolder,
-    TbReportAnalytics,
-    TbUsers,
-} from 'react-icons/tb'
 import {
     BASE_PATH,
     featureItems,
-    featureRows,
 } from '../../invenka/components/data/landingData'
-
-/**
- * Data for the /invenka/features page.
- * Everything is pulled from components/data/landingData.ts so the copy stays
- * in one place. Only the short card titles that are marked NEW below are
- * additional text; their descriptions are existing sentences.
- */
 
 export type FeatureCard = {
     title: string
     description: string
-    Icon?: IconType
-    image?: string // used instead of an icon (integration logos)
-    href?: string // only cards backed by a feature detail page are links
+    image: string
+    href?: string
 }
 
 export type FeatureCategory = {
@@ -33,66 +15,118 @@ export type FeatureCategory = {
     label: string
     heading: string
     description: string
-    points: string[]
     cards: FeatureCard[]
 }
 
-// A card for one of the 7 dropdown features (links to its detail page)
-const fromItem = (slug: string): FeatureCard => {
+// Card for one of the feature detail pages
+const fromItem = (
+    slug: string,
+    image: string,
+): FeatureCard => {
     const item = featureItems.find((f) => f.slug === slug)
-    if (!item) throw new Error(`Unknown feature slug: ${slug}`)
+
+    if (!item) {
+        throw new Error(`Unknown feature slug: ${slug}`)
+    }
+
     return {
         title: item.title,
         description: item.description,
-        Icon: item.Icon,
+        image,
         href: `${BASE_PATH}/features/${item.slug}`,
     }
 }
-
-const [organizeRow, trackRow, reportRow, syncRow] = featureRows
 
 export const featureCategories: FeatureCategory[] = [
     {
         id: 'organize',
         label: 'Organize',
-        heading: organizeRow.title,
-        description: organizeRow.text,
-        points: organizeRow.points,
+        heading: 'Organize and automate your stock',
+        description:
+            'Bring your items together, organize them your way, and keep every important detail easy to find.',
         cards: [
-            { title: 'Quick import', description: organizeRow.points[0], Icon: TbFileImport }, // NEW title
-            { title: 'Folders', description: organizeRow.points[1], Icon: TbFolder }, // NEW title
+            {
+                title: 'Quick import',
+                description:
+                    'Import your existing inventory in just a few minutes.',
+                image: '/img/features/featurepics/quick-import.png',
+            },
+            {
+                title: 'Folders',
+                description:
+                    'Group items by location, category, and the way your team works.',
+                image: '/img/features/featurepics/folders.png',
+            },
         ],
     },
+
     {
         id: 'manage',
         label: 'Manage',
-        heading: syncRow.title,
-        description: syncRow.text,
-        points: syncRow.points,
+        heading: 'Manage your inventory from anywhere',
+        description:
+            'Keep your inventory connected across devices and make it simple for your whole team to stay organized.',
         cards: [
-            fromItem('mobile-app'),
-            { title: 'Cloud sync', description: syncRow.points[0], Icon: TbCloud }, // NEW title
-            { title: 'Teams of any size', description: syncRow.points[2], Icon: TbUsers }, // NEW title
+            fromItem(
+                'mobile-app',
+                '/img/features/featurepics/mobile-app.png',
+            ),
+            {
+                title: 'Cloud sync',
+                description:
+                    'Keep your inventory information synced and available wherever you work.',
+                image: '/img/features/featurepics/cloud-sync.png',
+            },
+            {
+                title: 'Teams of any size',
+                description:
+                    'Give everyone on your team the access they need to keep work moving.',
+                image: '/img/features/featurepics/teams.png',
+            },
         ],
     },
+
     {
         id: 'track',
         label: 'Track & Update',
-        heading: trackRow.title,
-        description: trackRow.text,
-        points: trackRow.points,
-        cards: [fromItem('barcoding'), fromItem('alerts')],
+        heading: 'Track every item with confidence',
+        description:
+            'Know what you have, where it is, and when something changes with simple tracking and timely updates.',
+        cards: [
+            fromItem(
+                'barcoding',
+                '/img/features/featurepics/barcoding.png',
+            ),
+            fromItem(
+                'alerts',
+                '/img/features/featurepics/alerts.png',
+            ),
+        ],
     },
+
     {
         id: 'report',
         label: 'Report',
-        heading: reportRow.title,
-        description: reportRow.text,
-        points: reportRow.points,
+        heading: 'See the bigger picture with better data',
+        description:
+            'Turn your inventory data into clear insights that help you understand what is happening across your business.',
         cards: [
-            { title: 'Detailed data', description: reportRow.points[0], Icon: TbReportAnalytics }, // NEW title
-            { title: 'PDF & CSV export', description: reportRow.points[1], Icon: TbFileExport }, // NEW title
-            fromItem('inventory-prediction'),
+            {
+                title: 'Detailed data',
+                description:
+                    'Get a clearer view of your inventory with useful information in one place.',
+                image: '/img/features/featurepics/analytics.png',
+            },
+            {
+                title: 'PDF & CSV export',
+                description:
+                    'Export your inventory data when you need to share, review, or work with it elsewhere.',
+                image: '/img/features/featurepics/export.png',
+            },
+            fromItem(
+                'inventory-prediction',
+                '/img/features/featurepics/inventory-prediction.png',
+            ),
         ],
-    }
+    },
 ]

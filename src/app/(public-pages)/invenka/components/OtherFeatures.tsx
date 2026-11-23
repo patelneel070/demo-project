@@ -1,4 +1,3 @@
-
 import Container from '../../landing/components/LandingContainer'
 import Button from '@/components/ui/Button'
 import { TbCircleCheck } from 'react-icons/tb'
@@ -33,9 +32,9 @@ const OtherFeatures = () => {
                             : 'bg-gray-100 dark:bg-gray-800'
                     }
                 >
-                    <Container>
+                    <div className="w-full px-6 lg:px-10 2xl:px-16">
                         <motion.div
-                            className={cardClass}
+                            className={`${cardClass} w-full max-w-[1600px] mx-auto`}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
@@ -91,8 +90,8 @@ const OtherFeatures = () => {
                                     <div
                                         className={
                                             index % 2 === 0
-                                                ? 'h-[400px] w-[900px] lg:h-[500px] overflow-hidden'
-                                                : 'pl-0 h-[400px] lg:h-[500px] overflow-hidden'
+                                                ? 'h-[400px] w-full lg:h-[500px] overflow-hidden rounded-[80px]'
+                                                : 'pl-0 h-[400px] w-full lg:h-[500px] overflow-hidden rounded-[80px]'
                                         }
                                     >
                                         <img
@@ -104,7 +103,7 @@ const OtherFeatures = () => {
                                 </div>
                             </div>
                         </motion.div>
-                    </Container>
+                    </div>
                 </div>
             ))}
 
@@ -153,7 +152,7 @@ const OtherFeatures = () => {
                                     <img
                                         src={mobileSection.image}
                                         alt={mobileSection.imageAlt}
-                                        className="rounded-[24px]"
+                                        className="rounded-[40px]"
                                     />
                                 </div>
                             </motion.div>
