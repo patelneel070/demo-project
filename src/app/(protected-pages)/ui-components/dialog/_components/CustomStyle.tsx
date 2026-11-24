@@ -45,7 +45,7 @@ const CustomStyle = () => {
                         dont look even slightly believable.
                     </p>
                 </div>
-                <div className="text-right px-6 py-3 bg-gray-100 dark:bg-gray-700 rounded-bl-lg rounded-br-lg">
+                <div className="text-right px-6 py-3 bg-gray-100 rounded-bl-lg rounded-br-lg">
                     <Button
                         className="ltr:mr-2 rtl:ml-2"
                         onClick={onDialogClose}

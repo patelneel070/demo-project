@@ -83,7 +83,7 @@ const Gallery = () => {
     return (
         <>
             {isGeneratedImagesView && (
-                <div className="rounded-xl bg-gray-100 dark:bg-gray-700 p-5 mb-4">
+                <div className="rounded-xl bg-gray-100 p-5 mb-4">
                     <h4 className="mb-4">
                         {isGeneratingImage ? 'Generating' : 'Result'}
                     </h4>
@@ -100,7 +100,7 @@ const Gallery = () => {
                                 {[...Array(4)].map((item) => (
                                     <Skeleton
                                         key={`loading-${item}`}
-                                        className="rounded-xl bg-gray-300 dark:bg-gray-600"
+                                        className="rounded-xl bg-gray-300"
                                         height={250}
                                     />
                                 ))}

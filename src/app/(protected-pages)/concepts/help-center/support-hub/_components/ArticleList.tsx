@@ -66,7 +66,7 @@ const Articles = ({ query, topic }: ArticlesProps) => {
                 <div className="mb-6">
                     <h4 className="flex items-center gap-4">
                         <button
-                            className="outline-hidden rounded-full p-2 text-xl bg-white hover:bg-gray-200 hover:text-gray-800 dark:hover:text-gray-100"
+                            className="outline-hidden rounded-full p-2 text-xl bg-white hover:bg-gray-200 hover:text-gray-800"
                             onClick={handleBack}
                         >
                             <TbArrowNarrowLeft />

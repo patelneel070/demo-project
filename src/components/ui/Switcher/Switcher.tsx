@@ -87,7 +87,7 @@ const Switcher = (props: SwitcherProps) => {
         }
     }
 
-    const switcherColor = switcherClass || 'bg-primary dark:bg-primary'
+    const switcherColor = switcherClass || 'bg-primary'
 
     return (
         <label

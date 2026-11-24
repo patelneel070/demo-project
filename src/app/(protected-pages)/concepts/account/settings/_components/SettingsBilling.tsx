@@ -117,7 +117,7 @@ const SettingsBilling = () => {
     return (
         <div>
             <h4 className="mb-4">Billing</h4>
-            <div className="bg-gray-100 dark:bg-gray-700 rounded-xl p-6">
+            <div className="bg-gray-100 rounded-xl p-6">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                         <div>
@@ -191,7 +191,7 @@ const SettingsBilling = () => {
                             className={classNames(
                                 'flex items-center justify-between p-4',
                                 !isLastChild(data.paymentMethods, index) &&
-                                    'border-b border-gray-200 dark:border-gray-600',
+                                    'border-b border-gray-200',
                             )}
                         >
                             <div className="flex items-center">
@@ -209,7 +209,7 @@ const SettingsBilling = () => {
                                 )}
                                 <div className="ml-3 rtl:mr-3">
                                     <div className="flex items-center">
-                                        <div className="text-gray-900 dark:text-gray-100 font-semibold">
+                                        <div className="text-gray-900 font-semibold">
                                             {card.cardHolderName} ••••{' '}
                                             {card.last4Number}
                                         </div>

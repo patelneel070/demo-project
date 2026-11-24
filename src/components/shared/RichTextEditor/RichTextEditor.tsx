@@ -112,7 +112,7 @@ const RichTextEditor = (props: RichTextEditorProps) => {
     return (
         <div
             className={classNames(
-                'rich-text-editor rounded-xl ring-1 ring-gray-200 dark:ring-gray-600 border border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 pt-3',
+                'rich-text-editor rounded-xl ring-1 ring-gray-200 border border-gray-200 bg-gray-100 pt-3',
                 editor.isFocused && 'ring-primary border-primary',
                 invalid && 'bg-error-subtle',
                 editor.isFocused &&
@@ -156,7 +156,7 @@ const RichTextEditor = (props: RichTextEditorProps) => {
             <EditorContent
                 ref={ref}
                 className={classNames(
-                    'max-h-[600px] overflow-auto px-2 prose prose-p:text-sm dark:prose-p:text-gray-400 max-w-full',
+                    'max-h-[600px] overflow-auto px-2 prose prose-p:text-sm max-w-full',
                     editorContentClass,
                 )}
                 editor={editor}

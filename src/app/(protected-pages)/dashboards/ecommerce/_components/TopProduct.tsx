@@ -33,7 +33,7 @@ const TopProduct = ({ data }: TopProductProps) => {
                     <div
                         key={product.id}
                         className={classNames(
-                            'flex items-center justify-between py-2 dark:border-gray-600',
+                            'flex items-center justify-between py-2',
                             !isLastChild(data, index) && 'mb-2',
                         )}
                     >

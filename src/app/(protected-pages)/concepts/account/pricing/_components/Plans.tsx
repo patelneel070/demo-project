@@ -28,7 +28,7 @@ const Plans = ({ data, subcription, cycle }: PlansProps) => {
                     className={classNames(
                         'px-6 pt-2 flex flex-col justify-between',
                         !isLastChild(data.plans, index) &&
-                            'border-r-0 xl:border-r border-gray-200 dark:border-gray-700',
+                            'border-r-0 xl:border-r border-gray-200',
                     )}
                 >
                     <div>
@@ -55,7 +55,7 @@ const Plans = ({ data, subcription, cycle }: PlansProps) => {
                                 {paymentCycle === 'monthly' ? 'month' : 'year'}
                             </span>
                         </div>
-                        <div className="flex flex-col gap-4 border-t border-gray-200 dark:border-gray-700 mt-6 pt-6">
+                        <div className="flex flex-col gap-4 border-t border-gray-200 mt-6 pt-6">
                             {featuresList.map((feature) => (
                                 <div
                                     key={feature.id}

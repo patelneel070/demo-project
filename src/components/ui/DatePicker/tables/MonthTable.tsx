@@ -54,7 +54,7 @@ const MonthTable = (props: MonthTableProps) => {
                     'month-picker-cell',
                     active && !disabled
                         ? 'month-picker-cell-active bg-primary'
-                        : 'text-gray-800 dark:text-gray-100',
+                        : 'text-gray-800',
                     !active && !disabled && 'hover:bg-gray-100',
                     disabled && 'month-picker-cell-disabled',
                 )}

@@ -132,14 +132,14 @@ const RolesPermissionsAccessDialog = () => {
                         <div
                             key={module.id}
                             className={classNames(
-                                'flex flex-col md:flex-row md:items-center justify-between gap-4 py-6 border-gray-200 dark:border-gray-600',
+                                'flex flex-col md:flex-row md:items-center justify-between gap-4 py-6 border-gray-200',
                                 !isLastChild(accessModules, index) &&
                                     'border-b',
                             )}
                         >
                             <div className="flex items-center gap-4">
                                 <Avatar
-                                    className="bg-transparent dark:bg-transparent p-2 border-2 border-gray-200 dark:border-gray-600 text-primary"
+                                    className="bg-transparent p-2 border-2 border-gray-200 text-primary"
                                     size={50}
                                     icon={moduleIcon[module.id]}
                                     shape="round"
@@ -151,7 +151,7 @@ const RolesPermissionsAccessDialog = () => {
                             </div>
                             <div className="flex items-center gap-4">
                                 <Segment
-                                    className="bg-transparent dark:bg-transparent"
+                                    className="bg-transparent"
                                     selectionType="multiple"
                                     value={modules?.accessRight[module.id]}
                                     onChange={(val) =>
@@ -186,7 +186,7 @@ const RolesPermissionsAccessDialog = () => {
                                                         }) =>
                                                             classNames(
                                                                 active &&
-                                                                    'bg-transparent dark:bg-transparent text-primary border-primary ring-1 ring-primary',
+                                                                    'bg-transparent text-primary border-primary ring-1 ring-primary',
                                                             )
                                                         }
                                                         onClick={

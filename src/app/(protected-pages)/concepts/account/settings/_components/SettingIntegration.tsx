@@ -63,13 +63,13 @@ const SettingIntegration = () => {
                     <div
                         key={app.id}
                         className={classNames(
-                            'flex items-center justify-between py-6 border-gray-200 dark:border-gray-700',
+                            'flex items-center justify-between py-6 border-gray-200',
                             !isLastChild(data, index) && 'border-b',
                         )}
                     >
                         <div className="flex items-center gap-4">
                             <Avatar
-                                className="bg-transparent dark:bg-transparent p-2 border-2 border-gray-200 dark:border-gray-700"
+                                className="bg-transparent p-2 border-2 border-gray-200"
                                 size={50}
                                 src={app.img}
                                 shape="round"
@@ -106,7 +106,7 @@ const SettingIntegration = () => {
             >
                 <div className="flex items-center gap-3">
                     <Avatar
-                        className="bg-transparent dark:bg-transparent p-2 border-2 border-gray-200 dark:border-gray-600"
+                        className="bg-transparent p-2 border-2 border-gray-200"
                         size={55}
                         src={selectedIntegration.integration.img}
                         shape="round"

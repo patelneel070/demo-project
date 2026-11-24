@@ -64,7 +64,7 @@ const StatisticCard = (props: StatisticCardProps) => {
         <button
             className={classNames(
                 'p-4 rounded-2xl cursor-pointer ltr:text-left rtl:text-right transition duration-150 outline-hidden',
-                active && 'bg-white dark:bg-gray-900 shadow-md',
+                active && 'bg-white shadow-md',
             )}
             onClick={() => onClick(label)}
         >
@@ -140,7 +140,7 @@ const Overview = ({ data }: StatisticGroupsProps) => {
                     }}
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-2xl p-3 bg-gray-100 dark:bg-gray-700 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-2xl p-3 bg-gray-100 mt-4">
                 <StatisticCard
                     title="Total profit"
                     value={

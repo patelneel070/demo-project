@@ -4,19 +4,19 @@ const SliderTootltip = () => {
     return (
         <div className="flex flex-col gap-y-6">
             <div className="my-5 flex flex-col">
-                <strong className="mb-2 text-gray-900 dark:text-white">
+                <strong className="mb-2 text-gray-900">
                     Show tooltip on hover
                 </strong>
                 <Slider showTooltipOnHover defaultValue={60} />
             </div>
             <div className="my-5 flex flex-col">
-                <strong className="mb-2 text-gray-900 dark:text-white">
+                <strong className="mb-2 text-gray-900">
                     Always show tooltip
                 </strong>
                 <Slider alwaysShowTooltip defaultValue={60} />
             </div>
             <div className="my-5 flex flex-col">
-                <strong className="mb-2 text-gray-900 dark:text-white">
+                <strong className="mb-2 text-gray-900">
                     Custom tooltip
                 </strong>
                 <Slider

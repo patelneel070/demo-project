@@ -187,7 +187,7 @@ const SettingsSecurity = () => {
                         <div
                             key={authOption.value}
                             className={classNames(
-                                'py-6 border-gray-200 dark:border-gray-600',
+                                'py-6 border-gray-200',
                                 !isLastChild(authenticatorList, index) &&
                                     'border-b',
                             )}

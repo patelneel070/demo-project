@@ -73,7 +73,7 @@ const Page = () => {
                     ].map((feat) => (
                         <a
                             key={feat.id}
-                            className="border-2 border-gray-200 dark:border-gray-700 hover:border-primary flex flex-col items-center justify-center py-4 rounded-xl gap-2 no-underline"
+                            className="border-2 border-gray-200 hover:border-primary flex flex-col items-center justify-center py-4 rounded-xl gap-2 no-underline"
                             href={feat.src}
                             target="_blank"
                             rel="noreferrer"

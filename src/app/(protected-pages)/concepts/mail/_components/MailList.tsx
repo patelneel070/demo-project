@@ -288,7 +288,7 @@ const MailList = () => {
                                 <div
                                     key={mail.id}
                                     className={classNames(
-                                        'flex justify-between items-center gap-2 px-2 rounded-xl border-gray-200 dark:border-gray-700 py-4 cursor-pointer group',
+                                        'flex justify-between items-center gap-2 px-2 rounded-xl border-gray-200 py-4 cursor-pointer group',
                                         !isLastChild(mailList, index) &&
                                             'border-b',
                                     )}

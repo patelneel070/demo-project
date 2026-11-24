@@ -112,7 +112,7 @@ const RecentCampaign = ({ data }: RecentCampaignProps) => {
                                 <Td>
                                     <div className="flex items-center gap-2">
                                         <Avatar
-                                            className="bg-transparent dark:bg-transparent p-2 border-2 border-gray-200 dark:border-gray-600"
+                                            className="bg-transparent p-2 border-2 border-gray-200"
                                             size={50}
                                             shape="round"
                                             icon={

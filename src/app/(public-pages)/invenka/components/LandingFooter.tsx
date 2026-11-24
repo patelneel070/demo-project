@@ -1,14 +1,12 @@
-import Container from '../../landing/components/LandingContainer'
+import Container from './LandingContainer'
 import Button from '@/components/ui/Button'
-import AuroraBackground from '../../landing/components/AuroraBackground'
+import AuroraBackground from './AuroraBackground'
 import { motion } from 'framer-motion'
-import { MODE_DARK, MODE_LIGHT } from '@/constants/theme.constant'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import type { Mode } from '@/@types/theme'
 import { cta, footer } from './data/landingData'
 
-const LandingFooter = ({ mode }: { mode: Mode }) => {
+const LandingFooter = () => {
     const year = new Date().getFullYear()
     const router = useRouter()
 
@@ -39,16 +37,11 @@ const LandingFooter = ({ mode }: { mode: Mode }) => {
                     </AuroraBackground>
                 </div>
 
-                <div className="border-t border-gray-200 dark:border-gray-800 py-12">
+                <div className="border-t border-gray-200 py-12">
                     <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
                         <div className="col-span-2 md:col-span-1">
                             <Link href="/">
-                                {mode === MODE_LIGHT && (
-                                    <img src="/img/logo/invenka logo-png.png" width={120} height={40} alt="logo" />
-                                )}
-                                {mode === MODE_DARK && (
-                                    <img src="/img/logo/logo-dark-full.png" width={120} height={40} alt="logo" />
-                                )}
+                                <img src="/img/logo/invenka logo-png.png" width={120} height={40} alt="logo" />
                             </Link>
                             <p className="mt-4 max-w-xs">
                                 {footer.tagline}

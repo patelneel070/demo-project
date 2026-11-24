@@ -20,8 +20,8 @@ type CustomerListTableProps = {
 }
 
 const statusColor: Record<string, string> = {
-    active: 'bg-emerald-200 dark:bg-emerald-200 text-gray-900 dark:text-gray-900',
-    blocked: 'bg-red-200 dark:bg-red-200 text-gray-900 dark:text-gray-900',
+    active: 'bg-emerald-200 text-gray-900',
+    blocked: 'bg-red-200 text-gray-900',
 }
 
 const NameColumn = ({ row }: { row: Customer }) => {
@@ -29,7 +29,7 @@ const NameColumn = ({ row }: { row: Customer }) => {
         <div className="flex items-center">
             <Avatar size={40} shape="circle" src={row.img} />
             <Link
-                className={`hover:text-primary ml-2 rtl:mr-2 font-semibold text-gray-900 dark:text-gray-100`}
+                className={`hover:text-primary ml-2 rtl:mr-2 font-semibold text-gray-900`}
                 href={`/concepts/customers/customer-details/${row.id}`}
             >
                 {row.name}

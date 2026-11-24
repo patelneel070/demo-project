@@ -71,12 +71,12 @@ const LeadPerformance = ({ data }: LeadPerformanceProps) => {
                             className="flex items-center gap-4"
                         >
                             <div className="flex items-center gap-2">
-                                <div className="rounded-full h-8 w-8 border-2 border-gray-200 dark:border-gray-600 font-bold heading-text flex items-center justify-center">
+                                <div className="rounded-full h-8 w-8 border-2 border-gray-200 font-bold heading-text flex items-center justify-center">
                                     {index + 1}
                                 </div>
                                 <div className="heading-text">{lead}</div>
                             </div>
-                            <div className="border-dashed border-[1.5px] border-gray-300 dark:border-gray-500 flex-1" />
+                            <div className="border-dashed border-[1.5px] border-gray-300 flex-1" />
                             <div>
                                 <span
                                     className={classNames(

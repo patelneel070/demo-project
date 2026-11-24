@@ -244,7 +244,7 @@ const BillingSection = ({ data }: BillingSectionProps) => {
                         className={classNames(
                             'flex flex-col lg:flex-row lg:items-center justify-between gap-3 p-4',
                             !isLastChild(data.paymentMethod || [], index) &&
-                                'border-b border-gray-200 dark:border-gray-600',
+                                'border-b border-gray-200',
                         )}
                     >
                         <div className="flex items-center gap-3">
@@ -256,12 +256,12 @@ const BillingSection = ({ data }: BillingSectionProps) => {
                             )}
                             <div>
                                 <div className="flex items-center">
-                                    <div className="text-gray-900 dark:text-gray-100 font-semibold">
+                                    <div className="text-gray-900 font-semibold">
                                         {card.cardHolderName} ••••{' '}
                                         {card.last4Number}
                                     </div>
                                     {card.primary && (
-                                        <Tag className="bg-sky-100 text-primary dark:bg-primary/20 dark:text-primary rounded-md border-0 mx-2">
+                                        <Tag className="bg-sky-100 text-primary rounded-md border-0 mx-2">
                                             <span className="capitalize">
                                                 {' '}
                                                 Primary{' '}

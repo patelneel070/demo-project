@@ -16,18 +16,18 @@ const CollapsibleSideSvg = ({
             <rect
                 width={500}
                 height={500}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
-            <mask id="a" className="fill-white dark:fill-gray-800 ">
+            <mask id="a" className="fill-white ">
                 <path d="M0 20C0 8.954 8.954 0 20 0h172v500H20c-11.046 0-20-8.954-20-20V20Z" />
             </mask>
             <path
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 d="M0 20C0 8.954 8.954 0 20 0h172v500H20c-11.046 0-20-8.954-20-20V20Z"
             />
             <path
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 d="M0 0h192H0Zm192 500H0h192ZM0 500V0v500ZM194 0v500h-4V0h4Z"
                 mask="url(#a)"
             />
@@ -35,7 +35,7 @@ const CollapsibleSideSvg = ({
                 cx={47.5}
                 cy={47.5}
                 r={27.5}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
             />
             <rect
                 width={152}
@@ -58,7 +58,7 @@ const CollapsibleSideSvg = ({
                 height={13}
                 x={20}
                 y={148}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={6}
             />
             <rect
@@ -66,7 +66,7 @@ const CollapsibleSideSvg = ({
                 height={13}
                 x={20}
                 y={181}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={6}
             />
             <rect
@@ -74,22 +74,22 @@ const CollapsibleSideSvg = ({
                 height={13}
                 x={20}
                 y={214}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={6}
             />
             <path
-                className="fill-gray-100 dark:fill-gray-950"
+                className="fill-gray-100"
                 d="M192 0h308v500H192z"
             />
-            <mask id="b" className="fill-white dark:fill-gray-800 ">
+            <mask id="b" className="fill-white ">
                 <path d="M192 0h288c11.046 0 20 8.954 20 20v58H192V0Z" />
             </mask>
             <path
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 d="M192 0h288c11.046 0 20 8.954 20 20v58H192V0Z"
             />
             <path
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 d="M192 0h308-308Zm308 79H192v-2h308v2Zm-308-1V0v78ZM500 0v78V0Z"
                 mask="url(#b)"
             />
@@ -98,7 +98,7 @@ const CollapsibleSideSvg = ({
                 height={382}
                 x={212}
                 y={98}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
         </svg>

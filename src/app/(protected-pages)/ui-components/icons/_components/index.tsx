@@ -47,11 +47,11 @@ const IconSetWrapper = ({ children, name, url }: IconSetWrapperProps) => {
         <a href={url} target="_blank" rel="noopener noreferrer">
             <Card
                 clickable
-                className="hover:shadow-lg transition duration-150 ease-in-out dark:hover:border-gray-400"
-                bodyClass="bg-gray-100 dark:bg-gray-700 rounded-xl p-3"
+                className="hover:shadow-lg transition duration-150 ease-in-out"
+                bodyClass="bg-gray-100 rounded-xl p-3"
                 bordered={false}
             >
-                <div className="px-2 rounded-xl bg-white dark:bg-gray-800 py-4">
+                <div className="px-2 rounded-xl bg-white py-4">
                     {children}
                 </div>
                 <div className="text-center mt-4">

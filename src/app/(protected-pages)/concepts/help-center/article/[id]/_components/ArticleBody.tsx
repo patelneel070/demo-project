@@ -20,7 +20,7 @@ const ArticleBody = ({ data }: ArticleProps) => {
                 <div className="text-xs">
                     <div className="mb-1">
                         Created by:
-                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                        <span className="font-semibold text-gray-900">
                             {data.createdBy}
                         </span>
                     </div>
@@ -33,7 +33,7 @@ const ArticleBody = ({ data }: ArticleProps) => {
                     </div>
                 </div>
             </div>
-            <div className="mt-8 prose dark:prose-invert max-w-none prose-p:mt-2 prose-headings:font-bold">
+            <div className="mt-8 prose max-w-none prose-p:mt-2 prose-headings:font-bold">
                 {ReactHtmlParser(data.content || '')}
             </div>
         </>

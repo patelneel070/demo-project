@@ -81,7 +81,7 @@ const MapChart = (props: MapChartProps) => {
                 id="map-dots"
                 height={6}
                 width={6}
-                className="fill-gray-300 dark:fill-gray-500 "
+                className="fill-gray-300 "
                 strokeWidth={1}
                 background="transparent"
             />
@@ -89,7 +89,7 @@ const MapChart = (props: MapChartProps) => {
                 id="map-dots-hover"
                 height={6}
                 width={6}
-                className="fill-gray-400 dark:fill-gray-300 "
+                className="fill-gray-400 "
                 strokeWidth={1}
                 background="transparent"
             />

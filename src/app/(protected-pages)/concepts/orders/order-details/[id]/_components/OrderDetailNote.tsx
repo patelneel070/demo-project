@@ -10,7 +10,7 @@ const OrderDetailNote = ({ note }: OrderDetailNoteProps) => {
     return (
         <Card>
             <h4 className="mb-4">Note</h4>
-            <div className="rounded-xl p-4 bg-gray-50 dark:bg-gray-700 ">
+            <div className="rounded-xl p-4 bg-gray-50 ">
                 {note}
             </div>
         </Card>

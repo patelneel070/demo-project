@@ -37,7 +37,7 @@ const TaskListTable = ({
                         style={{ height: rowHeight }}
                     >
                         <div
-                            className="table-cell align-middle whitespace-nowrap overflow-hidden text-ellipsis  border-r border-gray-200 dark:border-gray-700 px-2"
+                            className="table-cell align-middle whitespace-nowrap overflow-hidden text-ellipsis  border-r border-gray-200 px-2"
                             style={{
                                 minWidth: rowWidth,
                                 maxWidth: rowWidth,
@@ -71,7 +71,7 @@ const TaskListTable = ({
                         {extraCells?.map((cell, cellIndex) => (
                             <div
                                 key={`${t.id}-cell-${rowIndex}-${cellIndex}`}
-                                className="table-cell align-middle whitespace-nowrap overflow-hidden text-ellipsis  border-r border-gray-200 dark:border-gray-700 px-2"
+                                className="table-cell align-middle whitespace-nowrap overflow-hidden text-ellipsis  border-r border-gray-200 px-2"
                                 style={{
                                     minWidth: rowWidth,
                                     maxWidth: rowWidth,

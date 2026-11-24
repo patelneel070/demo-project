@@ -16,14 +16,14 @@ const FrameLessSideSvg = ({
             <rect
                 width={500}
                 height={500}
-                className="fill-gray-100 dark:fill-gray-950"
+                className="fill-gray-100"
                 rx={20}
             />
             <circle
                 cx={47.5}
                 cy={47.5}
                 r={27.5}
-                className="fill-gray-300 dark:fill-gray-700"
+                className="fill-gray-300"
             />
             <path
                 className="fill-primary"
@@ -34,7 +34,7 @@ const FrameLessSideSvg = ({
                 height={13}
                 x={20}
                 y={138}
-                className="fill-gray-300 dark:fill-gray-700"
+                className="fill-gray-300"
                 rx={6}
             />
             <rect
@@ -42,7 +42,7 @@ const FrameLessSideSvg = ({
                 height={13}
                 x={20}
                 y={171}
-                className="fill-gray-300 dark:fill-gray-700"
+                className="fill-gray-300"
                 rx={6}
             />
             <rect
@@ -50,14 +50,14 @@ const FrameLessSideSvg = ({
                 height={13}
                 x={20}
                 y={204}
-                className="fill-gray-300 dark:fill-gray-700"
+                className="fill-gray-300"
                 rx={6}
             />
             <rect
                 width={336}
                 height={500}
                 x={164}
-                className="fill-gray-100 dark:fill-gray-950"
+                className="fill-gray-100"
                 rx={20}
             />
             <rect
@@ -65,7 +65,7 @@ const FrameLessSideSvg = ({
                 height={460}
                 x={184}
                 y={20}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
         </svg>

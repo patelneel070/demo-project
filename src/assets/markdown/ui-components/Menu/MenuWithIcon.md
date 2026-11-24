@@ -20,7 +20,7 @@ const MenuContent = ({ icon, label }: { icon: ReactNode, label: string }) => {
 
 const MenuWithIcon = () => {
     return (
-        <div className="border border-gray-200 dark:border-gray-700 rounded-md p-2" style={{ maxWidth: 250 }}>
+        <div className="border border-gray-200 rounded-md p-2" style={{ maxWidth: 250 }}>
             <Menu>
                 <Menu.MenuItem eventKey="settings">
                     <MenuContent icon={<HiOutlineCog />} label="Settings" />

@@ -38,9 +38,9 @@ const RolesPermissionsUserSelected = () => {
         <>
             {selectedUser.length > 0 && (
                 <StickyFooter
-                    className="-mx-8 flex items-center justify-between py-4 bg-white dark:bg-gray-800"
-                    stickyClass="border-t border-gray-200 dark:border-gray-700 px-8"
-                    defaultClass="container mx-auto px-8 rounded-xl border border-gray-200 dark:border-gray-600 mt-4"
+                    className="-mx-8 flex items-center justify-between py-4 bg-white"
+                    stickyClass="border-t border-gray-200 px-8"
+                    defaultClass="container mx-auto px-8 rounded-xl border border-gray-200 mt-4"
                 >
                     <div className="container mx-auto">
                         <div className="flex items-center justify-between">

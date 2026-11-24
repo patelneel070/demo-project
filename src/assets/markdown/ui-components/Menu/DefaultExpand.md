@@ -7,7 +7,7 @@ const DefaultExpand = () => {
 
     return (
         <div
-            className="border border-gray-200 dark:border-gray-700 rounded-md p-2"
+            className="border border-gray-200 rounded-md p-2"
             style={{ maxWidth: 250 }}
         >
             <Menu defaultExpandedKeys={defaultExpandKey}>

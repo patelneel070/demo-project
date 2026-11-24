@@ -16,11 +16,11 @@ const BlankSvg = ({
             <rect
                 width={500}
                 height={500}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
             <path
-                className="fill-gray-100 dark:fill-gray-950"
+                className="fill-gray-100"
                 d="M0 0h500v500H0z"
             />
             <rect
@@ -28,7 +28,7 @@ const BlankSvg = ({
                 height={460}
                 x={20}
                 y={20}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
         </svg>

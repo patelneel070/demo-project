@@ -3,7 +3,7 @@ const List = () => {
     return (
         <div>
             <div className="mb-6">
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     font-light
                 </span>
                 <ul className="list-disc list-inside">
@@ -19,7 +19,7 @@ const List = () => {
                 </ul>
             </div>
             <div className="mb-6">
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     font-light
                 </span>
                 <ul className="list-decimal list-inside">
@@ -35,7 +35,7 @@ const List = () => {
                 </ul>
             </div>
             <div>
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     font-light
                 </span>
                 <ul className="list-none list-inside">

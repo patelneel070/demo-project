@@ -48,7 +48,7 @@ const ChatInput = (props: ChatInputProps) => {
     }
 
     return (
-        <div className="border-2 border-gray-200 dark:border-gray-700 rounded-xl min-h-[50px] px-3 flex flex-col">
+        <div className="border-2 border-gray-200 rounded-xl min-h-[50px] px-3 flex flex-col">
             {attachments.length > 0 && (
                 <Upload
                     fileList={attachments}

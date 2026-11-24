@@ -33,7 +33,7 @@ const Article = ({
     return (
         <div
             className={classNames(
-                'flex items-center justify-between py-6 border-gray-200 dark:border-gray-700 group cursor-pointer',
+                'flex items-center justify-between py-6 border-gray-200 group cursor-pointer',
                 isLastChild && 'border-b',
             )}
             role="buttton"
@@ -41,7 +41,7 @@ const Article = ({
         >
             <div className="flex items-center gap-4">
                 <Avatar
-                    className="bg-gray-100 dark:bg-gray-700"
+                    className="bg-gray-100"
                     size={50}
                     icon={
                         <span className="heading-text">

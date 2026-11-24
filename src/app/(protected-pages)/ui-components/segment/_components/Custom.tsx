@@ -16,7 +16,7 @@ const Custom = () => {
     return (
         <Segment
             defaultValue={['Team']}
-            className="gap-4 md:flex-row flex-col bg-transparent dark:bg-transparent"
+            className="gap-4 md:flex-row flex-col bg-transparent"
         >
             {segmentSelections.map((item) => (
                 <Segment.Item
@@ -33,9 +33,9 @@ const Custom = () => {
                                     'justify-between',
                                     'border',
                                     'rounded-xl ',
-                                    'dark:bg-transparent',
+                                    '',
                                     'border-gray-300',
-                                    'dark:border-gray-600',
+                                    '',
                                     'py-5 px-4',
                                     'select-none',
                                     'w-100',

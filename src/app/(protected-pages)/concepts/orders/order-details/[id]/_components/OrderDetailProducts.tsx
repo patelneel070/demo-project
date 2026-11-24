@@ -17,7 +17,7 @@ const OrderDetailProducts = ({ products }: OrderDetailProductsProps) => {
                 {products?.map((product) => (
                     <div
                         key={product.id}
-                        className="rounded-xl bg-gray-50 dark:bg-gray-700 p-4"
+                        className="rounded-xl bg-gray-50 p-4"
                     >
                         <div className="flex items-center justify-between gap-4">
                             <div className="flex items-center gap-2">

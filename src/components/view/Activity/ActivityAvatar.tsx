@@ -64,7 +64,7 @@ const ActivityAvatar = ({ data }: ActivityAvatar) => {
     if (data && iconType.includes(data.type)) {
         return (
             <Avatar
-                className="text-gray-900 bg-gray-100 dark:text-white dark:bg-gray-700"
+                className="text-gray-900 bg-gray-100 "
                 icon={<Icon type={data.type} />}
                 {...defaultAvatarProps}
             />

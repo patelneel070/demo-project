@@ -3,13 +3,13 @@ const Text = () => {
     return (
         <div className="flex flex-col gap-8">
             <div>
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     default
                 </span>
                 <p>The quick brown fox jumps over the lazy dog.</p>
             </div>
             <div>
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     italic
                 </span>
                 <p className="italic">
@@ -17,7 +17,7 @@ const Text = () => {
                 </p>
             </div>
             <div>
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     underline
                 </span>
                 <p className="underline">
@@ -25,7 +25,7 @@ const Text = () => {
                 </p>
             </div>
             <div>
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     overline
                 </span>
                 <p className="overline">
@@ -33,7 +33,7 @@ const Text = () => {
                 </p>
             </div>
             <div>
-                <span className="text-sm text-slate-500 font-mono mb-3 dark:text-slate-400">
+                <span className="text-sm text-slate-500 font-mono mb-3">
                     line-through
                 </span>
                 <p className="line-through">

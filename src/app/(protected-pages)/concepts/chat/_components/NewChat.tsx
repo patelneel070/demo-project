@@ -129,13 +129,13 @@ const NewChat = () => {
                                             <div
                                                 key={contact.id}
                                                 className={classNames(
-                                                    'py-3 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700',
+                                                    'py-3 px-3 rounded-lg flex items-center justify-between cursor-pointer hover:bg-gray-100',
                                                     selectedContact.some(
                                                         (item) =>
                                                             item.id ===
                                                             contact.id,
                                                     ) &&
-                                                        'bg-gray-100 dark:bg-gray-700',
+                                                        'bg-gray-100',
                                                 )}
                                                 role="button"
                                                 onClick={() =>

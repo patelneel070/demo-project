@@ -26,12 +26,12 @@ const NavContent = ({ onLinkClick, routes }: NavContentProps) => {
                     <div className="mb-4 heading-text font-bold">
                         {group.groupName}
                     </div>
-                    <div className="ltr:border-l rtl:border-r border-gray-200 dark:border-gray-600">
+                    <div className="ltr:border-l rtl:border-r border-gray-200">
                         {group.nav.map((menu) => (
                             <Link
                                 key={menu.label}
                                 className={classNames(
-                                    `cursor-pointer font-semibold ltr:border-l rtl:border-r px-4 h-6 mb-4 flex items-center gap-2 hover:text-gray-900 dark:hover:text-gray-100 ltr:-ml-px rtl:-mr-px`,
+                                    `cursor-pointer font-semibold ltr:border-l rtl:border-r px-4 h-6 mb-4 flex items-center gap-2 hover:text-gray-900 ltr:-ml-px rtl:-mr-px`,
                                     currentPath === menu.path
                                         ? activeClass
                                         : 'border-transparent',

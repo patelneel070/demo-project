@@ -16,18 +16,18 @@ const StackedSideSvg = ({
             <rect
                 width={500}
                 height={500}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
-            <mask id="a" className="fill-white dark:fill-gray-800 ">
+            <mask id="a" className="fill-white ">
                 <path d="M0 20C0 8.954 8.954 0 20 0h44v500H20c-11.046 0-20-8.954-20-20V20Z" />
             </mask>
             <path
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 d="M0 20C0 8.954 8.954 0 20 0h44v500H20c-11.046 0-20-8.954-20-20V20Z"
             />
             <path
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 d="M0 0h64H0Zm64 500H0h64Zm-64 0V0v500ZM65 0v500h-2V0h2Z"
                 mask="url(#a)"
             />
@@ -35,7 +35,7 @@ const StackedSideSvg = ({
                 cx={32}
                 cy={37}
                 r={17}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
             />
             <rect
                 width={34}
@@ -58,7 +58,7 @@ const StackedSideSvg = ({
                 height={17}
                 x={23.5}
                 y={127}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={8.5}
             />
             <rect
@@ -66,7 +66,7 @@ const StackedSideSvg = ({
                 height={17}
                 x={23.5}
                 y={164}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={8.5}
             />
             <rect
@@ -74,14 +74,14 @@ const StackedSideSvg = ({
                 height={17}
                 x={23.5}
                 y={201}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={8.5}
             />
-            <mask id="b" className="fill-white dark:fill-gray-800 ">
+            <mask id="b" className="fill-white ">
                 <path d="M64 0h149v500H64V0Z" />
             </mask>
             <path
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 d="M211 0v500h4V0h-4Z"
                 mask="url(#b)"
             />
@@ -106,7 +106,7 @@ const StackedSideSvg = ({
                 height={13}
                 x={79}
                 y={63}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={6}
             />
             <rect
@@ -114,7 +114,7 @@ const StackedSideSvg = ({
                 height={13}
                 x={79}
                 y={96}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={6}
             />
             <rect
@@ -122,22 +122,22 @@ const StackedSideSvg = ({
                 height={13}
                 x={79}
                 y={129}
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 rx={6}
             />
             <path
-                className="fill-gray-100 dark:fill-gray-950"
+                className="fill-gray-100"
                 d="M213 0h287v500H213z"
             />
-            <mask id="c" className="fill-white dark:fill-gray-800 ">
+            <mask id="c" className="fill-white ">
                 <path d="M213 0h267c11.046 0 20 8.954 20 20v58H213V0Z" />
             </mask>
             <path
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 d="M213 0h267c11.046 0 20 8.954 20 20v58H213V0Z"
             />
             <path
-                className="fill-gray-200 dark:fill-gray-600"
+                className="fill-gray-200"
                 d="M213 0h287-287Zm287 79H213v-2h287v2Zm-287-1V0v78ZM500 0v78V0Z"
                 mask="url(#c)"
             />
@@ -146,7 +146,7 @@ const StackedSideSvg = ({
                 height={382}
                 x={233}
                 y={98}
-                className="fill-white dark:fill-gray-800 "
+                className="fill-white "
                 rx={20}
             />
         </svg>

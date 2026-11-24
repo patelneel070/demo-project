@@ -38,7 +38,7 @@ const ProjectDetailsOverview = (props: ProjectDetailsOverviewProps) => {
             <div className="lg:min-w-[320px] lg:w-[350px]">
                 <Card
                     bordered={false}
-                    className="bg-gray-100 dark:bg-gray-800 shadow-none"
+                    className="bg-gray-100 shadow-none"
                 >
                     <h5>Client information</h5>
                     <div className="flex flex-col gap-5 mt-6">
@@ -85,7 +85,7 @@ const ProjectDetailsOverview = (props: ProjectDetailsOverviewProps) => {
                 </Card>
                 <Card
                     bordered={false}
-                    className="bg-gray-100 dark:bg-gray-800 shadow-none mt-6"
+                    className="bg-gray-100 shadow-none mt-6"
                 >
                     <h5>Schedule</h5>
                     <div className="flex flex-col gap-5 mt-6">
@@ -115,7 +115,7 @@ const ProjectDetailsOverview = (props: ProjectDetailsOverviewProps) => {
                             <span className="font-semibold heading-text">
                                 Status:
                             </span>
-                            <Tag className="border-2 bg-transparent text-green-600 border-green-600 dark:bg-transparent dark:text-green-600 dark:border-green-600 rounded-full">
+                            <Tag className="border-2 bg-transparent text-green-600 border-green-600 rounded-full">
                                 {schedule.status}
                             </Tag>
                         </div>
@@ -126,7 +126,7 @@ const ProjectDetailsOverview = (props: ProjectDetailsOverviewProps) => {
                             </span>
                             <Progress
                                 percent={schedule.completion}
-                                trailClass="bg-gray-200 dark:bg-gray-600"
+                                trailClass="bg-gray-200"
                                 size="sm"
                             />
                         </div>

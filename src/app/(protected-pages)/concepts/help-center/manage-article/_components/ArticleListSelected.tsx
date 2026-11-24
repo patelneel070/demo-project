@@ -69,11 +69,11 @@ const ArticleListSelected = () => {
         <>
             <StickyFooter
                 className={classNames(
-                    'flex items-center justify-between py-4 bg-white dark:bg-gray-800',
+                    'flex items-center justify-between py-4 bg-white',
                     !hasSelectedArticle && 'hidden',
                 )}
-                stickyClass="border-t border-gray-200 dark:border-gray-700 px-8 -mx-4 sm:-mx-8"
-                defaultClass="container mx-auto px-8 rounded-xl border border-gray-200 dark:border-gray-600 mt-4"
+                stickyClass="border-t border-gray-200 px-8 -mx-4 sm:-mx-8"
+                defaultClass="container mx-auto px-8 rounded-xl border border-gray-200 mt-4"
             >
                 <div className="container mx-auto">
                     <div className="flex items-center justify-between">

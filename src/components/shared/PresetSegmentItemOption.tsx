@@ -37,7 +37,7 @@ const PresetSegmentItemOption = (props: PresetSegmentItemOptionProps) => {
                 'items-center',
                 'border',
                 'rounded-md ',
-                'border-gray-200 dark:border-gray-600',
+                'border-gray-200',
                 defaultGutter && 'py-5 px-4',
                 'cursor-pointer',
                 'select-none',

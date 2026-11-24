@@ -83,7 +83,7 @@ const CustomerDemographic = ({ data }: CustomerDemographicProps) => {
                             className={classNames(
                                 'flex items-center gap-4 p-3 rounded-xl transition-colors duration-150',
                                 hovering === item.id &&
-                                    'bg-gray-100 dark:bg-gray-700',
+                                    'bg-gray-100',
                             )}
                             onMouseEnter={() => setHovering(item.id)}
                             onMouseLeave={() => setHovering('')}
@@ -100,7 +100,7 @@ const CustomerDemographic = ({ data }: CustomerDemographicProps) => {
                                     trailClass={classNames(
                                         'transition-colors duration-150',
                                         hovering === item.id &&
-                                            'bg-gray-200 dark:bg-gray-600',
+                                            'bg-gray-200',
                                     )}
                                 />
                             </div>

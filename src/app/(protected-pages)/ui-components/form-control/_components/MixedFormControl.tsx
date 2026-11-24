@@ -326,7 +326,7 @@ const MixedFormControl = () => {
                     control={control}
                     render={({ field }) => (
                         <Segment
-                            className="w-full bg-transparent dark:bg-transparent p-0"
+                            className="w-full bg-transparent p-0"
                             selectionType="multiple"
                             {...field}
                         >

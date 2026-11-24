@@ -8,15 +8,15 @@
   }
 
   .pagination-pager-inactive {
-    @apply text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-600;
+    @apply text-gray-500 hover:bg-gray-100;
   }
 
   .pagination-pager-disabled {
-    @apply cursor-not-allowed text-gray-300 dark:text-gray-600;
+    @apply cursor-not-allowed text-gray-300;
   }
 
   .pagination-total {
-    @apply font-semibold mr-3 text-gray-500 dark:text-gray-400;
+    @apply font-semibold mr-3 text-gray-500;
   }
 
   .pagination-pager-next {

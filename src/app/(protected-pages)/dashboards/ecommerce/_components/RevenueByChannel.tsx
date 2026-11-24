@@ -101,18 +101,18 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
             <div className="flex items-center gap-1 mt-6">
                 <Bar
                     percent={data[selectedPeriod].percentage.onlineStore}
-                    className="bg-sky-200 dark:opacity-70"
+                    className="bg-sky-200"
                 />
                 <Bar
                     percent={data[selectedPeriod].percentage.physicalStore}
-                    className="bg-emerald-200 dark:opacity-70"
+                    className="bg-emerald-200"
                 />
                 <Bar
                     percent={data[selectedPeriod].percentage.socialMedia}
-                    className="bg-orange-200 dark:opacity-70"
+                    className="bg-orange-200"
                 />
             </div>
-            <div className="bg-gray-100 dark:bg-gray-900 rounded-xl p-4 mt-8">
+            <div className="bg-gray-100 rounded-xl p-4 mt-8">
                 <div className="grid grid-cols-3">
                     <DisplayColumn
                         icon={<TbShoppingCart />}
@@ -121,7 +121,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
                             data[selectedPeriod].value /
                             data[selectedPeriod].percentage.onlineStore
                         }
-                        iconClass="bg-sky-200 dark:opacity-70"
+                        iconClass="bg-sky-200"
                     />
                     <DisplayColumn
                         icon={<TbBuildingStore />}
@@ -130,7 +130,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
                             data[selectedPeriod].value /
                             data[selectedPeriod].percentage.physicalStore
                         }
-                        iconClass="bg-emerald-200 dark:opacity-70"
+                        iconClass="bg-emerald-200"
                     />
                     <DisplayColumn
                         icon={<TbDeviceMobileMessage />}
@@ -139,7 +139,7 @@ const RevenueByChannel = ({ data }: RevenueByChannelProps) => {
                             data[selectedPeriod].value /
                             data[selectedPeriod].percentage.socialMedia
                         }
-                        iconClass="bg-orange-200 dark:opacity-70"
+                        iconClass="bg-orange-200"
                     />
                 </div>
             </div>

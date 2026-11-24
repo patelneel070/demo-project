@@ -60,7 +60,7 @@ const MailSideBarContent = ({ title }: { title?: string }) => {
                             eventKey={menu.value}
                             className={`mb-2 ${
                                 selectedCategory.value === menu.value
-                                    ? 'bg-gray-100 dark:bg-gray-700'
+                                    ? 'bg-gray-100'
                                     : ''
                             }`}
                             isActive={currentPath === menu.value}
@@ -83,7 +83,7 @@ const MailSideBarContent = ({ title }: { title?: string }) => {
                                 eventKey={label.value}
                                 className={`mb-2 ${
                                     selectedCategory.value === label.value
-                                        ? 'bg-gray-100 dark:bg-gray-700'
+                                        ? 'bg-gray-100'
                                         : ''
                                 }`}
                                 isActive={currentPath === label.value}

@@ -62,13 +62,13 @@ const ChatLandingView = () => {
                     {promptSuggestion.map((suggestion) => (
                         <div
                             key={suggestion.title}
-                            className="flex flex-col gap-4 justify-between rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 p-5 min-h-40 2xl:min-h-60 cursor-pointer"
+                            className="flex flex-col gap-4 justify-between rounded-xl bg-gray-100 hover:bg-gray-200 p-5 min-h-40 2xl:min-h-60 cursor-pointer"
                             role="button"
                             onClick={() => handleSend(suggestion.title)}
                         >
                             <h6 className="font-normal">{suggestion.title}</h6>
                             <div>
-                                <div className="bg-white dark:bg-gray-800 rounded-full p-2 inline-flex">
+                                <div className="bg-white rounded-full p-2 inline-flex">
                                     <span className="text-2xl">
                                         {suggeustionIcon[suggestion.type]}
                                     </span>

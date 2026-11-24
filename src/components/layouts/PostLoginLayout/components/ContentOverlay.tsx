@@ -70,7 +70,7 @@ const ContentOverlay = ({ children }: CommonProps) => {
                                 {pageBackgroundType === 'plain' ? (
                                     <div
                                         className={classNames(
-                                            'bg-white dark:bg-gray-900 rounded-2xl',
+                                            'bg-white rounded-2xl',
                                             pageContainerGutterClass,
                                         )}
                                     >
@@ -99,7 +99,7 @@ const ContentOverlay = ({ children }: CommonProps) => {
                         className={classNames(
                             'fixed',
                             isSticky
-                                ? 'shadow-sm dark:shadow-2xl'
+                                ? 'shadow-sm'
                                 : 'bg-transparent dark',
                         )}
                         wrapperClass="px-0"

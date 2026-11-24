@@ -63,7 +63,7 @@ const FileManagerInviteDialog = () => {
                             size="sm"
                             customColorClass={({ unclickable }) =>
                                 classNames(
-                                    'bg-gray-900 dark:bg-gray-100 dark:hover:bg-gray-200',
+                                    'bg-gray-900 ',
                                     !unclickable
                                         ? 'hover:bg-gray-800'
                                         : 'hover:bg-gray-900',

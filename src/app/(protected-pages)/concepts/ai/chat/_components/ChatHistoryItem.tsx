@@ -50,8 +50,8 @@ const ChatHistoryItem = (props: ChatHistoryItemProps) => {
     return (
         <div
             className={classNames(
-                'rounded-xl p-3 px-5 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer group relative',
-                (dropdownOpen || active) && 'bg-gray-100 dark:bg-gray-700',
+                'rounded-xl p-3 px-5 hover:bg-gray-100 cursor-pointer group relative',
+                (dropdownOpen || active) && 'bg-gray-100',
             )}
             onClick={onClick}
             {...rest}
@@ -62,9 +62,9 @@ const ChatHistoryItem = (props: ChatHistoryItemProps) => {
             </div>
             <div
                 className={classNames(
-                    'rounded-xl absolute bottom-0 top-0 to-transparent ltr:right-0 ltr:bg-linear-to-l rtl:left-0 rtl:bg-linear-to-r group-hover:from-gray-100 dark:group-hover:from-gray-700 w-8 from-0% group-hover:w-20 group-hover:from-60% flex items-center justify-end',
+                    'rounded-xl absolute bottom-0 top-0 to-transparent ltr:right-0 ltr:bg-linear-to-l rtl:left-0 rtl:bg-linear-to-r group-hover:from-gray-100 w-8 from-0% group-hover:w-20 group-hover:from-60% flex items-center justify-end',
                     dropdownOpen &&
-                        'from-gray-100 dark:from-gray-700 w-20 from-60%',
+                        'from-gray-100 w-20 from-60%',
                 )}
             >
                 <Dropdown

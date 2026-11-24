@@ -16,12 +16,12 @@ type CurrentTasksProps = {
 }
 
 export const labelClass: Record<string, string> = {
-    'In Progress': 'bg-sky-200 dark:bg-sky-200 dark:text-gray-900',
-    Completed: 'bg-emerald-200 dark:bg-emerald-200 dark:text-gray-900',
-    Pending: 'bg-amber-200 dark:bg-amber-200 dark:text-gray-900',
-    High: 'bg-red-200 dark:bg-red-200 dark:text-gray-900',
-    Medium: 'bg-orange-200 dark:bg-orange-200 dark:text-gray-900',
-    Low: 'bg-purple-200 dark:bg-purple-200 dark:text-gray-900',
+    'In Progress': 'bg-sky-200 ',
+    Completed: 'bg-emerald-200 ',
+    Pending: 'bg-amber-200 ',
+    High: 'bg-red-200 ',
+    Medium: 'bg-orange-200 ',
+    Low: 'bg-purple-200 ',
 }
 
 const CurrentTasks = ({ data }: CurrentTasksProps) => {
@@ -58,7 +58,7 @@ const CurrentTasks = ({ data }: CurrentTasksProps) => {
                     <div
                         key={task.id}
                         className={classNames(
-                            'flex items-center justify-between py-4 border-gray-200 dark:border-gray-600',
+                            'flex items-center justify-between py-4 border-gray-200',
                             !isLastChild(tasks, index) && 'border-b',
                         )}
                     >

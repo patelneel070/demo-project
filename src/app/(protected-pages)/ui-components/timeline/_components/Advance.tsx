@@ -28,12 +28,12 @@ const Advance = () => {
                     }
                 >
                     <p className="my-1 flex items-center">
-                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                        <span className="font-semibold text-gray-900">
                             Angelina Gotelli{' '}
                         </span>
                         <span className="mx-2">has change the status to </span>
                         <Badge className="bg-emerald-500" />
-                        <span className="ml-1 rtl:mr-1 font-semibold text-gray-900 dark:text-gray-100">
+                        <span className="ml-1 rtl:mr-1 font-semibold text-gray-900">
                             Completed
                         </span>
                         <span className="ml-3 rtl:mr-3">6h ago</span>
@@ -48,11 +48,11 @@ const Advance = () => {
                     }
                 >
                     <p className="my-1 flex items-center">
-                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                        <span className="font-semibold text-gray-900">
                             Max Alexander
                         </span>
                         <span className="mx-2">comment on your </span>
-                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                        <span className="font-semibold text-gray-900">
                             Post
                         </span>
                         <span className="ml-3 rtl:mr-3">2d ago</span>
@@ -68,13 +68,13 @@ const Advance = () => {
                 </Timeline.Item>
                 <Timeline.Item
                     media={
-                        <TimelineAvatar className="bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-100">
+                        <TimelineAvatar className="bg-gray-200 text-gray-700">
                             <HiTag />
                         </TimelineAvatar>
                     }
                 >
                     <p className="flex items-center">
-                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                        <span className="font-semibold text-gray-900">
                             Eugene Stewart{' '}
                         </span>
                         <span className="mx-2">added tags </span>

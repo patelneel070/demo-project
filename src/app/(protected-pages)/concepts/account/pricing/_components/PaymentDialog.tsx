@@ -115,7 +115,7 @@ const PaymentDialog = () => {
                     <div className="mt-6">
                         <Segment
                             defaultValue={selectedPlan.paymentCycle}
-                            className="gap-4 flex bg-transparent dark:bg-transparent"
+                            className="gap-4 flex bg-transparent"
                             onChange={(value) =>
                                 handlePaymentChange(value as PaymentCycle)
                             }
@@ -127,10 +127,10 @@ const PaymentDialog = () => {
                                             return (
                                                 <div
                                                     className={classNames(
-                                                        'flex justify-between border rounded-xl border-gray-300 dark:border-gray-600 py-5 px-4 select-none ring-1 w-1/2',
+                                                        'flex justify-between border rounded-xl border-gray-300 py-5 px-4 select-none ring-1 w-1/2',
                                                         active
                                                             ? 'ring-primary border-primary'
-                                                            : 'ring-transparent bg-gray-100 dark:bg-gray-600',
+                                                            : 'ring-transparent bg-gray-100',
                                                     )}
                                                     role="button"
                                                     onClick={onSegmentItemClick}
@@ -171,8 +171,8 @@ const PaymentDialog = () => {
                             )}
                         </Segment>
                     </div>
-                    <div className="mt-6 border border-gray-200 dark:border-gray-600 rounded-lg">
-                        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
+                    <div className="mt-6 border border-gray-200 rounded-lg">
+                        <div className="flex items-center justify-between p-4 border-b border-gray-200">
                             <div className="w-full">
                                 <span>Billing email</span>
                                 <div className="flex items-center gap-2 mt-2">

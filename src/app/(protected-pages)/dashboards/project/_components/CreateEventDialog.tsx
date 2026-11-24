@@ -42,37 +42,37 @@ export const eventTypes: Record<
     task: {
         label: 'Task',
         icon: <TbCheckbox />,
-        color: 'bg-purple-200 dark:bg-purple-200',
+        color: 'bg-purple-200',
     },
     meeting: {
         label: 'Meeting',
         icon: <TbVideo />,
-        color: 'bg-sky-200 dark:bg-sky-200',
+        color: 'bg-sky-200',
     },
     holiday: {
         label: 'Enjoy your holiday',
         icon: <LuTreePalm />,
-        color: 'bg-amber-200 dark:bg-amber-200',
+        color: 'bg-amber-200',
     },
     breaks: {
         label: 'Break',
         icon: <TbCoffee />,
-        color: 'bg-orange-200 dark:bg-orange-200',
+        color: 'bg-orange-200',
     },
     event: {
         label: 'Event',
         icon: <TbCalendarStar />,
-        color: 'bg-emerald-200 dark:bg-emerald-200',
+        color: 'bg-emerald-200',
     },
     workshops: {
         label: 'Workshop',
         icon: <TbPresentation />,
-        color: 'bg-rose-200 dark:bg-rose-200',
+        color: 'bg-rose-200',
     },
     reminders: {
         label: 'Reminder',
         icon: <TbBell />,
-        color: 'bg-teal-200 dark:bg-teal-200',
+        color: 'bg-teal-200',
     },
 }
 

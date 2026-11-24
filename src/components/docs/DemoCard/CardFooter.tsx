@@ -92,7 +92,7 @@ const CardFooter = (props: CardFooterProps) => {
                         <Segment
                             size={'xs'}
                             value={mdType}
-                            className="bg-[#ebebeb] dark:bg-gray-950 gap-1 rounded-lg"
+                            className="bg-[#ebebeb] gap-1 rounded-lg"
                             onChange={(value) => setMdType(value as string)}
                         >
                             <Segment.Item className="rounded-lg" value="ts">

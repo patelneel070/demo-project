@@ -47,7 +47,7 @@ const EditArticleBody = ({ content }: EditArticleBodyProps) => {
 
     return (
         <div>
-            <div className="flex gap-x-1 gap-y-2 p-2 border-t border-b border-gray-200 dark:border-gray-700">
+            <div className="flex gap-x-1 gap-y-2 p-2 border-t border-b border-gray-200">
                 <ToolButtonBold editor={editor} />
                 <ToolButtonItalic editor={editor} />
                 <ToolButtonStrike editor={editor} />

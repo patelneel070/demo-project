@@ -42,7 +42,7 @@ const groupedOptions: Option[] = [
 ]
 
 const formatGroupLabel = (data: Option) => (
-    <div className="font-bold text-xs uppercase text-gray-800 dark:text-white my-2">
+    <div className="font-bold text-xs uppercase text-gray-800 my-2">
         {data.label}
     </div>
 )

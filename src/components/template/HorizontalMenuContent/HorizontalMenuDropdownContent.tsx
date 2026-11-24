@@ -63,8 +63,8 @@ const MenuItem = ({
     return (
         <div
             className={classNames(
-                'cursor-pointer font-semibold px-3 rounded-lg flex items-center w-full whitespace-nowrap gap-x-2 transition-colors duration-150 hover:text-gray-900 hover:bg-gray-100 dark:hover:text-gray-100 dark:hover:bg-gray-800',
-                active && 'bg-gray-100 dark:bg-gray-800',
+                'cursor-pointer font-semibold px-3 rounded-lg flex items-center w-full whitespace-nowrap gap-x-2 transition-colors duration-150 hover:text-gray-900 hover:bg-gray-100 ',
+                active && 'bg-gray-100',
                 className,
             )}
             role="menuitem"
@@ -118,10 +118,10 @@ const MenuLink = ({
             <div>
                 <Avatar
                     className={classNames(
-                        'bg-white dark:bg-transparent p-2 border-2 border-gray-200 dark:border-gray-600',
+                        'bg-white p-2 border-2 border-gray-200',
                         active
                             ? 'text-primary'
-                            : 'text-gray-900 dark:text-gray-100',
+                            : 'text-gray-900',
                     )}
                     size={40}
                     icon={icon}
@@ -220,7 +220,7 @@ const ColumnsLayout = (
             {navigationTree.some((nav) => nav.type === NAV_ITEM_TYPE_ITEM) && (
                 <div
                     className={classNames(
-                        'ltr:border-l rtl:border-r border-gray-200 dark:border-gray-800 min-w-[280px] p-4 flex flex-col',
+                        'ltr:border-l rtl:border-r border-gray-200 min-w-[280px] p-4 flex flex-col',
                     )}
                 >
                     {navigationTree.map((nav) => {
@@ -364,10 +364,10 @@ const TabLayout = ({
                                             <div>
                                                 <Avatar
                                                     className={classNames(
-                                                        'bg-white dark:bg-transparent p-2 border-2 border-gray-200 dark:border-gray-600',
+                                                        'bg-white p-2 border-2 border-gray-200',
                                                         nav.key === routeKey
                                                             ? 'text-primary'
-                                                            : 'text-gray-900 dark:text-gray-100',
+                                                            : 'text-gray-900',
                                                     )}
                                                     size={40}
                                                     icon={
@@ -409,7 +409,7 @@ const TabLayout = ({
                     nav.key === activeKey &&
                     nav.type === NAV_ITEM_TYPE_COLLAPSE,
             ) && (
-                <div className="ltr:border-l rtl:border-r border-gray-200 dark:border-gray-800 p-6">
+                <div className="ltr:border-l rtl:border-r border-gray-200 p-6">
                     <div
                         className={classNames(
                             'grid gap-x-8 flex-1',
@@ -464,7 +464,7 @@ const HorizontalMenuDropdownContent = (
 
     return (
         <div
-            className="rounded-2xl bg-white dark:bg-gray-900 ring-0 shadow-[0px_48px_64px_-16px_rgba(0,0,0,0.25)] border border-gray-100 dark:border-gray-800 focus:outline-hidden min-w-[180px]"
+            className="rounded-2xl bg-white ring-0 shadow-[0px_48px_64px_-16px_rgba(0,0,0,0.25)] border border-gray-100 focus:outline-hidden min-w-[180px]"
             style={style}
         >
             {layoutMeta?.layout === 'default' && (

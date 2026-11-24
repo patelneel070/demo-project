@@ -42,7 +42,7 @@ const UploadFile = () => {
                 <h4>Upload Files</h4>
                 <Upload
                     draggable
-                    className="mt-6 bg-gray-100 dark:bg-transparent"
+                    className="mt-6 bg-gray-100"
                     onChange={setUploadedFiles}
                     onFileRemove={setUploadedFiles}
                 >
@@ -51,12 +51,12 @@ const UploadFile = () => {
                             <UploadMedia height={150} width={200} />
                         </div>
                         <p className="font-semibold">
-                            <span className="text-gray-800 dark:text-white">
+                            <span className="text-gray-800">
                                 Drop your files here, or{' '}
                             </span>
                             <span className="text-blue-500">browse</span>
                         </p>
-                        <p className="mt-1 font-semibold opacity-60 dark:text-white">
+                        <p className="mt-1 font-semibold opacity-60">
                             through your machine
                         </p>
                     </div>

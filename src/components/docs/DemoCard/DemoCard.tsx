@@ -51,7 +51,7 @@ const DemoCard = (props: DemoCardProps) => {
                 footer={{
                     content: !hideFooter && <CardFooter {...rest} />,
                     className:
-                        'bg-gray-50 dark:bg-gray-700 pb-2 pt-2 rounded-b-2xl',
+                        'bg-gray-50 pb-2 pt-2 rounded-b-2xl',
                 }}
             >
                 {demoComponent}

@@ -138,7 +138,7 @@ const ProfileSection = ({ data = {} }: ProfileSectionProps) => {
                             <Button
                                 size="sm"
                                 icon={
-                                    <FaXTwitter className="text-black dark:text-white" />
+                                    <FaXTwitter className="text-black" />
                                 }
                                 onClick={() =>
                                     handleSocialNavigate(

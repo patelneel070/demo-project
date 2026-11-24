@@ -22,7 +22,7 @@ const MailDetail = ({ mail }: MailDetailProps) => {
                   header: {
                       content: <MailDetailTitle />,
                       extra: <MailDetailAction />,
-                      className: 'bg-gray-100 dark:bg-gray-700 h-[100px]',
+                      className: 'bg-gray-100 h-[100px]',
                   },
               }
             : {}),
@@ -30,7 +30,7 @@ const MailDetail = ({ mail }: MailDetailProps) => {
 
     return (
         <Card
-            className="flex-1 h-full max-h-full dark:border-gray-700"
+            className="flex-1 h-full max-h-full"
             bodyClass="h-full relative"
             {...cardHeaderProps}
         >

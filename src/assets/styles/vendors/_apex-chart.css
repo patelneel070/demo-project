@@ -2,7 +2,7 @@
   @apply !shadow-lg;
 
   &.apexcharts-theme-light {
-    @apply !border !border-gray-200 dark:!border-gray-600 !bg-white dark:!bg-gray-600;
+    @apply !border !border-gray-200 !bg-white;
 
     .apexcharts-tooltip-title {
       @apply !border-b-0 !bg-transparent;
@@ -15,11 +15,11 @@
 }
 
 .apexcharts-datalabel-label {
-  @apply !fill-gray-900 dark:!fill-gray-100 text-2xl font-bold;
+  @apply !fill-gray-900 text-2xl font-bold;
 }
 
 .apexcharts-datalabel-value {
-  @apply !fill-gray-500 dark:!fill-gray-400 text-base;
+  @apply !fill-gray-500 text-base;
 }
 
 .apexcharts-tooltip-title {
@@ -27,12 +27,12 @@
 }
 
 .apexcharts-gridline {
-  @apply stroke-gray-200 dark:stroke-gray-600;
+  @apply stroke-gray-200;
 }
 
 .apexcharts-text {
   tspan {
-    @apply !fill-gray-500 dark:!fill-gray-400;
+    @apply !fill-gray-500;
   }
 }
 
@@ -45,5 +45,5 @@
 }
 
 .apexcharts-legend-text {
-  @apply !text-gray-500 dark:!text-gray-400 !text-sm !font-normal;
+  @apply !text-gray-500 !text-sm !font-normal;
 }

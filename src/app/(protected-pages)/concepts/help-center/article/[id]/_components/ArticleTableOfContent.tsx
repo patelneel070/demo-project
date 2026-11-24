@@ -18,12 +18,12 @@ const ArticleTableOfContent = ({ content }: ArticleTableOfContentProps) => {
                 <Affix offset={getTopGapValue()}>
                     <Card>
                         <h6 className="font-bold">In this page</h6>
-                        <ul className="text-gray-500 dark:text-gray-400 font-medium mt-4 relative">
+                        <ul className="text-gray-500 font-medium mt-4 relative">
                             {content.map((link) => (
                                 <li key={`anchor${link.id}`}>
                                     <Link
-                                        activeClass="text-primary dark:text-gray-50 after:content-[''] after:absolute after:-left-5 after:bg-primary after:w-[2px] after:h-5"
-                                        className="cursor-pointer block transform transition-colors duration-200 py-2 hover:text-primary dark:hover:text-gray-100 "
+                                        activeClass="text-primary after:content-[''] after:absolute after:-left-5 after:bg-primary after:w-[2px] after:h-5"
+                                        className="cursor-pointer block transform transition-colors duration-200 py-2 hover:text-primary "
                                         to={link.id}
                                         spy={true}
                                         smooth={true}

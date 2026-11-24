@@ -9,7 +9,7 @@ const Example = () => {
             </div>
             <StickyFooter
                 className="px-8 flex items-center justify-between py-4"
-                stickyClass="border rounded-lg bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
+                stickyClass="border rounded-lg bg-white border-gray-200"
             >
                 <div className="md:flex items-center">
                     <Button size="sm" className="ltr:mr-3 rtl:ml-3">

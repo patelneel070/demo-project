@@ -84,7 +84,7 @@ const GeneratorPrompt = () => {
     }
 
     return (
-        <div className="rounded-lg p-4 border-2 border-gray-100 dark:border-gray-700">
+        <div className="rounded-lg p-4 border-2 border-gray-100">
             <div className="flex gap-4 mb-4">
                 {uploadedImage.length > 0 && (
                     <div className="max-w-[150px] relative cursor-pointer group">

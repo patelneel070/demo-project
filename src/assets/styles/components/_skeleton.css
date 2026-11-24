@@ -1,6 +1,6 @@
 @layer components {
   .skeleton {
-    @apply bg-gray-200 dark:bg-gray-600 flex;
+    @apply bg-gray-200 flex;
   }
 
   .skeleton-circle {

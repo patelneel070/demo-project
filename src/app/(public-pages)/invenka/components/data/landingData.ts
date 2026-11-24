@@ -20,9 +20,8 @@ export type NavLink = { title: string; href: string }
 // Plain navbar links. "Features" is handled separately (mega dropdown).
 export const navLinks: NavLink[] = [
     // { title: 'Features', href: `${BASE_PATH}/features` },
-    { title: 'Integrations', href: `${BASE_PATH}/integrations` },
-    { title: 'Solutions', href: `${BASE_PATH}/solutions` },
     { title: 'Industries', href: `${BASE_PATH}/industries` },
+    { title: 'Solutions', href: `${BASE_PATH}/solutions` },
     { title: 'Pricing', href: `${BASE_PATH}/pricing` },
     { title: 'Resources', href: `${BASE_PATH}/resources` },
 ]
@@ -86,7 +85,6 @@ export const hero = {
     primaryCta: 'Start Free Trial',
     secondaryCta: 'See All plans',
     imageLight: '/img/invenka/hero/hero-light.png',
-    imageDark: '/img/invenka/hero/hero-dark.webp', 
     imageAlt: 'Invenka inventory list',
 }
 

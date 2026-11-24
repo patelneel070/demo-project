@@ -6,7 +6,7 @@ const GridRowStartEnd = () => {
             <DemoBoxContent className="row-span-3 bg-fuchsia-500 grid place-content-center">
                 01
             </DemoBoxContent>
-            <DemoBoxContent className="col-span-2 bg-fuchsia-300 grid place-content-center dark:bg-fuchsia-800 dark:text-fuchsia-400">
+            <DemoBoxContent className="col-span-2 bg-fuchsia-300 grid place-content-center ">
                 02
             </DemoBoxContent>
             <DemoBoxContent className="row-span-2 col-span-2 bg-fuchsia-500 grid place-content-center">

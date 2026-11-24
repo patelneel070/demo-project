@@ -48,7 +48,7 @@ export const SettingsMenu = ({ onChange }: { onChange?: () => void }) => {
                             eventKey={menu.value}
                             className={`mb-2 ${
                                 currentView === menu.value
-                                    ? 'bg-gray-100 dark:bg-gray-700'
+                                    ? 'bg-gray-100'
                                     : ''
                             }`}
                             isActive={currentPath === menu.value}

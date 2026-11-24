@@ -19,7 +19,7 @@ const BoardColumn = (props: BoardColumnProps) => {
             {(provided, snapshot) => (
                 <div
                     ref={provided.innerRef}
-                    className="board-column flex flex-col mb-3 min-w-[300px] w-[300px] max-w-[300px] p-0rounded-lg dark:bg-gray-900 bg-gray-50 rounded-2xl"
+                    className="board-column flex flex-col mb-3 min-w-[300px] w-[300px] max-w-[300px] p-0rounded-lg bg-gray-50 rounded-2xl"
                     {...provided.draggableProps}
                 >
                     <BoardTitle

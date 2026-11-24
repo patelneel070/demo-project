@@ -133,10 +133,10 @@ const Button = (props: ButtonProps) => {
 
     const plainColor = () => {
         const btn = {
-            bgColor: active ? `` : `dark:primary-mild dark:bg-opacity-20`,
+            bgColor: active ? `` : ``,
             textColor: ``,
             hoverColor: active ? '' : `hover:text-primary-mild`,
-            activeColor: `dark:active:primary-mild dark:active:bg-opacity-40`,
+            activeColor: ``,
         }
         return getBtnColor(btn)
     }
@@ -144,12 +144,12 @@ const Button = (props: ButtonProps) => {
     const defaultColor = () => {
         const btn = {
             bgColor: active
-                ? `bg-gray-100 border border-gray-300 dark:bg-gray-500 dark:border-gray-500`
-                : `bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-700`,
-            textColor: `text-gray-600 dark:text-gray-100`,
+                ? `bg-gray-100 border border-gray-300 `
+                : `bg-white border border-gray-300 `,
+            textColor: `text-gray-600`,
             hoverColor: active
                 ? ''
-                : `ring-primary dark:ring-white hover:border-primary dark:hover:border-white hover:ring-1 hover:text-primary dark:hover:text-white dark:hover:bg-transparent`,
+                : `ring-primary hover:border-primary hover:ring-1 hover:text-primary `,
             activeColor: ``,
         }
         return getBtnColor(btn)

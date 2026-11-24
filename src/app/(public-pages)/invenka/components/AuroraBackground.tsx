@@ -17,7 +17,7 @@ const AuroraBackground = ({
     return (
         <div
             className={classNames(
-                'relative flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-900  transition-bg',
+                'relative flex flex-col items-center justify-center bg-gray-50 transition-bg',
                 className,
             )}
             {...props}
@@ -31,16 +31,13 @@ const AuroraBackground = ({
                 <div
                     className={classNames(
                         `[--white-gradient:repeating-linear-gradient(100deg,var(--color-white)_0%,var(--color-white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--color-white)_16%)]
-            [--dark-gradient:repeating-linear-gradient(100deg,var(--color-black)_0%,var(--color-black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--color-black)_16%)]
-            [--aurora:repeating-linear-gradient(100deg,var(--color-purple-300)_10%,var(--color-fuchsia-200)_15%,var(--color-pink-200)_20%,var(--color-rose-300)_25%,var(--color-violet-400)_30%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--color-teal-300)_10%,var(--color-emerald-200)_15%,var(--color-cyan-200)_20%,var(--color-teal-200)_25%,var(--color-teal-400)_30%)]
             [--transparent:rgba(255,255,255,0)]
             [background-image:var(--white-gradient),var(--aurora)]
-            dark:[background-image:var(--dark-gradient),var(--aurora)]
             [background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
-            filter blur-[10px] invert dark:invert-0
+            filter blur-[10px] invert
             after:content-[""] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] 
-            after:dark:[background-image:var(--dark-gradient),var(--aurora)]
             after:[background-size:200%,_100%] 
             animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
             pointer-events-none

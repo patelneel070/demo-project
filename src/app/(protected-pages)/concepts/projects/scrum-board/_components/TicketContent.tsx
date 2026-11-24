@@ -160,7 +160,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                     <ScrollBar className="max-h-[700px] overflow-y-auto">
                         <div className="flex flex-col gap-6">
                             <div className="flex items-center min-h-[30px]">
-                                <div className="font-semibold text-gray-900 dark:text-gray-100 min-w-[150px]">
+                                <div className="font-semibold text-gray-900 min-w-[150px]">
                                     Assigned to:
                                 </div>
                                 <div className="flex items-center gap-1">
@@ -217,7 +217,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                                 </div>
                             </div>
                             <div className="flex items-center min-h-[30px]">
-                                <div className="font-semibold text-gray-900 dark:text-gray-100 min-w-[150px]">
+                                <div className="font-semibold text-gray-900 min-w-[150px]">
                                     Label:
                                 </div>
                                 <div className="flex items-center gap-1">
@@ -232,7 +232,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                                     <Dropdown
                                         renderTitle={
                                             <Tag
-                                                className="border-dashed cursor-pointer border-2 bg-transparent dark:bg-transparent border-gray-300 dark:border-gray-500 hover:border-primary hover:text-primary"
+                                                className="border-dashed cursor-pointer border-2 bg-transparent border-gray-300 hover:border-primary hover:text-primary"
                                                 prefix={<TbPlus />}
                                             >
                                                 Add Label
@@ -267,7 +267,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                                 </div>
                             </div>
                             <div className="flex items-center min-h-[30px]">
-                                <div className="font-semibold text-gray-900 dark:text-gray-100 min-w-[150px]">
+                                <div className="font-semibold text-gray-900 min-w-[150px]">
                                     Due date:
                                 </div>
                                 <span className="font-semibold">
@@ -278,7 +278,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                             </div>
                             {ticketData.description && (
                                 <div className="flex">
-                                    <div className="font-semibold text-gray-900 dark:text-gray-100 min-w-[150px]">
+                                    <div className="font-semibold text-gray-900 min-w-[150px]">
                                         Description:
                                     </div>
                                     <div className="flex">
@@ -315,7 +315,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                                                                 </div>
                                                                 <div className="ml-2 rtl:mr-2 p-3 rounded-sm w-100">
                                                                     <div className="flex items-center mb-2">
-                                                                        <span className="font-semibold text-gray-900 dark:text-gray-100">
+                                                                        <span className="font-semibold text-gray-900">
                                                                             {
                                                                                 comment.name
                                                                             }
@@ -377,7 +377,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                                                     <Card
                                                         key={file.id}
                                                         bodyClass="px-3 pt-3 pb-1"
-                                                        className="bg-gray-100 dark:bg-gray-700 shadow-none"
+                                                        className="bg-gray-100 shadow-none"
                                                         bordered={false}
                                                     >
                                                         <img
@@ -387,7 +387,7 @@ const TicketContent = ({ onTicketClose }: { onTicketClose: () => void }) => {
                                                         />
                                                         <div className="mt-1 flex justify-between items-center">
                                                             <div>
-                                                                <div className="font-semibold text-gray-900 dark:text-gray-100">
+                                                                <div className="font-semibold text-gray-900">
                                                                     {file.name}
                                                                 </div>
                                                                 <span className="text-xs">

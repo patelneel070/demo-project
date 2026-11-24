@@ -4,15 +4,8 @@ import Drawer from '@/components/ui/Drawer'
 import classNames from '@/utils/classNames'
 import useScrollTop from '@/utils/hooks/useScrollTop'
 import Image from 'next/image'
-import {
-    TbArrowRight,
-    TbChevronDown,
-    TbMenu2,
-    TbMoon,
-    TbSun,
-} from 'react-icons/tb'
+import { TbArrowRight, TbChevronDown, TbMenu2 } from 'react-icons/tb'
 import Link from 'next/link'
-import type { Mode } from '@/@types/theme'
 import { usePathname, useRouter } from 'next/navigation'
 import Button from '@/components/ui/Button'
 import {
@@ -21,18 +14,13 @@ import {
     navLinks,
 } from './data/landingData'
 
-type NavigationProps = {
-    toggleMode: () => void
-    mode: Mode
-}
-
 const focusRingClass =
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
 
 const navItemClass =
-    'flex items-center gap-1 px-5 py-2 rounded-xl heading-text transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+    'flex items-center gap-1 px-5 py-2 rounded-xl heading-text transition duration-200 hover:bg-gray-100'
 
-const Navigation = ({ toggleMode, mode }: NavigationProps) => {
+const Navigation = () => {
     const { isSticky } = useScrollTop()
     const router = useRouter()
     const pathname = usePathname()
@@ -99,15 +87,15 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
             <div
                 style={{ transition: 'all 0.2s ease-in-out' }}
                 className={classNames(
-                    'w-full fixed inset-x-0 top-0 bg-white  z-[50]',
+                    'w-full fixed inset-x-0 top-0 bg-gray-50  z-[50]',
                 )}
             >
                 <div
                     className={classNames(
                         'flex flex-row self-start items-center justify-between py-3 px-4 w-full relative z-[60] transition duration-200',
                         isSticky || isFeaturesOpen
-                            ? 'bg-white dark:bg-gray-800 shadow-lg'
-                            : 'bg-transparent dark:bg-transparent',
+                            ? 'bg-gray-50 shadow-lg'
+                            : 'bg-transparent',
                     )}
                 >
                     <button
@@ -135,7 +123,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                 onClick={() =>
                                     setIsMobileFeaturesOpen((open) => !open)
                                 }
-                                className="flex items-center justify-between rounded-xl px-3 py-2 font-semibold heading-text hover:bg-gray-100 dark:hover:bg-gray-700"
+                                className="flex items-center justify-between rounded-xl px-3 py-2 font-semibold heading-text hover:bg-gray-100"
                             >
                                 Features
                                 <TbChevronDown
@@ -147,13 +135,13 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                 />
                             </button>
                             {isMobileFeaturesOpen && (
-                                <div className="ml-3 flex flex-col border-l border-gray-200 pl-3 dark:border-gray-700">
+                                <div className="ml-3 flex flex-col border-l border-gray-200 pl-3">
                                     {featureItems.map(({ title, slug, Icon }) => (
                                         <Link
                                             key={slug}
                                             href={`${featuresPageHref}/${slug}`}
                                             onClick={closeDrawer}
-                                            className="flex items-center gap-2 rounded-lg px-2 py-2 heading-text hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            className="flex items-center gap-2 rounded-lg px-2 py-2 heading-text hover:bg-gray-100"
                                         >
                                             <Icon size={18} className="text-primary" />
                                             {title}
@@ -173,7 +161,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                     key={href}
                                     href={href}
                                     onClick={closeDrawer}
-                                    className="rounded-xl px-3 py-2 font-semibold heading-text hover:bg-gray-100 dark:hover:bg-gray-700"
+                                    className="rounded-xl px-3 py-2 font-semibold heading-text hover:bg-gray-100"
                                 >
                                     {title}
                                 </Link>
@@ -182,26 +170,16 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     </Drawer>
 
                     <Link href="/invenka">
-                        {mode === 'light' && (
-                            <Image
-                                src="/img/logo/invenka logo-png.png"
-                                width={120}
-                                height={120}
-                                alt="logo"
-                            />
-                        )}
-                        {mode === 'dark' && (
-                            <Image
-                                src="/img/logo/i-logo-white-png.png"
-                                width={60}
-                                height={40}
-                                alt="logo"
-                            />
-                        )}
+                        <Image
+                            src="/img/logo/invenka logo-png.png"
+                            width={120}
+                            height={120}
+                            alt="logo"
+                        />
                     </Link>
 
                     {/* --------------------- Desktop nav items ---------------------- */}
-                    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center text-sm font-medium pointer-events-none">
+                    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center text-sm font-medium pointer-events-none ">
                         <div className="pointer-events-auto flex items-center">
                             <button
                                 ref={featuresButtonRef}
@@ -212,7 +190,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                 onClick={() => setIsFeaturesOpen((open) => !open)}
                                 className={classNames(
                                     navItemClass,
-                                    isFeaturesOpen && 'bg-gray-100 dark:bg-gray-700',
+                                    isFeaturesOpen && 'bg-gray-100',
                                     focusRingClass,
                                 )}
                             >
@@ -245,18 +223,6 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
 
                     {/* `relative z-10` keeps these buttons above the nav layer */}
                     <div className="relative z-10 flex items-center gap-2">
-                        <button
-                            type="button"
-                            onClick={toggleMode}
-                            className="flex items-center justify-center rounded-xl p-2 text-neutral-500 hover:bg-gray-100 dark:hover:bg-gray-700"
-                            aria-label="Toggle theme"
-                        >
-                            {mode === 'light' ? (
-                                <TbMoon size={20} />
-                            ) : (
-                                <TbSun size={20} />
-                            )}
-                        </button>
                         <Link
                             href="/sign-in"
                             className="hidden sm:block px-3 py-2 font-semibold heading-text"
@@ -285,9 +251,9 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                     role="region"
                     aria-label="Features"
                     className={classNames(
-                        'fixed left-0 z-[55] hidden w-full overflow-y-auto border-y border-gray-200 bg-white shadow-2xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 lg:block',
-                        'min-h-[320px] max-h-[45vh]',
-                        isSticky ? 'top-[5.5rem]' : 'top-[4.5rem]',
+                         'fixed left-1/2 z-[55] hidden w-[calc(100%-2rem)] max-w-[1280px] -translate-x-1/2 overflow-y-auto rounded-b-2xl border border-gray-200 bg-gray-50 shadow-2xl transition-all duration-200 lg:block',
+                        'min-h-[320px] max-h-[45vh]',   
+                        // isSticky ? 'top-[5.5rem]' : 'top-[4.5rem]',
                         isFeaturesOpen
                             ? 'visible translate-y-0 opacity-100'
                             : 'invisible -translate-y-2 opacity-0',
@@ -306,7 +272,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                                     href={`${featuresPageHref}/${slug}`}
                                                     onClick={closeFeatures}
                                                     className={classNames(
-                                                        'flex h-full flex-col gap-3 rounded-2xl p-4 transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-700',
+                                                        'flex h-full flex-col gap-3 rounded-2xl p-4 transition duration-200 hover:bg-gray-100',
                                                         focusRingClass,
                                                     )}
                                                 >
@@ -322,7 +288,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                                             {title}
                                                         </span>
 
-                                                        <span className="mt-1 block text-sm text-muted dark:text-muted-dark line-clamp-2">
+                                                        <span className="mt-1 block text-sm text-muted line-clamp-2">
                                                             {description}
                                                         </span>
                                                     </span>
@@ -334,7 +300,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                             </div>
 
                             {/* RIGHT — Image + Text */}
-                            <div className="border-l border-gray-200 dark:border-gray-700 p-6 lg:p-8 flex flex-col justify-center">
+                            <div className="border-l border-gray-200 p-6 lg:p-8 flex flex-col justify-center">
 
                                 <div className="overflow-hidden rounded-2xl mb-5">
                                     <img
@@ -348,7 +314,7 @@ const Navigation = ({ toggleMode, mode }: NavigationProps) => {
                                     Manage your inventory with ease
                                 </h3>
 
-                                <p className="mt-2 text-sm text-muted dark:text-muted-dark">
+                                <p className="mt-2 text-sm text-muted">
                                     Track stock, manage items, get alerts and keep your
                                     entire inventory organized from one place.
                                 </p>

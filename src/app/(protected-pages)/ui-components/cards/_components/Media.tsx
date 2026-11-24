@@ -27,7 +27,7 @@ const HeaderFooterBorder = () => {
         <div className="max-w-xs">
             <Card
                 clickable
-                className="hover:shadow-lg transition duration-150 ease-in-out dark:border dark:border-gray-600 dark:border-solid"
+                className="hover:shadow-lg transition duration-150 ease-in-out "
                 header={{
                     content: cardHeader,
                     bordered: false,

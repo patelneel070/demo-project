@@ -78,9 +78,9 @@ const MessageList = (props: MessageListProps) => {
                                 avatarGap={avatarGap}
                                 content={
                                     <span className="flex items-center gap-2">
-                                        <span className="size-1.5 rounded-full bg-gray-700 motion-safe:animate-[bounce_1s_ease-in-out_infinite] dark:bg-gray-300"></span>
-                                        <span className="size-1.5 rounded-full bg-gray-700 motion-safe:animate-[bounce_0.5s_ease-in-out_infinite] dark:bg-gray-300"></span>
-                                        <span className="size-1.5 rounded-full bg-gray-700 motion-safe:animate-[bounce_1s_ease-in-out_infinite] dark:bg-gray-300"></span>
+                                        <span className="size-1.5 rounded-full bg-gray-700 motion-safe:animate-[bounce_1s_ease-in-out_infinite]"></span>
+                                        <span className="size-1.5 rounded-full bg-gray-700 motion-safe:animate-[bounce_0.5s_ease-in-out_infinite]"></span>
+                                        <span className="size-1.5 rounded-full bg-gray-700 motion-safe:animate-[bounce_1s_ease-in-out_infinite]"></span>
                                     </span>
                                 }
                             />

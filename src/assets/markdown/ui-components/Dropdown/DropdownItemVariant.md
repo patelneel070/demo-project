@@ -8,7 +8,7 @@ const HeaderDivider = () => {
                 <Dropdown.Item variant="header">
                     <div className="pt-3 pb-1 px-3">
                         <span>Signed in as</span>
-                        <div className="font-semibold mt-1 text-gray-800 dark:text-white">
+                        <div className="font-semibold mt-1 text-gray-800">
                             alex_g@theme_nate.com
                         </div>
                     </div>
@@ -27,8 +27,8 @@ const HeaderDivider = () => {
 							text-indigo-600 
 							font-semibold 
 							hover:bg-gray-100 
-							dark:hover:bg-black 
-							dark:hover:bg-opacity-20
+							
+							
 						"
                     >
                         Custom Dropdown Item

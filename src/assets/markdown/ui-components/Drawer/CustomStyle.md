@@ -44,7 +44,7 @@ const CustomStyle = () => {
                 title={Title}
                 isOpen={isOpen}
                 footer={Footer}
-                headerClass="!items-start !bg-gray-100 dark:!bg-gray-900"
+                headerClass="!items-start !bg-gray-100"
                 footerClass="!border-t-0 !p-3"
                 onClose={onDrawerClose}
                 onRequestClose={onDrawerClose}

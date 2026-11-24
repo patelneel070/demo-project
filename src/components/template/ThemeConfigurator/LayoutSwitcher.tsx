@@ -69,7 +69,7 @@ const LayoutSwitcher = () => {
     return (
         <div>
             <Segment
-                className="w-full bg-transparent dark:bg-transparent p-0"
+                className="w-full bg-transparent p-0"
                 value={[]}
                 onChange={(val) => setLayout(val as LayoutType)}
             >
@@ -84,8 +84,8 @@ const LayoutSwitcher = () => {
                                             className={classNames(
                                                 'border-2 rounded-xl overflow-hidden',
                                                 active
-                                                    ? 'border-primary dark:border-primary'
-                                                    : 'border-gray-200 dark:border-gray-700',
+                                                    ? 'border-primary'
+                                                    : 'border-gray-200',
                                             )}
                                             onClick={onSegmentItemClick}
                                         >

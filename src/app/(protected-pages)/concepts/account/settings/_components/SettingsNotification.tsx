@@ -127,7 +127,7 @@ const SettingsNotification = () => {
         <div>
             <h4>Notification</h4>
             <div className="mt-2">
-                <div className="flex items-center justify-between py-6 border-b border-gray-200 dark:border-gray-600">
+                <div className="flex items-center justify-between py-6 border-b border-gray-200">
                     <div>
                         <h5>Enable desktop notification</h5>
                         <p>
@@ -142,7 +142,7 @@ const SettingsNotification = () => {
                         />
                     </div>
                 </div>
-                <div className="flex items-center justify-between py-6 border-b border-gray-200 dark:border-gray-600">
+                <div className="flex items-center justify-between py-6 border-b border-gray-200">
                     <div>
                         <h5>Enable unread notification badge</h5>
                         <p>
@@ -157,7 +157,7 @@ const SettingsNotification = () => {
                         />
                     </div>
                 </div>
-                <div className="py-6 border-b border-gray-200 dark:border-gray-600">
+                <div className="py-6 border-b border-gray-200">
                     <h5>Enable unread notification badge</h5>
                     <div className="mt-4">
                         <Radio.Group

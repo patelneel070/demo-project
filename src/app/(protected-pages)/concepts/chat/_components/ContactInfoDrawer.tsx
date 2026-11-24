@@ -276,7 +276,7 @@ const ContactInfoDrawer = () => {
                                         <a
                                             key={link.id}
                                             href={link.url}
-                                            className="rounded-xl py-4 px-2 flex items-center justify-between gap-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            className="rounded-xl py-4 px-2 flex items-center justify-between gap-2 hover:bg-gray-100"
                                             target='"_blank'
                                         >
                                             <div className="flex items-center gap-2 min-w-0">

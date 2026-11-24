@@ -5,17 +5,17 @@ const GridColumnStartEnd = () => {
     return (
         <div className="grid grid-cols-3 gap-4">
             <div className="...">
-                <DemoBoxContent className="bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+                <DemoBoxContent className="bg-indigo-300 ">
                     01
                 </DemoBoxContent>
             </div>
             <div className="...">
-                <DemoBoxContent className="bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+                <DemoBoxContent className="bg-indigo-300 ">
                     02
                 </DemoBoxContent>
             </div>
             <div className="...">
-                <DemoBoxContent className="bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+                <DemoBoxContent className="bg-indigo-300 ">
                     03
                 </DemoBoxContent>
             </div>
@@ -25,12 +25,12 @@ const GridColumnStartEnd = () => {
                 </DemoBoxContent>
             </div>
             <div className="...">
-                <DemoBoxContent className="bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+                <DemoBoxContent className="bg-indigo-300 ">
                     05
                 </DemoBoxContent>
             </div>
             <div className="...">
-                <DemoBoxContent className="bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">
+                <DemoBoxContent className="bg-indigo-300 ">
                     06
                 </DemoBoxContent>
             </div>

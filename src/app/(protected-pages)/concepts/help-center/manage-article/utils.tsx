@@ -45,18 +45,18 @@ export const categoryLabel: Record<string, string> = {
 }
 
 export const categoryClass: Record<string, string> = {
-    introduction: 'bg-sky-200 dark:bg-sky-200',
-    setupGuide: 'bg-red-200 dark:bg-red-200',
-    basicFeatures: 'bg-amber-200 dark:bg-amber-200',
-    survey: 'bg-orange-200 dark:bg-orange-200',
-    analytic: 'bg-teal-200 dark:bg-teal-200',
-    dataVisualization: 'bg-cyan-200 dark:bg-cyan-200',
-    chatbot: 'bg-yellow-200 dark:bg-yellow-200',
-    media: 'bg-rose-200 dark:bg-rose-200',
-    security: 'bg-emerald-200 dark:bg-emerald-200',
-    integration: ' bg-purple-200 dark:bg-purple-200',
-    themes: 'bg-sky-200 dark:bg-sky-200',
-    commission: 'bg-indigo-200 dark:bg-indigo-200',
+    introduction: 'bg-sky-200',
+    setupGuide: 'bg-red-200',
+    basicFeatures: 'bg-amber-200',
+    survey: 'bg-orange-200',
+    analytic: 'bg-teal-200',
+    dataVisualization: 'bg-cyan-200',
+    chatbot: 'bg-yellow-200',
+    media: 'bg-rose-200',
+    security: 'bg-emerald-200',
+    integration: ' bg-purple-200',
+    themes: 'bg-sky-200',
+    commission: 'bg-indigo-200',
 }
 
 export const categoryOption = [

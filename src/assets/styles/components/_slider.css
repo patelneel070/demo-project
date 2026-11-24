@@ -1,6 +1,6 @@
 @layer components {
     .slider-tooltip {
-        @apply absolute text-xs whitespace-nowrap pointer-events-none select-none touch-none z-50 max-w-[250px] text-white rounded-lg p-2 -top-11 bg-gray-800 dark:bg-black -translate-x-2/4;
+        @apply absolute text-xs whitespace-nowrap pointer-events-none select-none touch-none z-50 max-w-[250px] text-white rounded-lg p-2 -top-11 bg-gray-800 -translate-x-2/4;
     }
 
     .slider-thumb-wrapper {

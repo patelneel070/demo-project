@@ -33,7 +33,7 @@ const RolesPermissionsGroups = () => {
                     {Array.from({ length: 4 }).map((_, index) => (
                         <div
                             key={index}
-                            className="flex flex-col justify-between rounded-2xl p-5 bg-gray-100 dark:bg-gray-700 min-h-[140px]"
+                            className="flex flex-col justify-between rounded-2xl p-5 bg-gray-100 min-h-[140px]"
                         >
                             <div className="flex flex-auto flex-col justify-between gap-2">
                                 <div className="flex items-center gap-2">
@@ -67,7 +67,7 @@ const RolesPermissionsGroups = () => {
                 roleList.map((role) => (
                     <div
                         key={role.id}
-                        className="flex flex-col justify-between rounded-2xl p-5 bg-gray-100 dark:bg-gray-700 min-h-[140px]"
+                        className="flex flex-col justify-between rounded-2xl p-5 bg-gray-100 min-h-[140px]"
                     >
                         <div className="flex items-center justify-between">
                             <h6 className="font-bold">{role.name}</h6>
@@ -79,7 +79,7 @@ const RolesPermissionsGroups = () => {
                                     <UsersAvatarGroup
                                         avatarProps={{
                                             className:
-                                                'cursor-pointer -mr-2 border-2 border-white dark:border-gray-500',
+                                                'cursor-pointer -mr-2 border-2 border-white',
                                             size: 28,
                                         }}
                                         avatarGroupProps={{ maxCount: 3 }}

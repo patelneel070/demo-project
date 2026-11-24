@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const Prose = () => {
     return (
-        <article className="prose dark:prose-invert mx-auto">
+        <article className="prose mx-auto">
             <p className="lead">
                 Until now, trying to style an article, document, or blog post
                 with Tailwind has been a tedious task that required a keen eye

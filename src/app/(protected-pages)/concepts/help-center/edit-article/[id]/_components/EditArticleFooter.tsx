@@ -40,7 +40,7 @@ const EditArticleFooter = () => {
     }
 
     return (
-        <div className="sticky bottom-0 left-0 right-0 z-10 mt-8 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 -mx-4 sm:-mx-8 py-4">
+        <div className="sticky bottom-0 left-0 right-0 z-10 mt-8 border-t border-gray-200 bg-white -mx-4 sm:-mx-8 py-4">
             <div className="max-w-[1200px] mx-auto">
                 <div className="flex items-center justify-between px-8">
                     <Button

@@ -175,7 +175,7 @@ const ActivityEvent = ({ data, compact }: ActivityEventProps) => {
                     )}
                     <Card
                         bordered={false}
-                        className="mt-4 bg-gray-100 dark:bg-gray-700 shadow-none"
+                        className="mt-4 bg-gray-100 shadow-none"
                     >
                         {ReactHtmlParser(data.comment || '', options)}
                     </Card>
@@ -215,7 +215,7 @@ const ActivityEvent = ({ data, compact }: ActivityEventProps) => {
                     )}
                     <Card
                         bordered={false}
-                        className="mt-4 bg-gray-100 dark:bg-gray-700 shadow-none"
+                        className="mt-4 bg-gray-100 shadow-none"
                     >
                         {ReactHtmlParser(data.comment || '', options)}
                     </Card>

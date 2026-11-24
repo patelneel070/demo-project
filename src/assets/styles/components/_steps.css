@@ -24,7 +24,7 @@
     @apply text-lg rounded-full w-9 h-9 flex items-center justify-center font-semibold;
 
     &.step-item-icon-pending {
-      @apply border-2 border-gray-300 dark:border-gray-600;
+      @apply border-2 border-gray-300;
     }
 
     &.step-item-icon-current {
@@ -37,7 +37,7 @@
   }
 
   .step-item-title {
-    @apply whitespace-nowrap font-bold block text-gray-600 dark:text-gray-300;
+    @apply whitespace-nowrap font-bold block text-gray-600;
 
     &.step-item-title-error {
       @apply text-red-500;
@@ -61,7 +61,7 @@
     @apply w-full;
 
     &.inactive {
-      @apply bg-gray-200 dark:bg-gray-600;
+      @apply bg-gray-200;
     }
 
     &.step-connect-vertical {

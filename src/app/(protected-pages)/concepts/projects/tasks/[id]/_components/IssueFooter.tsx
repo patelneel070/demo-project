@@ -69,7 +69,7 @@ const IssueFooter = () => {
                                             </div>
                                             <div className="ml-2 rtl:mr-2 p-3 rounded-sm w-100">
                                                 <div className="flex items-center mb-2">
-                                                    <span className="font-semibold text-gray-900 dark:text-gray-100">
+                                                    <span className="font-semibold text-gray-900">
                                                         {comment.name}
                                                     </span>
                                                     <span className="mx-1">
@@ -125,7 +125,7 @@ const IssueFooter = () => {
                                 <Card
                                     key={file.id}
                                     bodyClass="px-3 pt-3 pb-1"
-                                    className="bg-gray-100 dark:bg-gray-700 shadow-none"
+                                    className="bg-gray-100 shadow-none"
                                     bordered={false}
                                 >
                                     <img
@@ -135,7 +135,7 @@ const IssueFooter = () => {
                                     />
                                     <div className="mt-1 flex justify-between items-center">
                                         <div>
-                                            <div className="font-semibold text-gray-900 dark:text-gray-100">
+                                            <div className="font-semibold text-gray-900">
                                                 {file.name}
                                             </div>
                                             <span className="text-xs">

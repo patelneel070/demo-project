@@ -54,7 +54,7 @@ const EditArticleHeader = (props: EditArticleHeaderProps) => {
                 value={articleTitle}
                 onChange={(e) => setArticleTitle(e.target.value)}
             />
-            <div className="mt-3 flex flex-col gap-6 border-t border-gray-200 dark:border-gray-700 py-6">
+            <div className="mt-3 flex flex-col gap-6 border-t border-gray-200 py-6">
                 <Field title="Created by:">
                     {authors.length > 0 && (
                         <div className="flex items-center gap-2">

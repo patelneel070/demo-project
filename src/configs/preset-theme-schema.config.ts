@@ -7,115 +7,25 @@ export type Variables =
 
 export type ThemeVariables = Record<'light' | 'dark', Record<Variables, string>>
 
+// Sea Glass teal. `neutral` stays white: it is the text colour used on
+// top of primary buttons.
+const seaGlass: Record<Variables, string> = {
+    primary: '#2a7f7a', //       buttons, links, active states
+    primaryDeep: '#1f6662', //   pressed
+    primaryMild: '#2f8781', //   hover (keeps white text readable)
+    primarySubtle: '#2a7f7a1a', // soft tints: active tab, selected row
+    neutral: '#ffffff',
+}
+
+// The `dark` key mirrors `light` so existing types keep compiling,
+// but nothing in the app can ever render a dark palette.
 const defaultTheme: ThemeVariables = {
-    light: {
-        primary: '#2a85ff',
-        primaryDeep: '#0069f6',
-        primaryMild: '#4996ff',
-        primarySubtle: '#2a85ff1a',
-        neutral: '#ffffff',
-    },
-    dark: {
-        primary: '#2a85ff',
-        primaryDeep: '#0069f6',
-        primaryMild: '#4996ff',
-        primarySubtle: '#2a85ff1a',
-        neutral: '#ffffff',
-    },
-}
-
-const darkTheme: ThemeVariables = {
-    light: {
-        primary: '#18181b',
-        primaryDeep: '#09090b',
-        primaryMild: '#27272a',
-        primarySubtle: '#18181b0d',
-        neutral: '#ffffff',
-    },
-    dark: {
-        primary: '#ffffff',
-        primaryDeep: '#09090b',
-        primaryMild: '#e5e7eb',
-        primarySubtle: '#ffffff1a',
-        neutral: '#111827',
-    },
-}
-
-const greenTheme: ThemeVariables = {
-    light: {
-        primary: '#0CAF60',
-        primaryDeep: '#088d50',
-        primaryMild: '#34c779',
-        primarySubtle: '#0CAF601a',
-        neutral: '#ffffff',
-    },
-    dark: {
-        primary: '#0CAF60',
-        primaryDeep: '#088d50',
-        primaryMild: '#34c779',
-        primarySubtle: '#0CAF601a',
-        neutral: '#ffffff',
-    },
-}
-
-const purpleTheme: ThemeVariables = {
-    light: {
-        primary: '#8C62FF',
-        primaryDeep: '#704acc',
-        primaryMild: '#a784ff',
-        primarySubtle: '#8C62FF1a',
-        neutral: '#ffffff',
-    },
-    dark: {
-        primary: '#8C62FF',
-        primaryDeep: '#704acc',
-        primaryMild: '#a784ff',
-        primarySubtle: '#8C62FF1a',
-        neutral: '#ffffff',
-    },
-}
-
-const orangeTheme: ThemeVariables = {
-    light: {
-        primary: '#fb732c',
-        primaryDeep: '#cc5c24',
-        primaryMild: '#fc8f56',
-        primarySubtle: '#fb732c1a',
-        neutral: '#ffffff',
-    },
-    dark: {
-        primary: '#fb732c',
-        primaryDeep: '#cc5c24',
-        primaryMild: '#fc8f56',
-        primarySubtle: '#fb732c1a',
-        neutral: '#ffffff',
-    },
-}
-
-const redTheme: ThemeVariables = {
-    light: {
-        primary: '#ef4444',
-        primaryDeep: '#dc2626',
-        primaryMild: '#f87171',
-        primarySubtle: '#ef44441a',
-        neutral: '#ffffff',
-    },
-    dark: {
-        primary: '#ef4444',
-        primaryDeep: '#dc2626',
-        primaryMild: '#f87171',
-        primarySubtle: '#ef44441a',
-        neutral: '#ffffff',
-    },
+    light: seaGlass,
+    dark: seaGlass,
 }
 
 const presetThemeSchemaConfig: Record<string, ThemeVariables> = {
     default: defaultTheme,
-    dark: darkTheme,
-    green: greenTheme,
-    purple: purpleTheme,
-    orange: orangeTheme,
-    red: redTheme,
 }
 
 export default presetThemeSchemaConfig

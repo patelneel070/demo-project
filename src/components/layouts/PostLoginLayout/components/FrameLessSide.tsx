@@ -43,7 +43,7 @@ const FrameLessSide = ({ children }: CommonProps) => {
                         defaultClass,
                         'rounded-2xl',
                         pageBackgroundType === 'plain' &&
-                            'bg-white dark:bg-gray-900',
+                            'bg-white',
                     )}
                 >
                     <main className="h-full">
@@ -85,10 +85,10 @@ const FrameLessSide = ({ children }: CommonProps) => {
                     mode="dark"
                 />
                 <FrameLessGap className="min-h-screen min-w-0 relative w-full">
-                    <div className="bg-white dark:bg-gray-900 flex flex-col flex-1 h-full rounded-2xl">
+                    <div className="bg-white flex flex-col flex-1 h-full rounded-2xl">
                         <Header
                             className={classNames(
-                                'rounded-t-2xl dark:bg-gray-900',
+                                'rounded-t-2xl',
                                 isSticky && 'shadow-sm rounded-none!',
                             )}
                             headerStart={

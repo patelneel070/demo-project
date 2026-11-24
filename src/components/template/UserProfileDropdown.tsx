@@ -66,7 +66,7 @@ const _UserDropdown = () => {
                 <div className="py-2 px-3 flex items-center gap-3">
                     <Avatar {...avatarProps} />
                     <div>
-                        <div className="font-bold text-gray-900 dark:text-gray-100">
+                        <div className="font-bold text-gray-900">
                             {session?.user?.name || 'Anonymous'}
                         </div>
                         <div className="text-xs">

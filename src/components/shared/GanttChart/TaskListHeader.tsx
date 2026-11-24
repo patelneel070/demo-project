@@ -32,7 +32,7 @@ const TaskListHeader = ({
                     &nbsp;Name
                 </div>
                 <div
-                    className="border-r border-gray-200 dark:border-gray-700 -ml-1"
+                    className="border-r border-gray-200 -ml-1"
                     style={{
                         height: headerHeight,
                     }}
@@ -55,7 +55,7 @@ const TaskListHeader = ({
                         &nbsp;{headers}
                     </div>
                     <div
-                        className="border-r border-gray-200 dark:border-gray-700 -ml-1"
+                        className="border-r border-gray-200 -ml-1"
                         style={{
                             height: headerHeight,
                         }}

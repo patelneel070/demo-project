@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================
+   Sea Glass x Lexa: light theme only (no dark mode)
+   ========================================================== */
+
+:root {
+	/* Stops OS-level dark mode from darkening scrollbars,
+	   form controls and autofill */
+	color-scheme: light;
+
+	/* Brand */
+	--primary: #2a7f7a;          /* buttons, links, active states */
+	--primary-deep: #1f6662;     /* hover / pressed */
+	--primary-mild: #7ccbc6;     /* charts, icons, progress bars (never text) */
+	--primary-subtle: #ddefec;   /* active tab, selected row, soft badges */
+
+	/* Status */
+	--error: #b93a2e;
+	--error-subtle: #f8e1dd;
+	--success: #2f7d4f;
+	--success-subtle: #e4f3ea;
+	--info: #2b6cb0;
+	--info-subtle: #e3eef9;
+	--warning: #a8661a;
+	--warning-subtle: #f8ebd3;
+
+	--neutral: #e4eceb;
+
+	/* Teal-tinted grays */
+	--gray-50: #fbfdfd;          /* cards, tables */
+	--gray-100: #f1f5f4;         /* page background */
+	--gray-200: #e4eceb;         /* hover, zebra rows */
+	--gray-300: #d3e0df;         /* borders */
+	--gray-400: #9aabab;         /* placeholders, disabled (not for text) */
+	--gray-500: #66767b;         /* muted text */
+	--gray-600: #4d5d62;
+	--gray-700: #3a4a4f;
+	--gray-800: #25353a;         /* main text */
+	--gray-900: #1a282c;
+	--gray-950: #0f1a1d;
+}
+
+@layer base {
+	html {
+		color-scheme: light;
+	}
+
+	body {
+		@apply bg-gray-100 font-sans text-[14.5px] leading-[1.5] text-gray-800 antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-heading tracking-tight text-gray-800;
+	}
+
+	h1 {
+		@apply text-[26px] font-semibold;
+	}
+	h2 {
+		@apply text-xl font-semibold;
+	}
+	h3 {
+		@apply text-base font-medium;
+	}
+
+	/* Numbers line up in tables and quantity columns */
+	table,
+	.tabular {
+		font-variant-numeric: tabular-nums;
+	}
+
+	th {
+		@apply text-xs font-semibold tracking-wide text-gray-500;
+	}
+
+	code,
+	.sku {
+		@apply font-mono text-[13px];
+	}
+
+	::placeholder {
+		color: var(--gray-400);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 2px;
+	}
+}

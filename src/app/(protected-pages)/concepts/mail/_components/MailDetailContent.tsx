@@ -37,7 +37,7 @@ const MailDetailContent = (props: MailDetailContentProps) => {
                                         mail.message as Message[],
                                         index,
                                     ) &&
-                                        'border-b border-gray-200 dark:border-gray-700',
+                                        'border-b border-gray-200',
                                 )}
                             >
                                 <div className="flex items-center justify-between gap-2">
@@ -78,11 +78,11 @@ const MailDetailContent = (props: MailDetailContentProps) => {
                                         {msg.attachment.map((item) => (
                                             <div
                                                 key={item.file}
-                                                className="min-w-full md:min-w-[230px] rounded-2xl dark:bg-gray-800 border border-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-700 py-4 px-3.5 inline-flex items-center gap-2 transition-all cursor-pointer"
+                                                className="min-w-full md:min-w-[230px] rounded-2xl border border-gray-200 hover:bg-gray-100 py-4 px-3.5 inline-flex items-center gap-2 transition-all cursor-pointer"
                                             >
                                                 <FileIcon type={item.type} />
                                                 <div>
-                                                    <div className="font-semibold text-gray-900 dark:text-gray-100">
+                                                    <div className="font-semibold text-gray-900">
                                                         {item.file}
                                                     </div>
                                                     <span className="">

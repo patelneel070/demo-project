@@ -65,10 +65,10 @@ const ImageList = (props: ImageListProps) => {
             {imgList.map((img) => (
                 <div
                     key={img.id}
-                    className="group relative rounded-xl border border-gray-200 dark:border-gray-600 p-2 flex"
+                    className="group relative rounded-xl border border-gray-200 p-2 flex"
                 >
                     <img
-                        className="rounded-lg max-h-[140px] mx-auto max-w-full dark:bg-transparent"
+                        className="rounded-lg max-h-[140px] mx-auto max-w-full"
                         src={img.img}
                         alt={img.name}
                     />
@@ -219,7 +219,7 @@ const ImageSection = ({ control, errors }: ImageSectionProps) => {
                                                     <PiImagesThin />
                                                 </div>
                                                 <p className="text-center mt-1 text-xs">
-                                                    <span className="text-gray-800 dark:text-white">
+                                                    <span className="text-gray-800">
                                                         Drop your image here, or{' '}
                                                         {''}
                                                     </span>
@@ -248,7 +248,7 @@ const ImageSection = ({ control, errors }: ImageSectionProps) => {
                                                 <PiImagesThin />
                                             </div>
                                             <p className="flex flex-col items-center mt-2">
-                                                <span className="text-gray-800 dark:text-white">
+                                                <span className="text-gray-800">
                                                     Drop your image here, or{' '}
                                                     {''}
                                                 </span>

@@ -120,7 +120,7 @@ const _Notification = ({ className }: { className?: string }) => {
             onOpen={onNotificationOpen}
         >
             <Dropdown.Item variant="header">
-                <div className="dark:border-gray-700 px-2 flex items-center justify-between mb-1">
+                <div className="px-2 flex items-center justify-between mb-1">
                     <h6>Notifications</h6>
                     <Button
                         variant="plain"
@@ -139,7 +139,7 @@ const _Notification = ({ className }: { className?: string }) => {
                     notificationList.map((item, index) => (
                         <div key={item.id}>
                             <div
-                                className={`relative rounded-xl flex px-4 py-3 cursor-pointer hover:bg-gray-100 active:bg-gray-100 dark:hover:bg-gray-700`}
+                                className={`relative rounded-xl flex px-4 py-3 cursor-pointer hover:bg-gray-100 active:bg-gray-100`}
                                 onClick={() => onMarkAsRead(item.id)}
                             >
                                 <div>
@@ -160,13 +160,13 @@ const _Notification = ({ className }: { className?: string }) => {
                                     className="absolute top-4 ltr:right-4 rtl:left-4 mt-1.5"
                                     innerClass={`${
                                         item.readed
-                                            ? 'bg-gray-300 dark:bg-gray-600'
+                                            ? 'bg-gray-300'
                                             : 'bg-primary'
                                     } `}
                                 />
                             </div>
                             {!isLastChild(notificationList, index) ? (
-                                <div className="border-b border-gray-200 dark:border-gray-700 my-2" />
+                                <div className="border-b border-gray-200 my-2" />
                             ) : (
                                 ''
                             )}

@@ -79,23 +79,23 @@ const ListItem = (props: {
             <div
                 className={classNames(
                     'flex items-center justify-between rounded-xl p-3 cursor-pointer user-select',
-                    'hover:bg-gray-100 dark:hover:bg-gray-700',
+                    'hover:bg-gray-100',
                 )}
             >
                 <div className="flex items-center gap-2">
                     <div
                         className={classNames(
-                            'rounded-lg border-2 border-gray-200 shadow-xs text-xl group-hover:shadow-sm h-10 w-10 flex items-center justify-center bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100',
+                            'rounded-lg border-2 border-gray-200 shadow-xs text-xl group-hover:shadow-sm h-10 w-10 flex items-center justify-center bg-white text-gray-900',
                         )}
                     >
                         {icon && navigationIcon[icon]}
                     </div>
-                    <div className="text-gray-900 dark:text-gray-300">
+                    <div className="text-gray-900">
                         <Highlighter
                             autoEscape
                             highlightClassName={classNames(
                                 'text-primary',
-                                'underline bg-transparent font-semibold dark:text-white',
+                                'underline bg-transparent font-semibold',
                             )}
                             searchWords={[keyWord]}
                             textToHighlight={label}
@@ -184,12 +184,12 @@ const _Search = ({ className }: { className?: string }) => {
                 onRequestClose={handleSearchClose}
             >
                 <div>
-                    <div className="px-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-600">
+                    <div className="px-4 flex items-center justify-between border-b border-gray-200">
                         <div className="flex items-center">
                             <HiOutlineSearch className="text-xl" />
                             <input
                                 ref={inputRef}
-                                className="ring-0 outline-hidden block w-full p-4 text-base bg-transparent text-gray-900 dark:text-gray-100"
+                                className="ring-0 outline-hidden block w-full p-4 text-base bg-transparent text-gray-900"
                                 placeholder="Search..."
                                 onChange={handleSearch}
                             />

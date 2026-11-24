@@ -54,8 +54,8 @@ const CustomSelectOption = ({
         <div
             className={`flex items-center justify-between p-2 ${
                 isSelected
-                    ? 'bg-gray-100 dark:bg-gray-500'
-                    : 'hover:bg-gray-50 dark:hover:bg-gray-600'
+                    ? 'bg-gray-100'
+                    : 'hover:bg-gray-50'
             }`}
             {...innerProps}
         >
@@ -144,7 +144,7 @@ const ProjectDetailsHeader = (props: ProjectDetailsHeaderProps) => {
 
     return (
         <>
-            <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 mb-6 pb-4">
+            <div className="flex items-center justify-between border-b border-gray-200 mb-6 pb-4">
                 <div className="flex items-center gap-4">
                     {smaller.xl && (
                         <ToggleDrawer ref={drawerRef} title="Navigation">
@@ -185,7 +185,7 @@ const ProjectDetailsHeader = (props: ProjectDetailsHeaderProps) => {
                                     variant="solid"
                                     size="sm"
                                     customColorClass={() =>
-                                        'bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200'
+                                        'bg-gray-900 hover:bg-gray-800 '
                                     }
                                     onClick={() => setCopied(true)}
                                 >

@@ -9,7 +9,7 @@ const AlertToast = () => {
                 showIcon
                 closable
                 type="success"
-                className="dark:bg-gray-700"
+                className=""
             >
                 Success
             </Alert>,

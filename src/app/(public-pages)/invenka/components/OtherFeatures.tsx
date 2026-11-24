@@ -1,4 +1,4 @@
-import Container from '../../landing/components/LandingContainer'
+import Container from './LandingContainer'
 import Button from '@/components/ui/Button'
 import { TbCircleCheck } from 'react-icons/tb'
 import { motion } from 'framer-motion'
@@ -28,8 +28,8 @@ const OtherFeatures = () => {
                     key={row.title}
                     className={
                         index % 2 === 0
-                            ? 'bg-white dark:bg-gray-900'
-                            : 'bg-gray-100 dark:bg-gray-800'
+                            ? 'bg-gray-50'
+                            : 'bg-gray-100'
                     }
                 >
                     <div className="w-full px-6 lg:px-10 2xl:px-16">
@@ -143,12 +143,12 @@ const OtherFeatures = () => {
 
                         <div className="relative flex justify-center">
                             <motion.div
-                                className="p-2 border border-gray-600 bg-gray-200 dark:bg-gray-700 dark:border-gray-700 rounded-[32px] max-w-[300px] lg:absolute lg:top-[-50px]"
+                                className="p-2 border border-gray-600 bg-gray-200 rounded-[32px] max-w-[300px] lg:absolute lg:top-[-50px]"
                                 whileHover={{ y: -20 }}
                             >
-                                <div className="absolute inset-x-0 bottom-0 h-20 w-full bg-gradient-to-b from-transparent via-gray-100 to-gray-100 dark:via-zinc-800/70 dark:to-gray-800 scale-[1.1] pointer-events-none" />
+                                <div className="absolute inset-x-0 bottom-0 h-20 w-full bg-gradient-to-b from-transparent via-gray-100 to-gray-100 scale-[1.1] pointer-events-none" />
 
-                                <div className="bg-white dark:bg-black dark:border-gray-700 border border-gray-200 rounded-[24px] overflow-hidden max-h-[450px]">
+                                <div className="bg-gray-50 border border-gray-200 rounded-[24px] overflow-hidden max-h-[450px]">
                                     <img
                                         src={mobileSection.image}
                                         alt={mobileSection.imageAlt}

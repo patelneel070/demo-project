@@ -61,7 +61,7 @@ const Attachment = ({ attachments }: AttatchmentProps) => {
                         <a
                             key={key}
                             download
-                            className="flex items-center gap-2 p-2 rounded-xl border border-gray-300 dark:border-gray-600 min-w-[250px] bg-white dark:bg-gray-600 my-2 no-underline"
+                            className="flex items-center gap-2 p-2 rounded-xl border border-gray-300 min-w-[250px] bg-white my-2 no-underline"
                             href={attachment.mediaUrl}
                         >
                             <TbFile className="text-3xl heading-text" />

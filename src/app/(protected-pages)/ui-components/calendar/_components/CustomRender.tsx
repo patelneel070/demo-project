@@ -18,7 +18,7 @@ const CustomRender = () => {
                         return 'text-white'
                     }
 
-                    return 'text-gray-700 dark:text-gray-200'
+                    return 'text-gray-700'
                 }}
                 dayStyle={(date, { selected, outOfMonth }) => {
                     if (date.getDate() === 18 && !selected) {

@@ -30,7 +30,7 @@ const Categories = ({ data }: CategoriesProps) => {
                         {category.topics.map((topic) => (
                             <div
                                 key={topic.id}
-                                className="cursor-pointer rounded-xl bg-gray-100 dark:bg-gray-700 p-8 group hover:bg-primary transition-colors"
+                                className="cursor-pointer rounded-xl bg-gray-100 p-8 group hover:bg-primary transition-colors"
                                 role="button"
                                 onClick={() => handleTopicClick(topic.id)}
                             >

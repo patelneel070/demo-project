@@ -39,8 +39,8 @@ const Navigator = () => {
             {navigationList.map((nav) => (
                 <Link
                     key={nav.label}
-                    activeClass="bg-gray-100 dark:bg-gray-700 active"
-                    className="cursor-pointer p-4 rounded-xl group hover:bg-gray-100 dark:hover:bg-gray-700"
+                    activeClass="bg-gray-100 active"
+                    className="cursor-pointer p-4 rounded-xl group hover:bg-gray-100"
                     to={nav.link}
                     spy={true}
                     smooth={true}
@@ -50,7 +50,7 @@ const Navigator = () => {
                     <span className="flex items-center gap-2">
                         <Avatar
                             icon={nav.icon}
-                            className="bg-gray-100 dark:bg-gray-700 group-hover:bg-white group-[.active]:bg-white dark:group-hover:bg-gray-800 dark:group-[.active]:bg-gray-800 text-gray-900 dark:text-gray-100"
+                            className="bg-gray-100 group-hover:bg-white group-[.active]:bg-white text-gray-900"
                         />
                         <span className="flex flex-col flex-1">
                             <span className="heading-text font-bold">

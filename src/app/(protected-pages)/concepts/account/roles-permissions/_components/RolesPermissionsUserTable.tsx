@@ -19,8 +19,8 @@ type RolesPermissionsUserTableProps = {
 }
 
 const statusColor: Record<string, string> = {
-    active: 'bg-emerald-200 dark:bg-emerald-200 text-gray-900 dark:text-gray-900',
-    blocked: 'bg-red-200 dark:bg-red-200 text-gray-900 dark:text-gray-900',
+    active: 'bg-emerald-200 text-gray-900',
+    blocked: 'bg-red-200 text-gray-900',
 }
 
 const RolesPermissionsUserTable = (props: RolesPermissionsUserTableProps) => {
@@ -150,7 +150,7 @@ const RolesPermissionsUserTable = (props: RolesPermissionsUserTableProps) => {
                         <Dropdown
                             renderTitle={
                                 <div
-                                    className="inline-flex items-center gap-2 py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                                    className="inline-flex items-center gap-2 py-2 px-4 rounded-lg hover:bg-gray-100 cursor-pointer"
                                     role="button"
                                 >
                                     <span className="font-bold heading-text">

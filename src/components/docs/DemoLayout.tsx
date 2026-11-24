@@ -83,15 +83,15 @@ const DemoLayout = (props: DemoLayoutProps) => {
                             <h6 className="heading-text font-bold uppercase tracking-wide mb-3 text-sm lg:text-xs">
                                 TABLE OF CONTENT
                             </h6>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium ltr:border-l rtl:border-r border-gray-200 dark:border-gray-700 px-4">
+                            <ul className="text-gray-500 font-medium ltr:border-l rtl:border-r border-gray-200 px-4">
                                 {demos.map((link) => (
                                     <li
                                         key={`anchor${link.mdName}`}
                                         className="relative"
                                     >
                                         <Link
-                                            activeClass="text-gray-900 dark:text-gray-50 after:content-[''] after:absolute after:-left-[18px] after:bg-primary after:w-[3px] after:h-5"
-                                            className="cursor-pointer block transform transition-colors duration-200 py-2 hover:text-gray-900 dark:hover:text-gray-100"
+                                            activeClass="text-gray-900 after:content-[''] after:absolute after:-left-[18px] after:bg-primary after:w-[3px] after:h-5"
+                                            className="cursor-pointer block transform transition-colors duration-200 py-2 hover:text-gray-900"
                                             to={link.mdName}
                                             spy={true}
                                             smooth={true}

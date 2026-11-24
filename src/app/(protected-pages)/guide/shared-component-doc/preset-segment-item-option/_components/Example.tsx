@@ -26,7 +26,7 @@ const Example = () => {
     return (
         <Segment
             value={value}
-            className="bg-transparent dark:bg-transparent"
+            className="bg-transparent"
             onChange={(val) => handleChange(val as string[])}
         >
             <div className="flex flex-col xl:flex-row items-center gap-4">
@@ -42,7 +42,7 @@ const Example = () => {
                                     hoverable
                                     active={active}
                                     disabled={disabled}
-                                    className="bg-white dark:bg-gray-800 w-[250px]"
+                                    className="bg-white w-[250px]"
                                     onSegmentItemClick={onSegmentItemClick}
                                 >
                                     <div className="flex items-center gap-3">

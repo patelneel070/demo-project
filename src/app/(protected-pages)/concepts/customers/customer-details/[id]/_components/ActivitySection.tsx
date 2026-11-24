@@ -138,7 +138,7 @@ const ActivitySection = ({
                             <span className="w-[70px] heading-text">
                                 {dayjs.unix(log.date).format('DD MMMM')}
                             </span>
-                            <div className="border-b border-2 border-gray-200 dark:border-gray-600 border-dashed w-full"></div>
+                            <div className="border-b border-2 border-gray-200 border-dashed w-full"></div>
                         </div>
                         <div className="flex flex-col gap-4">
                             {isEmpty(log.events) ? (

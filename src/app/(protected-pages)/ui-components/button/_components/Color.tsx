@@ -9,7 +9,7 @@ const Color = () => {
                 clickFeedback={false}
                 customColorClass={({ active, unclickable }) =>
                     classNames(
-                        'hover:text-gray-800 dark:hover:bg-gray-600 border-0 hover:ring-0',
+                        'hover:text-gray-800 border-0 hover:ring-0',
                         active ? 'bg-gray-200' : 'bg-gray-100',
                         unclickable && 'opacity-50 cursor-not-allowed',
                         !active && !unclickable && 'hover:bg-gray-200',

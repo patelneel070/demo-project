@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import ThemeContext from './ThemeContext'
 import ConfigProvider from '@/components/ui/ConfigProvider'
 import appConfig from '@/configs/app.config'
-import { MODE_DARK, MODE_LIGHT } from '@/constants/theme.constant'
+import { MODE_LIGHT } from '@/constants/theme.constant'
 import applyTheme from '@/utils/applyThemeSchema'
 import { setTheme as setThemeCookies } from '@/server/actions/theme'
 import presetThemeSchemaConfig from '@/configs/preset-theme-schema.config'
@@ -15,24 +15,26 @@ interface ThemeProviderProps extends CommonProps {
     locale?: string
 }
 
+// Light theme only: always light mode, always the Sea Glass ("default") schema.
+// This also ignores any old cookie that still says "dark" or "red".
+const SCHEMA = 'default'
+
 const ThemeProvider = ({ children, theme, locale }: ThemeProviderProps) => {
-    const [themeState, setThemeState] = useState<Theme>(theme)
+    const [themeState, setThemeState] = useState<Theme>({
+        ...theme,
+        mode: MODE_LIGHT,
+    })
 
     useEffect(() => {
-        document.documentElement.classList.toggle(
-            'dark',
-            themeState.mode === MODE_DARK,
-        )
-        document.documentElement.classList.toggle(
-            'light',
-            themeState.mode === MODE_LIGHT,
-        )
-    }, [themeState.mode])
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.add('light')
+    }, [])
 
     const handleSetTheme = async (payload: (param: Theme) => Theme | Theme) => {
         const setTheme = async (theme: Theme) => {
-            setThemeState(theme)
-            await setThemeCookies(JSON.stringify({ state: theme }))
+            const lightTheme: Theme = { ...theme, mode: MODE_LIGHT as Theme['mode'] }
+            setThemeState(lightTheme)
+            await setThemeCookies(JSON.stringify({ state: lightTheme }))
         }
 
         if (typeof payload === 'function') {
@@ -50,20 +52,20 @@ const ThemeProvider = ({ children, theme, locale }: ThemeProviderProps) => {
                 setTheme: handleSetTheme,
             }}
         >
-           <ConfigProvider
+            <ConfigProvider
                 value={{
-                 ...themeState,
-                locale: locale || appConfig.locale,
+                    ...themeState,
+                    locale: locale || appConfig.locale,
                 }}
-        >
+            >
                 {children}
             </ConfigProvider>
             <script
                 suppressHydrationWarning
                 dangerouslySetInnerHTML={{
                     __html: `(${applyTheme.toString()})(${JSON.stringify([
-                        theme.themeSchema || 'default',
-                        theme.mode,
+                        SCHEMA,
+                        MODE_LIGHT,
                         presetThemeSchemaConfig,
                     ]).slice(1, -1)})`,
                 }}

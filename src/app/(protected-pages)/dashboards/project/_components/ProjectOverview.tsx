@@ -63,19 +63,19 @@ const ProjectOverview = ({ data }: ProjectOverview) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-2xl mt-4">
                 <StatisticCard
                     title="Ongoing project"
-                    className="bg-sky-100 dark:bg-opacity-75"
+                    className="bg-sky-100"
                     value={data.ongoingProject}
                     icon={<TbProgressBolt />}
                 />
                 <StatisticCard
                     title="Project completed"
-                    className="bg-emerald-100 dark:bg-opacity-75"
+                    className="bg-emerald-100"
                     value={data.projectCompleted}
                     icon={<TbCopyCheck />}
                 />
                 <StatisticCard
                     title="Upcoming project"
-                    className="bg-purple-100 dark:bg-opacity-75"
+                    className="bg-purple-100"
                     value={data.upcomingProject}
                     icon={<TbArrowDownToArc />}
                 />

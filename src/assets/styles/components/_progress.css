@@ -22,7 +22,7 @@
   }
 
   .progress-inner {
-    @apply relative w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-600;
+    @apply relative w-full overflow-hidden rounded-full bg-gray-100;
   }
 
   .progress-wrapper {
@@ -38,7 +38,7 @@
   }
 
   .progress-circle-trail {
-    @apply stroke-current text-gray-100 dark:text-gray-600;
+    @apply stroke-current text-gray-100;
   }
 
   .progress-circle-stroke {

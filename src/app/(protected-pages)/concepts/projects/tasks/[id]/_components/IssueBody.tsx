@@ -35,13 +35,13 @@ export const labelList = [
 ]
 
 export const taskLabelColors: Record<string, string> = {
-    'Live issue': 'bg-rose-200 dark:bg-rose-200 dark:text-gray-900',
-    Task: 'bg-blue-200 dark:bg-blue-200 dark:text-gray-900',
-    Bug: 'bg-amber-200 dark:bg-amber-200 dark:text-gray-900',
-    Optimization: 'bg-purple-200 dark:bg-purple-200 dark:text-gray-900',
-    'In progress': 'bg-sky-200 dark:bg-sky-200 dark:text-gray-900',
-    Completed: 'bg-emerald-200 dark:bg-emerald-200 dark:text-gray-900',
-    Pending: 'bg-amber-200 dark:bg-amber-200 dark:text-gray-900',
+    'Live issue': 'bg-rose-200 ',
+    Task: 'bg-blue-200 ',
+    Bug: 'bg-amber-200 ',
+    Optimization: 'bg-purple-200 ',
+    'In progress': 'bg-sky-200 ',
+    Completed: 'bg-emerald-200 ',
+    Pending: 'bg-amber-200 ',
 }
 
 const statusList: string[] = ['Pending', 'In progress', 'Completed']
@@ -318,7 +318,7 @@ const IssueBody = () => {
                         ))}
                     </IssueFieldDropdown>
                     <IssueField title="Due date" icon={<TbClock />}>
-                        <div className="flex items-center gap-1 px-3 rounded-xl hover:bg-gray-200: dark:hover:bg-gray-700 focus:bg-gray-200 dark:focus:bg-gray-700 cursor-pointer w-full min-h-[46px] relative">
+                        <div className="flex items-center gap-1 px-3 rounded-xl hover:bg-gray-200: focus:bg-gray-200 cursor-pointer w-full min-h-[46px] relative">
                             <span className="font-semibold">
                                 {dayjs
                                     .unix(issueData.dueDate || 0)
@@ -356,7 +356,7 @@ const IssueBody = () => {
                         role="button"
                         onClick={handleDescriptionClick}
                     >
-                        <div className="prose-p:text-sm dark:prose-p:text-gray-400">
+                        <div className="prose-p:text-sm">
                             {ReactHtmlParser(issueData.description || '')}
                         </div>
                     </div>

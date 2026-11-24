@@ -143,7 +143,7 @@ const ChatBody = () => {
                 </div>
             ),
             extra: <ChatAction muted={selectedChat.muted} />,
-            className: 'bg-gray-100 dark:bg-gray-600 h-[100px]',
+            className: 'bg-gray-100 h-[100px]',
         },
     }
 
@@ -197,7 +197,7 @@ const ChatBody = () => {
         >
             {selectedChat.id ? (
                 <Card
-                    className="flex-1 h-full max-h-full dark:border-gray-700"
+                    className="flex-1 h-full max-h-full"
                     bodyClass="h-[calc(100%-100px)] relative"
                     {...cardHeaderProps}
                 >
@@ -213,7 +213,7 @@ const ChatBody = () => {
                     />
                 </Card>
             ) : (
-                <div className="flex-1 h-full max-h-full flex flex-col items-center justify-center rounded-2xl border border-gray-200 dark:border-gray-800">
+                <div className="flex-1 h-full max-h-full flex flex-col items-center justify-center rounded-2xl border border-gray-200">
                     <StartConverstation height={250} width={250} />
                     <div className="mt-10 text-center">
                         <h3>Start Chatting!</h3>
