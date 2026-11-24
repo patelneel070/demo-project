@@ -4,7 +4,7 @@ import { TbCircleCheck } from 'react-icons/tb'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import type { ReactNode } from 'react'
-import { featureRows, mobileSection } from './data/landingData'
+import { featureRows, mobileSection } from '../data/landingData'
 
 const PointList = ({ children }: { children: ReactNode }) => {
     return (

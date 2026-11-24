@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import TextGenerateEffect from './TextGenerateEffect'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { hero} from './data/landingData'
+import { hero} from '../data/landingData'
 
 const HeroContent = () => {
     const router = useRouter()

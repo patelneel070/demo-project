@@ -12,7 +12,7 @@ import {
     featureItems,
     featuresPageHref,
     navLinks,
-} from './data/landingData'
+} from '../data/landingData'
 
 const focusRingClass =
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
@@ -139,7 +139,7 @@ const Navigation = () => {
                                     {featureItems.map(({ title, slug, Icon }) => (
                                         <Link
                                             key={slug}
-                                            href={`${featuresPageHref}/${slug}`}
+                                            href={`$/${slug}`}
                                             onClick={closeDrawer}
                                             className="flex items-center gap-2 rounded-lg px-2 py-2 heading-text hover:bg-gray-100"
                                         >
@@ -269,7 +269,7 @@ const Navigation = () => {
                                         ({ title, slug, description, Icon }) => (
                                             <li key={slug}>
                                                 <Link
-                                                    href={`${featuresPageHref}/${slug}`}
+                                                    href={`/${slug}`}
                                                     onClick={closeFeatures}
                                                     className={classNames(
                                                         'flex h-full flex-col gap-3 rounded-2xl p-4 transition duration-200 hover:bg-gray-100',

@@ -32,7 +32,7 @@ import {
 import {
     BASE_PATH,
     featureItems,
-} from '../../invenka/components/data/landingData'
+} from '../../invenka/data/landingData'
 
 export type FeatureCard = {
     title: string
