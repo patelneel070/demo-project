@@ -154,7 +154,7 @@ const MobileAppLanding = () => {
 
                                     <div className="flex flex-col gap-2">
                                         {mobileFeatureTabs.map((tab) => {
-                                            const isActive =
+                                            const isActive = 
                                                 activeFeatureTab === tab.id
 
                                             return (

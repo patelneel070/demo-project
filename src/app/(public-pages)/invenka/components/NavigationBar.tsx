@@ -1,16 +1,22 @@
 'use client'
+
 import { useEffect, useRef, useState } from 'react'
 import Drawer from '@/components/ui/Drawer'
 import classNames from '@/utils/classNames'
 import useScrollTop from '@/utils/hooks/useScrollTop'
 import Image from 'next/image'
-import { TbArrowRight, TbChevronDown, TbMenu2 } from 'react-icons/tb'
+import { TbChevronDown, TbMenu2 } from 'react-icons/tb'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import Button from '@/components/ui/Button'
+import MegaDropdown from './MegaDropdown'
 import {
     featureItems,
     featuresPageHref,
+    solutionsPageHref,
+    solutionItems,
+    industriesItems,
+    industriesPageHref,
     navLinks,
 } from '../data/landingData'
 
@@ -26,48 +32,99 @@ const Navigation = () => {
     const pathname = usePathname()
 
     const [isOpen, setIsOpen] = useState(false)
-    const [isFeaturesOpen, setIsFeaturesOpen] = useState(false)
-    const [isMobileFeaturesOpen, setIsMobileFeaturesOpen] = useState(false)
 
-    const panelRef = useRef<HTMLDivElement>(null)
+    const [openDropdown, setOpenDropdown] = useState<
+        'features' | 'solutions' |'industries' | null
+    >(null)
+
+    const [isMobileFeaturesOpen, setIsMobileFeaturesOpen] =
+        useState(false)
+
+    const featuresPanelRef = useRef<HTMLDivElement>(null)
+    const solutionsPanelRef = useRef<HTMLDivElement>(null)
+    const industriesPanelRef = useRef<HTMLDivElement>(null)
+
     const featuresButtonRef = useRef<HTMLButtonElement>(null)
+    const solutionsButtonRef = useRef<HTMLButtonElement>(null)
+    const industriesButtonRef = useRef<HTMLButtonElement>(null)
 
-    const closeFeatures = () => setIsFeaturesOpen(false)
-    const closeDrawer = () => setIsOpen(false)
+    const isFeaturesOpen = openDropdown === 'features'
+    const isSolutionsOpen = openDropdown === 'solutions'
+    const isIndustriesOpen = openDropdown === 'industries'
+
+    const closeDropdown = () => {
+        setOpenDropdown(null)
+    }
+
+    const closeDrawer = () => {
+        setIsOpen(false)
+    }
 
     // Close everything whenever the route changes
     useEffect(() => {
-        setIsFeaturesOpen(false)
+        setOpenDropdown(null)
         setIsOpen(false)
     }, [pathname])
 
-    // While the mega dropdown is open: close on outside click and on Escape
+    // Close dropdown on outside click and Escape
     useEffect(() => {
-        if (!isFeaturesOpen) return
+        if (!openDropdown) return
 
         const handleMouseDown = (event: MouseEvent) => {
             const target = event.target as Node
+
+            const clickedInsideFeatures =
+                featuresPanelRef.current?.contains(target)
+
+            const clickedInsideSolutions =
+                solutionsPanelRef.current?.contains(target)
+
+            const clickedFeaturesButton =
+                featuresButtonRef.current?.contains(target)
+
+            const clickedSolutionsButton =
+                solutionsButtonRef.current?.contains(target)
+
+            const clickedInsideIndustries =
+                industriesPanelRef.current?.contains(target)
+            const clickedIndustriesButton =
+                industriesButtonRef.current?.contains(target)
             if (
-                !panelRef.current?.contains(target) &&
-                !featuresButtonRef.current?.contains(target)
+                !clickedInsideFeatures &&
+                !clickedInsideSolutions &&
+                !clickedFeaturesButton &&
+                !clickedSolutionsButton &&
+                !clickedIndustriesButton &&
+                !clickedInsideIndustries
             ) {
-                setIsFeaturesOpen(false)
+                setOpenDropdown(null)
             }
         }
+
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
-                setIsFeaturesOpen(false)
-                featuresButtonRef.current?.focus()
+                const currentDropdown = openDropdown
+
+                setOpenDropdown(null)
+
+                if (currentDropdown === 'features') {
+                    featuresButtonRef.current?.focus()
+                } else if (currentDropdown === 'solutions') {
+                    solutionsButtonRef.current?.focus()
+                }else if (currentDropdown === 'industries') {
+                    industriesButtonRef.current?.focus()
+                }
             }
         }
 
         document.addEventListener('mousedown', handleMouseDown)
         document.addEventListener('keydown', handleKeyDown)
+
         return () => {
             document.removeEventListener('mousedown', handleMouseDown)
             document.removeEventListener('keydown', handleKeyDown)
         }
-    }, [isFeaturesOpen])
+    }, [openDropdown])
 
     const isActive = (href: string) => pathname === href
 
@@ -78,7 +135,7 @@ const Navigation = () => {
                 aria-hidden="true"
                 className={classNames(
                     'fixed inset-0 z-[45] hidden bg-black/30 transition-opacity duration-200 lg:block',
-                    isFeaturesOpen
+                    openDropdown
                         ? 'opacity-100'
                         : 'pointer-events-none opacity-0',
                 )}
@@ -86,14 +143,12 @@ const Navigation = () => {
 
             <div
                 style={{ transition: 'all 0.2s ease-in-out' }}
-                className={classNames(
-                    'w-full fixed inset-x-0 top-0 bg-gray-50  z-[50]',
-                )}
+                className="fixed inset-x-0 top-0 z-[50] w-full bg-gray-50"
             >
                 <div
                     className={classNames(
-                        'flex flex-row self-start items-center justify-between py-3 px-4 w-full relative z-[60] transition duration-200',
-                        isSticky || isFeaturesOpen
+                        'relative z-[60] flex w-full flex-row items-center justify-between self-start px-4 py-3 transition duration-200',
+                        isSticky || openDropdown
                             ? 'bg-gray-50 shadow-lg'
                             : 'bg-transparent',
                     )}
@@ -102,12 +157,13 @@ const Navigation = () => {
                         type="button"
                         aria-label="Open menu"
                         onClick={() => setIsOpen(true)}
-                        className="flex lg:hidden items-center gap-4"
+                        className="flex items-center gap-4 lg:hidden"
                     >
                         <TbMenu2 size={24} />
                     </button>
 
                     {/* ------------------------ Mobile drawer ------------------------ */}
+
                     <Drawer
                         title="Navigation"
                         isOpen={isOpen}
@@ -121,32 +177,43 @@ const Navigation = () => {
                                 type="button"
                                 aria-expanded={isMobileFeaturesOpen}
                                 onClick={() =>
-                                    setIsMobileFeaturesOpen((open) => !open)
+                                    setIsMobileFeaturesOpen(
+                                        (open) => !open,
+                                    )
                                 }
                                 className="flex items-center justify-between rounded-xl px-3 py-2 font-semibold heading-text hover:bg-gray-100"
                             >
                                 Features
+
                                 <TbChevronDown
                                     size={16}
                                     className={classNames(
                                         'transition-transform duration-200',
-                                        isMobileFeaturesOpen && 'rotate-180',
+                                        isMobileFeaturesOpen &&
+                                            'rotate-180',
                                     )}
                                 />
                             </button>
+
                             {isMobileFeaturesOpen && (
                                 <div className="ml-3 flex flex-col border-l border-gray-200 pl-3">
-                                    {featureItems.map(({ title, slug, Icon }) => (
-                                        <Link
-                                            key={slug}
-                                            href={`$/${slug}`}
-                                            onClick={closeDrawer}
-                                            className="flex items-center gap-2 rounded-lg px-2 py-2 heading-text hover:bg-gray-100"
-                                        >
-                                            <Icon size={18} className="text-primary" />
-                                            {title}
-                                        </Link>
-                                    ))}
+                                    {featureItems.map(
+                                        ({ title, slug, Icon }) => (
+                                            <Link
+                                                key={slug}
+                                                href={`/${slug}`}
+                                                onClick={closeDrawer}
+                                                className="flex items-center gap-2 rounded-lg px-2 py-2 heading-text hover:bg-gray-100"
+                                            >
+                                                <Icon
+                                                    size={18}
+                                                    className="text-primary"
+                                                />
+                                                {title}
+                                            </Link>
+                                        ),
+                                    )}
+
                                     <Link
                                         href={featuresPageHref}
                                         onClick={closeDrawer}
@@ -156,6 +223,7 @@ const Navigation = () => {
                                     </Link>
                                 </div>
                             )}
+
                             {navLinks.map(({ title, href }) => (
                                 <Link
                                     key={href}
@@ -169,6 +237,8 @@ const Navigation = () => {
                         </div>
                     </Drawer>
 
+                    {/* ----------------------------- Logo ----------------------------- */}
+
                     <Link href="/invenka">
                         <Image
                             src="/img/logo/invenka logo-png.png"
@@ -179,15 +249,24 @@ const Navigation = () => {
                     </Link>
 
                     {/* --------------------- Desktop nav items ---------------------- */}
-                    <div className="lg:flex flex-row flex-1 absolute inset-0 hidden items-center justify-center text-sm font-medium pointer-events-none ">
-                        <div className="pointer-events-auto flex items-center">
+
+                    <div className="absolute inset-0 hidden flex-1 flex-row items-center justify-center text-sm font-medium pointer-events-none lg:flex">
+                        <div className="flex items-center pointer-events-auto">
+                            {/* -------------------------- Features -------------------------- */}
+
                             <button
                                 ref={featuresButtonRef}
                                 type="button"
                                 aria-haspopup="true"
                                 aria-expanded={isFeaturesOpen}
                                 aria-controls="features-mega-menu"
-                                onClick={() => setIsFeaturesOpen((open) => !open)}
+                                onClick={() =>
+                                    setOpenDropdown(
+                                        isFeaturesOpen
+                                            ? null
+                                            : 'features',
+                                    )
+                                }
                                 className={classNames(
                                     navItemClass,
                                     isFeaturesOpen && 'bg-gray-100',
@@ -195,15 +274,85 @@ const Navigation = () => {
                                 )}
                             >
                                 Features
+
                                 <TbChevronDown
                                     size={16}
                                     aria-hidden="true"
                                     className={classNames(
                                         'transition-transform duration-200',
-                                        isFeaturesOpen && 'rotate-180',
+                                        isFeaturesOpen &&
+                                            'rotate-180',
                                     )}
                                 />
                             </button>
+
+                            {/* -------------------------- Solutions -------------------------- */}
+
+                            <button
+                                ref={solutionsButtonRef}
+                                type="button"
+                                aria-haspopup="true"
+                                aria-expanded={isSolutionsOpen}
+                                aria-controls="solutions-mega-menu"
+                                onClick={() =>
+                                    setOpenDropdown(
+                                        isSolutionsOpen
+                                            ? null
+                                            : 'solutions',
+                                    )
+                                }
+                                className={classNames(
+                                    navItemClass,
+                                    isSolutionsOpen && 'bg-gray-100',
+                                    focusRingClass,
+                                )}
+                            >
+                                Solutions
+
+                                <TbChevronDown
+                                    size={16}
+                                    aria-hidden="true"
+                                    className={classNames(
+                                        'transition-transform duration-200',
+                                        isSolutionsOpen &&
+                                            'rotate-180',
+                                    )}
+                                />
+                            </button>
+                            {/* -------------------------- Industries -------------------------- */}
+                            <button
+                                ref={industriesButtonRef}
+                                type="button"
+                                aria-haspopup="true"
+                                aria-expanded={isIndustriesOpen}
+                                aria-controls="industries-mega-menu"
+                                onClick={() =>
+                                    setOpenDropdown(
+                                        isIndustriesOpen
+                                            ? null
+                                            : 'industries',
+                                    )
+                                }
+                                className={classNames(
+                                    navItemClass,
+                                    isIndustriesOpen && 'bg-gray-100',
+                                    focusRingClass,
+                                )}
+                            >
+                                Industries
+
+                                <TbChevronDown
+                                    size={16}
+                                    aria-hidden="true"
+                                    className={classNames(
+                                        'transition-transform duration-200',
+                                        isIndustriesOpen &&
+                                            'rotate-180',
+                                    )}
+                                />
+                            </button>
+
+                            {/* ------------------------- Other links ------------------------- */}
 
                             {navLinks.map(({ title, href }) => (
                                 <Link
@@ -211,7 +360,8 @@ const Navigation = () => {
                                     href={href}
                                     className={classNames(
                                         navItemClass,
-                                        isActive(href) && 'text-primary',
+                                        isActive(href) &&
+                                            'text-primary',
                                         focusRingClass,
                                     )}
                                 >
@@ -221,11 +371,12 @@ const Navigation = () => {
                         </div>
                     </div>
 
-                    {/* `relative z-10` keeps these buttons above the nav layer */}
+                    {/* --------------------- Right side buttons --------------------- */}
+
                     <div className="relative z-10 flex items-center gap-2">
                         <Link
                             href="/sign-in"
-                            className="hidden sm:block px-3 py-2 font-semibold heading-text"
+                            className="hidden px-3 py-2 font-semibold heading-text sm:block"
                         >
                             Sign in
                         </Link>
@@ -239,103 +390,56 @@ const Navigation = () => {
                     </div>
                 </div>
 
-                {/*
-                    Features mega dropdown (desktop).
-                    It is a sibling of the nav row (not inside the overflow/perspective
-                    layer) so `fixed` positions it against the viewport. It is almost
-                    full width and up to ~full height, but slightly smaller than the screen.
-                */}
-                <div
-                    ref={panelRef}
+                {/* ======================== FEATURES DROPDOWN ======================== */}
+
+                <MegaDropdown
                     id="features-mega-menu"
-                    role="region"
-                    aria-label="Features"
-                    className={classNames(
-                         'fixed left-1/2 z-[55] hidden w-[calc(100%-2rem)] max-w-[1280px] -translate-x-1/2 overflow-y-auto rounded-b-2xl border border-gray-200 bg-gray-50 shadow-2xl transition-all duration-200 lg:block',
-                        'min-h-[320px] max-h-[45vh]',   
-                        // isSticky ? 'top-[5.5rem]' : 'top-[4.5rem]',
-                        isFeaturesOpen
-                            ? 'visible translate-y-0 opacity-100'
-                            : 'invisible -translate-y-2 opacity-0',
-                    )}
-                >
-                    <div className="w-full">
-                        <div className="grid grid-cols-1 lg:grid-cols-3">
+                    ariaLabel="Features"
+                    isOpen={isFeaturesOpen}
+                    items={featureItems}
+                    image="/img/invenka/nav/features-preview.png"
+                    imageAlt="Invenka features"
+                    heading="Manage your inventory with ease"
+                    description="Track stock, manage items, get alerts and keep your entire inventory organized from one place."
+                    seeAllText="See All Features"
+                    seeAllHref={featuresPageHref}
+                    onClose={closeDropdown}
+                    panelRef={featuresPanelRef}
+                />
 
-                            {/* LEFT — Features */}
-                            <div className="lg:col-span-2 p-6 lg:p-8">
-                                <ul className="grid grid-cols-2 xl:grid-cols-3 gap-2">
-                                    {featureItems.map(
-                                        ({ title, slug, description, Icon }) => (
-                                            <li key={slug}>
-                                                <Link
-                                                    href={`/${slug}`}
-                                                    onClick={closeFeatures}
-                                                    className={classNames(
-                                                        'flex h-full flex-col gap-3 rounded-2xl p-4 transition duration-200 hover:bg-gray-100',
-                                                        focusRingClass,
-                                                    )}
-                                                >
-                                                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-subtle text-primary">
-                                                        <Icon
-                                                            size={22}
-                                                            aria-hidden="true"
-                                                        />
-                                                    </span>
+                {/* ======================== SOLUTIONS DROPDOWN ======================== */}
 
-                                                    <span>
-                                                        <span className="block text-base font-semibold heading-text">
-                                                            {title}
-                                                        </span>
+                <MegaDropdown
+                    id="solutions-mega-menu"
+                    ariaLabel="Solutions"
+                    isOpen={isSolutionsOpen}
+                    items={solutionItems}
+                    image="/img/invenka/nav/solutions-preview.svg"
+                    imageAlt="Invenka solutions"
+                    heading="Solutions built for your business"
+                    description="Choose the solution that fits your workflow and manage your inventory more efficiently from one place."
+                    seeAllText="See All Solutions"
+                    seeAllHref={solutionsPageHref}
+                    onClose={closeDropdown}
+                    panelRef={solutionsPanelRef}
+                />
 
-                                                        <span className="mt-1 block text-sm text-muted line-clamp-2">
-                                                            {description}
-                                                        </span>
-                                                    </span>
-                                                </Link>
-                                            </li>
-                                        ),
-                                    )}
-                                </ul>
-                            </div>
+                {/* ======================== INDUSTRIES DROPDOWN ======================== */}
 
-                            {/* RIGHT — Image + Text */}
-                            <div className="border-l border-gray-200 p-6 lg:p-8 flex flex-col justify-center">
-
-                                <div className="overflow-hidden rounded-2xl mb-5">
-                                    <img
-                                        src="/img/invenka/nav/features-preview.png"
-                                        alt="Invenka features"
-                                        className="w-full h-40 object-cover"
-                                    />
-                                </div>
-
-                                <h3 className="text-xl font-semibold heading-text">
-                                    Manage your inventory with ease
-                                </h3>
-
-                                <p className="mt-2 text-sm text-muted">
-                                    Track stock, manage items, get alerts and keep your
-                                    entire inventory organized from one place.
-                                </p>
-
-                                <Link
-                                    href={featuresPageHref}
-                                    onClick={closeFeatures}
-                                    className={classNames(
-                                        'mt-5 flex items-center gap-1 font-semibold text-primary',
-                                        focusRingClass,
-                                    )}
-                                >
-                                    See All Features
-                                    <TbArrowRight size={16} aria-hidden="true" />
-                                </Link>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                <MegaDropdown
+                    id="industries-mega-menu"
+                    ariaLabel="Industries"
+                    isOpen={isIndustriesOpen}
+                    items={industriesItems}
+                    image="/img/invenka/nav/solutions-preview.svg"
+                    imageAlt="Invenka solutions"
+                    heading="Powering Inventory Across Industries"
+                    description="Discover how Invenka helps businesses across industries simplify inventory management, improve visibility, and stay in control of their stock."
+                    seeAllText="See All Industries"
+                    seeAllHref={industriesPageHref}
+                    onClose={closeDropdown}
+                    panelRef={industriesPanelRef}
+                    />
             </div>
         </>
     )
