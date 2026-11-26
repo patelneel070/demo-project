@@ -81,19 +81,23 @@ const SolutionsLanding = () => {
                             </div>
                         </div>
 
-                        {/* HERO IMAGE - RIGHT */}
-                        <div className="flex w-full items-center justify-center lg:justify-end">
-                            <div className="relative w-full max-w-[620px] overflow-hidden rounded-3xl">
+                        <div className="relative flex w-full items-center justify-center lg:justify-end">
+                            <motion.div
+                                initial={{ opacity: 0, x: 40 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.15 }}
+                                className="relative w-full max-w-[760px] lg:-mr-8 xl:-mr-16"
+                            >
                                 <Image
                                     src={solutionsHero.image}
                                     alt={solutionsHero.imageAlt}
-                                    width={1200}
-                                    height={850}
+                                    width={1400}
+                                    height={900}
                                     priority
                                     className="h-auto w-full object-contain"
-                                    sizes="(max-width: 1023px) 100vw, 50vw"
+                                    sizes="(max-width: 1023px) 100vw, 55vw"
                                 />
-                            </div>
+                            </motion.div>
                         </div>
                     </motion.div>
                 </Container>
@@ -143,16 +147,6 @@ const SolutionsLanding = () => {
                                                     }`}
                                                     aria-hidden="true"
                                                 />
-
-                                                {/* Number */}
-                                                <div className="flex w-full items-center justify-between">
-                                                    <span className="font-mono text-xs tabular-nums text-muted">
-                                                        {String(index + 1).padStart(
-                                                            2,
-                                                            '0',
-                                                        )}
-                                                    </span>
-                                                </div>
 
                                                 {/* Large visual / icon frame */}
                                                 <div className="relative my-1 flex h-24 w-24 shrink-0 items-center justify-center">

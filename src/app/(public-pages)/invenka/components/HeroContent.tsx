@@ -3,13 +3,41 @@ import { motion } from 'framer-motion'
 import TextGenerateEffect from './TextGenerateEffect'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { hero } from '../data/landingData'
 
-const HeroContent = () => {
+type HeroContentProps = {
+    title: string
+    highlight: string[]
+    subtitle: string
+    primaryCta: string
+    secondaryCta: string
+    imageLight: string
+    imageAlt: string
+    benefits: {
+        title: string
+        text: string
+    }[]
+    onSecondaryClick?: () => void
+}
+
+const HeroContent = ({
+    title,
+    highlight,
+    subtitle,
+    primaryCta,
+    secondaryCta,
+    imageLight,
+    imageAlt,
+    benefits,
+    onSecondaryClick,
+}: HeroContentProps) => {
     const router = useRouter()
 
     const handlePlans = () => {
-        router.push('/plans')
+        if (onSecondaryClick) {
+            onSecondaryClick()
+        } else {
+            router.push('/plans')
+        }
     }
 
     return (
@@ -23,9 +51,9 @@ const HeroContent = () => {
 
                         <TextGenerateEffect
                             wordClassName="text-5xl font-bold leading-[0.98] tracking-[-0.03em] text-gray-900 sm:text-6xl lg:text-6xl xl:text-7xl"
-                            words={hero.title}
+                            words={title}
                             wordsCallbackClass={({ word }) =>
-                                hero.highlight.includes(word)
+                                highlight.includes(word)
                                     ? 'text-primary'
                                     : ''
                             }
@@ -46,7 +74,7 @@ const HeroContent = () => {
                             }}
                             className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9"
                         >
-                            {hero.subtitle}
+                            {subtitle}
                         </motion.p>
 
                         {/* ===================== CTA BUTTONS ===================== */}
@@ -70,11 +98,11 @@ const HeroContent = () => {
                                 variant="solid"
                                 onClick={() => router.push('/#')}
                             >
-                                {hero.primaryCta}
+                                {primaryCta}
                             </Button>
 
                             <Button onClick={handlePlans}>
-                                {hero.secondaryCta}
+                                {secondaryCta}
                             </Button>
                         </motion.div>
 
@@ -95,7 +123,7 @@ const HeroContent = () => {
                             }}
                             className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-gray-500"
                         >
-                            {hero.benefits.map((benefit) => (
+                            {benefits.map((benefit) => (
                                 <span
                                     key={benefit.title}
                                     className="flex items-center gap-2"
@@ -126,10 +154,10 @@ const HeroContent = () => {
                     >
                         <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
                             <Image
-                                src={hero.imageLight}
+                                src={imageLight}
                                 width={1800}
                                 height={1080}
-                                alt={hero.imageAlt}
+                                alt={imageAlt}
                                 className="h-auto w-full object-cover"
                                 priority
                             />

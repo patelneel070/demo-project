@@ -13,9 +13,7 @@ import {
     TbBuildingStore,
     TbShoppingBag,
     TbTruckDelivery,
-    TbShoppingCart,
-    TbToolsKitchen2,
-    TbBuilding,     
+    TbShoppingCart, 
 } from 'react-icons/tb'
 import {LuBoxes} from 'react-icons/lu'
 import {MdFactory} from 'react-icons/md'
@@ -180,21 +178,7 @@ export const industriesItems = [
         description:
             'Keep online products, orders and inventory synchronized as your business grows.',
         Icon: TbShoppingCart,
-    },
-    {
-        title: 'Restaurants & Food',
-        slug: 'industries/restaurants-food',
-        description:
-            'Track ingredients, supplies and stock levels while reducing waste and shortages.',
-        Icon: TbToolsKitchen2,
-    },
-    {
-        title: 'Construction',
-        slug: 'industries/construction',
-        description:
-            'Keep track of materials, tools and equipment across projects and locations.',
-        Icon: TbBuilding,
-    },
+    }
 ]
 export const featuresMenuPromo = {
     title: 'Everything in one place',
@@ -204,6 +188,8 @@ export const featuresMenuPromo = {
 }
 
 /* ----------------------------------- Hero ---------------------------------- */
+/* ----------------------------------- Hero ---------------------------------- */
+
 export const hero = {
     // Words listed in `highlight` are shown in the primary colour
     title: 'Take command of every item you own.',
@@ -218,12 +204,15 @@ export const hero = {
     benefits: [
         {
             title: 'Easy to use',
+            text: 'Simple inventory management that your team can start using right away.',
         },
         {
             title: 'Real-time inventory',
+            text: 'Keep stock information updated and visible across your team.',
         },
         {
             title: 'Built for modern teams',
+            text: 'Manage inventory across devices and locations as your business grows.',
         },
     ],
 }

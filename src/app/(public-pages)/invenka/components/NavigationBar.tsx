@@ -24,7 +24,7 @@ const focusRingClass =
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary'
 
 const navItemClass =
-    'flex items-center gap-1 px-5 py-2 rounded-xl heading-text transition duration-200 hover:bg-gray-100'
+    'flex items-center gap-1 px-5 py-2 rounded-xl heading-text transition duration-200'
 
 const Navigation = () => {
     const { isSticky } = useScrollTop()
@@ -146,9 +146,10 @@ const Navigation = () => {
                 className="fixed inset-x-0 top-0 z-[50] w-full bg-gray-50"
             >
             <div
+                    onMouseLeave={() => setOpenDropdown(null)}
                     className={classNames(
                         'relative z-[60] w-full transition duration-200',
-                        isSticky || openDropdown
+                        isSticky
                             ? 'bg-gray-50 shadow-lg'
                             : 'bg-transparent',
                     )}>
@@ -261,16 +262,10 @@ const Navigation = () => {
                                 aria-haspopup="true"
                                 aria-expanded={isFeaturesOpen}
                                 aria-controls="features-mega-menu"
-                                onClick={() =>
-                                    setOpenDropdown(
-                                        isFeaturesOpen
-                                            ? null
-                                            : 'features',
-                                    )
-                                }
+                                onMouseEnter={() => setOpenDropdown('features')}
+                                onClick={() => setOpenDropdown('features')}
                                 className={classNames(
                                     navItemClass,
-                                    isFeaturesOpen && 'bg-gray-100',
                                     focusRingClass,
                                 )}
                             >
@@ -295,16 +290,10 @@ const Navigation = () => {
                                 aria-haspopup="true"
                                 aria-expanded={isSolutionsOpen}
                                 aria-controls="solutions-mega-menu"
-                                onClick={() =>
-                                    setOpenDropdown(
-                                        isSolutionsOpen
-                                            ? null
-                                            : 'solutions',
-                                    )
-                                }
+                                onMouseEnter={() => setOpenDropdown('solutions')}
+                                onClick={() => setOpenDropdown('solutions')}
                                 className={classNames(
                                     navItemClass,
-                                    isSolutionsOpen && 'bg-gray-100',
                                     focusRingClass,
                                 )}
                             >
@@ -327,16 +316,10 @@ const Navigation = () => {
                                 aria-haspopup="true"
                                 aria-expanded={isIndustriesOpen}
                                 aria-controls="industries-mega-menu"
-                                onClick={() =>
-                                    setOpenDropdown(
-                                        isIndustriesOpen
-                                            ? null
-                                            : 'industries',
-                                    )
-                                }
+                                onMouseEnter={() => setOpenDropdown('industries')}
+                                onClick={() => setOpenDropdown('industries')}
                                 className={classNames(
                                     navItemClass,
-                                    isIndustriesOpen && 'bg-gray-100',
                                     focusRingClass,
                                 )}
                             >
