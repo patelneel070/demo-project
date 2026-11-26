@@ -1,5 +1,5 @@
 'use client'
-
+import Container from './LandingContainer'
 import { useEffect, useRef, useState } from 'react'
 import Drawer from '@/components/ui/Drawer'
 import classNames from '@/utils/classNames'
@@ -145,14 +145,15 @@ const Navigation = () => {
                 style={{ transition: 'all 0.2s ease-in-out' }}
                 className="fixed inset-x-0 top-0 z-[50] w-full bg-gray-50"
             >
-                <div
+            <div
                     className={classNames(
-                        'relative z-[60] flex w-full flex-row items-center justify-between self-start px-4 py-3 transition duration-200',
+                        'relative z-[60] w-full transition duration-200',
                         isSticky || openDropdown
                             ? 'bg-gray-50 shadow-lg'
                             : 'bg-transparent',
-                    )}
-                >
+                    )}>
+        <Container>
+        <div className="flex w-full flex-row items-center justify-between self-start py-3">
                     <button
                         type="button"
                         aria-label="Open menu"
@@ -375,7 +376,7 @@ const Navigation = () => {
 
                     <div className="relative z-10 flex items-center gap-2">
                         <Link
-                            href="/sign-in"
+                            href="#"
                             className="hidden px-3 py-2 font-semibold heading-text sm:block"
                         >
                             Sign in
@@ -383,7 +384,7 @@ const Navigation = () => {
 
                         <Button
                             variant="solid"
-                            onClick={() => router.push('/sign-up')}
+                            onClick={() => router.push('/#')}
                         >
                             Start Free Trial
                         </Button>
@@ -440,6 +441,8 @@ const Navigation = () => {
                     onClose={closeDropdown}
                     panelRef={industriesPanelRef}
                     />
+                    </Container>
+                </div>
             </div>
         </>
     )

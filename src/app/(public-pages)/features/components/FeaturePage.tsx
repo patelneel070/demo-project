@@ -63,7 +63,7 @@ const FeaturesPage = () => {
                         transition={{ duration: 0.3, delay: 0.6 }}
                         className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-10 relative z-10"
                     >
-                        <Button variant="solid" onClick={() => router.push('/sign-up')}>
+                        <Button variant="solid" onClick={() => router.push('/#')}>
                             {hero.primaryCta}
                         </Button>
                         <Button onClick={handlePlans}>{hero.secondaryCta}</Button>

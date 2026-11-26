@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import TextGenerateEffect from './TextGenerateEffect'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { hero} from '../data/landingData'
+import { hero } from '../data/landingData'
 
 const HeroContent = () => {
     const router = useRouter()
@@ -13,44 +13,153 @@ const HeroContent = () => {
     }
 
     return (
-        <div className="w-full bg-gray-100 mx-auto px-4 pb-10 flex flex-col items-center justify-between">
-            <div className="w-full max-w-7xl mx-auto flex flex-col pt-28 md:pt-36 relative overflow-hidden">
-                <div >
-                    <TextGenerateEffect
-                        wordClassName="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-center mt-6 relative z-10"
-                        words={hero.title}
-                        wordsCallbackClass={({ word }) =>
-                            hero.highlight.includes(word) ? 'text-primary' : ''
-                        }
-                    />
-                    <motion.p
-                        initial={{ opacity: 0, translateY: 40 }}
-                        animate={{ opacity: 1, translateY: 0 }}
-                        transition={{ duration: 0.3, delay: 0.5 }}
-                        className="text-center mt-6 text-base md:text-xl text-muted max-w-3xl mx-auto relative z-10 font-normal"
-                    >
-                        {hero.subtitle}
-                    </motion.p>
+        <section className="w-full bg-gray-100">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid min-h-[calc(100vh-80px)] items-center gap-8 py-14 sm:py-16 lg:grid-cols-2 lg:gap-10 lg:py-16 xl:gap-14">
+
+                    {/* ===================== LEFT CONTENT ===================== */}
+
+                    <div className="flex flex-col items-start text-left">
+
+                        <TextGenerateEffect
+                            wordClassName="text-5xl font-bold leading-[0.98] tracking-[-0.03em] text-gray-900 sm:text-6xl lg:text-6xl xl:text-7xl"
+                            words={hero.title}
+                            wordsCallbackClass={({ word }) =>
+                                hero.highlight.includes(word)
+                                    ? 'text-primary'
+                                    : ''
+                            }
+                        />
+
+                        <motion.p
+                            initial={{
+                                opacity: 0,
+                                translateY: 30,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                translateY: 0,
+                            }}
+                            transition={{
+                                duration: 0.4,
+                                delay: 0.5,
+                            }}
+                            className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9"
+                        >
+                            {hero.subtitle}
+                        </motion.p>
+
+                        {/* ===================== CTA BUTTONS ===================== */}
+
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                translateY: 30,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                translateY: 0,
+                            }}
+                            transition={{
+                                duration: 0.4,
+                                delay: 0.6,
+                            }}
+                            className="mt-9 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center"
+                        >
+                            <Button
+                                variant="solid"
+                                onClick={() => router.push('/#')}
+                            >
+                                {hero.primaryCta}
+                            </Button>
+
+                            <Button onClick={handlePlans}>
+                                {hero.secondaryCta}
+                            </Button>
+                        </motion.div>
+
+                        {/* ===================== BENEFITS ===================== */}
+
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                translateY: 20,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                translateY: 0,
+                            }}
+                            transition={{
+                                duration: 0.4,
+                                delay: 0.8,
+                            }}
+                            className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-gray-500"
+                        >
+                            {hero.benefits.map((benefit) => (
+                                <span
+                                    key={benefit.title}
+                                    className="flex items-center gap-2"
+                                >
+                                    <span className="h-2 w-2 rounded-full bg-primary" />
+                                    {benefit.title}
+                                </span>
+                            ))}
+                        </motion.div>
+                    </div>
+
+                    {/* ===================== RIGHT VISUAL ===================== */}
+
                     <motion.div
-                        initial={{ opacity: 0, translateY: 40 }}
-                        animate={{ opacity: 1, translateY: 0 }}
-                        transition={{ duration: 0.3, delay: 0.6 }}
-                        className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-10 relative z-10"
+                        initial={{
+                            opacity: 0,
+                            x: 50,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                        transition={{
+                            duration: 0.6,
+                            delay: 0.3,
+                        }}
+                        className="relative w-full"
                     >
-                        <Button variant="solid" onClick={() => router.push('/sign-up')}>
-                            {hero.primaryCta}
-                        </Button>
-                        <Button onClick={handlePlans}>{hero.secondaryCta}</Button>
+                        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg">
+                            <Image
+                                src={hero.imageLight}
+                                width={1800}
+                                height={1080}
+                                alt={hero.imageAlt}
+                                className="h-auto w-full object-cover"
+                                priority
+                            />
+                        </div>
                     </motion.div>
                 </div>
-                <div className="bg-gray-300 rounded-2xl mt-16 relative">
-                    <div className="absolute inset-x-0 bottom-0 h-40 w-full" />
-                    <div className="bg-gray-50">
-                        <Image src={hero.imageLight} width={1800} height={1080} alt={hero.imageAlt} />
-                    </div>
-                </div>
+
+                {/* ===================== BOTTOM LINE ===================== */}
+
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        translateY: 20,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        translateY: 0,
+                    }}
+                    transition={{
+                        duration: 0.4,
+                        delay: 1,
+                    }}
+                    className="border-t border-gray-200 py-8 sm:py-10"
+                >
+                    <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 sm:text-sm">
+                        Simplify inventory. Improve visibility. Stay in control.
+                    </p>
+                </motion.div>
             </div>
-        </div>
+        </section>
     )
 }
 

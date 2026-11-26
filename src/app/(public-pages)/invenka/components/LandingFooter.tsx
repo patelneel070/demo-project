@@ -42,7 +42,7 @@ const LandingFooter = () => {
                                 <Button
                                     variant="solid"
                                     onClick={() =>
-                                        router.push('/sign-up')
+                                        router.push('/#')
                                     }
                                 >
                                     Start Free Trial
@@ -50,7 +50,7 @@ const LandingFooter = () => {
 
                                 <Button
                                     onClick={() =>
-                                        router.push('/sign-in')
+                                        router.push('/#')
                                     }
                                 >
                                     Sign in

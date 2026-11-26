@@ -72,7 +72,7 @@ const OtherFeatures = () => {
                                         <Button
                                             variant="solid"
                                             onClick={() =>
-                                                router.push('/sign-up')
+                                                router.push('/#')
                                             }
                                         >
                                             Start Free Trial

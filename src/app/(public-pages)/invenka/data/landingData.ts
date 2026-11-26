@@ -204,7 +204,6 @@ export const featuresMenuPromo = {
 }
 
 /* ----------------------------------- Hero ---------------------------------- */
-
 export const hero = {
     // Words listed in `highlight` are shown in the primary colour
     title: 'Take command of every item you own.',
@@ -212,11 +211,22 @@ export const hero = {
     subtitle:
         'A simple way for growing teams to keep track of supplies, parts, tools and equipment, all in one place.',
     primaryCta: 'Start Free Trial',
-    secondaryCta: 'See All plans',
+    secondaryCta: 'See All Plans',
     imageLight: '/img/invenka/hero/hero-light.png',
-    imageAlt: 'Invenka inventory list',
-}
+    imageAlt: 'Invenka inventory management dashboard',
 
+    benefits: [
+        {
+            title: 'Easy to use',
+        },
+        {
+            title: 'Real-time inventory',
+        },
+        {
+            title: 'Built for modern teams',
+        },
+    ],
+}
 /* ------------------------------ Feature rows ------------------------------- */
 
 export const featureRows = [
