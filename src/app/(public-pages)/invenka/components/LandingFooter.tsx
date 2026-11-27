@@ -60,30 +60,10 @@ const LandingFooter = () => {
             {/* ===================== FOOTER ===================== */}
 
             <footer className="w-full bg-gray-100">
-                {/* Main footer links */}
+                {/* ===================== STAGE 1 ===================== */}
+
                 <Container>
                     <div className="grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 sm:gap-x-8 md:grid-cols-4 md:py-16 lg:grid-cols-5 lg:gap-12">
-                        
-                        {/* Brand */}
-                        <div className="sm:col-span-2 md:col-span-1 lg:col-span-1">
-                            <Link
-                                href="/"
-                                className="inline-flex items-center"
-                            >
-                                <img
-                                    src="/img/logo/invenka logo-png.png"
-                                    width={140}
-                                    height={45}
-                                    alt="Invenka"
-                                    className="h-auto w-[130px] sm:w-[140px]"
-                                />
-                            </Link>
-
-                            <p className="mt-5 max-w-xs text-sm leading-6 text-muted">
-                                {footer.tagline}
-                            </p>
-                        </div>
-
                         {/* Footer columns */}
                         {footer.columns.map((column) => (
                             <div key={column.title}>
@@ -153,15 +133,34 @@ const LandingFooter = () => {
                     </div>
                 </Container>
 
-                {/* Bottom footer */}
-                <div className="border-t border-gray-200 bg-gray-50">
-                    <Container>
-                        <div className="flex flex-col gap-4 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-                            <p>
-                                © {year} {footer.company}. All Rights Reserved.
-                            </p>
+                {/* ===================== STAGE 2 ===================== */}
 
-                            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                <div className="border-t border-gray-300 bg-gray-200">
+                    <Container>
+                        <div className="flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between">
+                            {/* Brand / company info */}
+                            <div className="flex flex-col gap-2">
+                                <Link
+                                    href="/"
+                                    className="inline-flex items-center"
+                                >
+                                    <img
+                                        src="/img/logo/invenka logo-png.png"
+                                        width={140}
+                                        height={45}
+                                        alt="Invenka"
+                                        className="h-auto w-[110px] sm:w-[120px]"
+                                    />
+                                </Link>
+
+                                <p className="text-sm text-muted">
+                                    Straightforward inventory software for
+                                    teams of every size.
+                                </p>
+                            </div>
+
+                            {/* Company / policy links */}
+                            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted">
                                 <Link
                                     href="#"
                                     className="transition-colors hover:text-primary"
@@ -185,6 +184,54 @@ const LandingFooter = () => {
                                     className="transition-colors hover:text-primary"
                                 >
                                     Cookie Policy
+                                </Link>
+                            </div>
+                        </div>
+                    </Container>
+                </div>
+
+                {/* ===================== STAGE 3 ===================== */}
+
+                <div className="border-t border-gray-200 bg-gray-50">
+                    <Container>
+                        <div className="flex flex-col gap-4 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+                            <p>
+                                © {year} {footer.company}. All Rights Reserved.
+                            </p>
+
+                            <div className="flex flex-wrap items-center gap-5">
+                                <span>Follow Us</span>
+
+                                <Link
+                                    href="#"
+                                    aria-label="Facebook"
+                                    className="transition-colors hover:text-primary"
+                                >
+                                    Facebook
+                                </Link>
+
+                                <Link
+                                    href="#"
+                                    aria-label="X"
+                                    className="transition-colors hover:text-primary"
+                                >
+                                    X
+                                </Link>
+
+                                <Link
+                                    href="#"
+                                    aria-label="Instagram"
+                                    className="transition-colors hover:text-primary"
+                                >
+                                    Instagram
+                                </Link>
+
+                                <Link
+                                    href="#"
+                                    aria-label="YouTube"
+                                    className="transition-colors hover:text-primary"
+                                >
+                                    YouTube
                                 </Link>
                             </div>
                         </div>

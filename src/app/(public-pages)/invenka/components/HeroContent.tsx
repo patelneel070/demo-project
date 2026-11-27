@@ -1,3 +1,5 @@
+'use client'
+
 import Button from '@/components/ui/Button'
 import { motion } from 'framer-motion'
 import TextGenerateEffect from './TextGenerateEffect'
@@ -41,7 +43,9 @@ const HeroContent = ({
     }
 
     return (
-        <section className="w-full bg-gray-100">
+        <section
+            className="w-full bg-gray-100 font-[var(--font-poppins)]"
+        >
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid min-h-[calc(100vh-80px)] items-center gap-8 py-14 sm:py-16 lg:grid-cols-2 lg:gap-10 lg:py-16 xl:gap-14">
 
@@ -50,7 +54,7 @@ const HeroContent = ({
                     <div className="flex flex-col items-start text-left">
 
                         <TextGenerateEffect
-                            wordClassName="text-5xl font-bold leading-[0.98] tracking-[-0.03em] text-gray-900 sm:text-6xl lg:text-6xl xl:text-7xl"
+                            wordClassName="font-heading text-5xl font-bold leading-tight tracking-tight text-gray-900 sm:text-6xl lg:text-6xl xl:text-7xl"
                             words={title}
                             wordsCallbackClass={({ word }) =>
                                 highlight.includes(word)

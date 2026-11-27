@@ -59,7 +59,7 @@ const MegaDropdown = ({
 
                 {/* ===================== LEFT ===================== */}
 
-                <div className="min-w-0 overflow-y-auto scrollbar-hide p-5 lg:col-span-2 lg:max-h-[calc(100vh-4.5rem)] lg:p-7">
+                <div className="min-w-0  p-5 lg:col-span-2 lg:max-h-[calc(100vh-4.5rem)] lg:p-7">
                     <ul className="grid grid-cols-2 gap-1.5 xl:grid-cols-3">
                         {items.map(
                             ({

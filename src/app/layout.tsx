@@ -9,8 +9,7 @@ import { getTheme } from '@/server/actions/theme'
 import { getLocale, getMessages } from 'next-intl/server'
 import { Inter, Poppins, JetBrains_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
-import '@/assets/styles/app.css'
-
+import '../assets/styles/app.css'
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
@@ -19,7 +18,7 @@ const inter = Inter({
 
 const poppins = Poppins({
     subsets: ['latin'],
-    weight: ['500', '600', '700'],
+    weight: ['400','500', '600', '700'],
     variable: '--font-poppins',
     display: 'swap',
 })

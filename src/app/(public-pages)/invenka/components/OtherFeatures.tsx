@@ -32,9 +32,9 @@ const OtherFeatures = () => {
                             : 'bg-gray-100'
                     }
                 >
-                    <div className="w-full px-6 lg:px-10 2xl:px-16">
+                    <Container>
                         <motion.div
-                            className={`${cardClass} w-full max-w-[1600px] mx-auto`}
+                            className={`${cardClass} w-full`}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
@@ -45,6 +45,7 @@ const OtherFeatures = () => {
                             viewport={{ once: true }}
                         >
                             <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                                {/* Text */}
                                 <div
                                     className={
                                         index % 2 === 1
@@ -80,6 +81,7 @@ const OtherFeatures = () => {
                                     </div>
                                 </div>
 
+                                {/* Image */}
                                 <div
                                     className={
                                         index % 2 === 1
@@ -87,24 +89,17 @@ const OtherFeatures = () => {
                                             : ''
                                     }
                                 >
-                                    <div
-                                        className={
-                                            index % 2 === 0
-                                                ? 'h-[400px] w-full lg:h-[500px] overflow-hidden rounded-[80px]'
-                                                : 'pl-0 h-[400px] w-full lg:h-[500px] overflow-hidden rounded-[80px]'
-                                        }
-                                    >
-                                        <img
+                                    <div className="h-[300px] w-full overflow-hidden rounded-[20px] sm:h-[400px] sm:rounded-[24px] lg:h-[500px] lg:rounded-[28px]">                                        <img
                                             src={row.image}
                                             alt={row.title}
-                                            className="w-full h-full object-cover object-center"
+                                            className="h-full w-full object-cover object-center"
                                         />
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
+                        </Container>
                     </div>
-                </div>
             ))}
 
             <Container>
@@ -143,12 +138,12 @@ const OtherFeatures = () => {
 
                         <div className="relative flex justify-center">
                             <motion.div
-                                className="p-2 border border-gray-600 bg-gray-200 rounded-[32px] max-w-[300px] lg:absolute lg:top-[-50px]"
+                                className="p-2 border border-gray-600 bg-gray-200 rounded-[40px] max-w-[300px] lg:absolute lg:top-[-50px]"
                                 whileHover={{ y: -20 }}
                             >
                                 <div className="absolute inset-x-0 bottom-0 h-20 w-full bg-gradient-to-b from-transparent via-gray-100 to-gray-100 scale-[1.1] pointer-events-none" />
 
-                                <div className="bg-gray-50 border border-gray-200 rounded-[24px] overflow-hidden max-h-[450px]">
+                                <div className="bg-gray-50 border border-gray-200 rounded-[40px] overflow-hidden max-h-[450px]">
                                     <img
                                         src={mobileSection.image}
                                         alt={mobileSection.imageAlt}

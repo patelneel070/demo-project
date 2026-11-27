@@ -5,18 +5,20 @@ import {
     TbChartLine,
     TbDeviceMobile,
     TbPackage,
-    TbClipboardList,
     TbBuildingWarehouse,
     TbMapPin,
     TbChartBar,
-    TbAutomation,
-    TbBuildingStore,
-    TbShoppingBag,
-    TbTruckDelivery,
-    TbShoppingCart, 
+    TbCar,
+    TbPlane,
+    TbBolt,
+    TbBuilding,
+    TbSofa,
+    TbHome,
+    TbBook2,
+    TbNews,
+    TbHelpCircle
 } from 'react-icons/tb'
 import {LuBoxes} from 'react-icons/lu'
-import {MdFactory} from 'react-icons/md'
 /**
  * ALL DUMMY CONTENT FOR THE /invenka LANDING PAGE LIVES HERE.
  * Image paths point to /public/img/invenka/... (see the image list).
@@ -25,21 +27,10 @@ import {MdFactory} from 'react-icons/md'
 export const BASE_PATH = '/invenka'
 
 /* ---------------------------------- Navbar --------------------------------- */
-
-export type NavLink = { title: string; href: string }
-
-// Plain navbar links. "Features" is handled separately (mega dropdown).
-export const navLinks: NavLink[] = [
-    // { title: 'Features', href: `${BASE_PATH}/features` },
-    // { title: 'Industries', href: `${BASE_PATH}/industries` },
-    // { title: 'Solutions', href: `${BASE_PATH}/solutions` },
-    { title: 'Pricing', href: `${BASE_PATH}/pricing` },
-    { title: 'Resources', href: `${BASE_PATH}/resources` },
-]
-
 export const featuresPageHref = `/features`
 export const solutionsPageHref = `/solutions`
 export const industriesPageHref = `/industries`
+export const resourcesPageHref ='/resources'
 export type FeatureItem = {
     title: string
     slug: string
@@ -78,7 +69,15 @@ export const featureItems: FeatureItem[] = [
         Icon: TbChartLine,
     },
 ]
-export const solutionItems = [
+export type SolutionItem = {
+    title: string
+    slug: string
+    description: string
+    Icon: IconType
+}
+
+/* All solutions — used on the full Solutions page */
+export const allSolutionItems: SolutionItem[] = [
     {
         title: 'Inventory Tracking',
         slug: 'solutions/inventory-tracking',
@@ -92,13 +91,6 @@ export const solutionItems = [
         description:
             'Keep inventory organized with accurate stock levels and adjustments.',
         Icon: LuBoxes,
-    },
-    {
-        title: 'Order Management',
-        slug: 'solutions/order-management',
-        description:
-            'Manage purchase and sales orders while keeping inventory up to date.',
-        Icon: TbClipboardList,
     },
     {
         title: 'Warehouse Management',
@@ -129,93 +121,99 @@ export const solutionItems = [
         Icon: TbChartBar,
     },
     {
+        title: 'Inventory Forecasting',
+        slug: 'solutions/inventory-forecasting',
+        description:
+            'Use inventory data to anticipate demand and plan future stock requirements.',
+        Icon: TbChartLine,
+    },
+    {
         title: 'Inventory Automation',
         slug: 'solutions/inventory-automation',
         description:
-            'Reduce manual work by automating repetitive inventory processes.',
-        Icon: TbAutomation,
+            'Automate repetitive inventory tasks and keep your stock operations running efficiently.',
+        Icon: TbBolt,
     },
 ]
+
+/* First 6 solutions — used in the navbar dropdown */
+export const solutionItems: SolutionItem[] =
+    allSolutionItems.slice(0, 6)
 export const industriesItems = [
     {
-        title: 'Small Business',
-        slug: 'industries/small-business',
+        title: 'Automotive & Fleet',
+        slug: 'industries/automotive-fleet',
         description:
-            'Simple inventory management for growing businesses and everyday operations.',
-        Icon: TbBuildingStore,
+            'Maintenance schedules, parts bins and repair stock for workshops and vehicle fleets.',
+        Icon: TbCar,
     },
     {
-        title: 'Retail',
-        slug: 'industries/retail',
+        title: 'Aviation & Aerospace',
+        slug: 'industries/aviation-aerospace',
         description:
-            'Manage products, stock and sales across stores with better inventory visibility.',
-        Icon: TbShoppingBag,
+            'Serialised components, traceable records and calibrated tooling for regulated operations.',
+        Icon: TbPlane,
     },
     {
-        title: 'Manufacturing',
-        slug: 'industries/manufacturing',
+        title: 'Electrical Contracting',
+        slug: 'industries/electrical-contracting',
         description:
-            'Track raw materials, components and finished goods throughout production.',
-        Icon: MdFactory,
+            'Cable, fittings and van stock replenished and allocated to each job site.',
+        Icon: TbBolt,
     },
     {
-        title: 'Wholesale & Distribution',
-        slug: 'industries/wholesale-distribution',
+        title: 'Facilities Management',
+        slug: 'industries/facilities-management',
         description:
-            'Manage bulk inventory, orders and stock movement across your distribution network.',
-        Icon: TbTruckDelivery,
+            'Equipment registers, planned upkeep and critical spares across buildings and sites.',
+        Icon: TbBuilding,
     },
     {
-        title: 'Warehousing',
-        slug: 'industries/warehousing',
+        title: 'Interior Design & Staging',
+        slug: 'industries/interior-design-staging',
         description:
-            'Organize warehouse inventory, storage locations and stock movements efficiently.',
-        Icon: TbBuildingWarehouse,
+            'Visual catalogues of furniture and décor allocated across projects and staging jobs.',
+        Icon: TbSofa,
     },
     {
-        title: 'E-commerce',
-        slug: 'industries/e-commerce',
+        title: 'Real Estate & Property',
+        slug: 'industries/real-estate-property',
         description:
-            'Keep online products, orders and inventory synchronized as your business grows.',
-        Icon: TbShoppingCart,
-    }
+            'Appliances, furnishings and hardware tracked across units and tenant turnovers.',
+        Icon: TbHome,
+    },
 ]
-export const featuresMenuPromo = {
-    title: 'Everything in one place',
-    text: 'See how Invenka helps you organize, track and forecast your stock.',
-    image: '/img/invenka/nav/features-preview.webp',
-    cta: 'See all features',
+
+export type ResourceItem = {
+    title: string
+    slug: string
+    description: string
+    Icon: IconType
 }
 
-/* ----------------------------------- Hero ---------------------------------- */
-/* ----------------------------------- Hero ---------------------------------- */
-
-export const hero = {
-    // Words listed in `highlight` are shown in the primary colour
-    title: 'Take command of every item you own.',
-    highlight: ['command'],
-    subtitle:
-        'A simple way for growing teams to keep track of supplies, parts, tools and equipment, all in one place.',
-    primaryCta: 'Start Free Trial',
-    secondaryCta: 'See All Plans',
-    imageLight: '/img/invenka/hero/hero-light.png',
-    imageAlt: 'Invenka inventory management dashboard',
-
-    benefits: [
-        {
-            title: 'Easy to use',
-            text: 'Simple inventory management that your team can start using right away.',
-        },
-        {
-            title: 'Real-time inventory',
-            text: 'Keep stock information updated and visible across your team.',
-        },
-        {
-            title: 'Built for modern teams',
-            text: 'Manage inventory across devices and locations as your business grows.',
-        },
-    ],
-}
+export const resourceItems: ResourceItem[] = [
+    {
+        title: 'Glossary',
+        slug: 'glossary',
+        description:
+            'Understand inventory terms, concepts, and essential terminology in simple language.',
+        Icon: TbBook2,
+    },
+    {
+        title: 'Blogs',
+        slug: 'blogs',
+        description:
+            'Explore insights, tips, and ideas to help you manage inventory more efficiently.',
+        Icon: TbNews,
+    },
+    {
+        title: 'Help Centre',
+        slug: 'help-centre',
+        description:
+            'Find answers, guides, and helpful information to get the most out of Invenka.',
+        Icon: TbHelpCircle,
+    },
+]
 /* ------------------------------ Feature rows ------------------------------- */
 
 export const featureRows = [
@@ -284,5 +282,29 @@ export const footer = {
         { title: 'Industries', links: ['Construction', 'Healthcare', 'Warehousing', 'Electrical', 'Retail'] },
         { title: 'Use Cases', links: ['Stock Management', 'Supply Tracking', 'Asset Tracking', 'Barcode Inventory'] },
         { title: 'Company', links: ['Pricing', 'Blog', 'About Us', 'Help Center', 'Privacy Policy'] },
+    ],
+}
+export const hero = {
+    title: 'Smart Inventory Management for Modern Businesses',
+    highlight: ['Smart', 'Inventory', 'Management'],
+    subtitle:
+        'Invenka helps businesses track stock, manage products, monitor inventory, and make better decisions from one powerful platform.',
+    primaryCta: 'Start Free Trial',
+    secondaryCta: 'Explore Features',
+    imageLight: '/img/invenka/hero/hero-light.png',
+    imageAlt: 'Invenka inventory management dashboard',
+    benefits: [
+        {
+            title: 'Real-time tracking',
+            text: 'Keep track of your inventory levels and stock movements in real time.',
+        },
+        {
+            title: 'Reduce errors',
+            text: 'Minimize manual work, stock mistakes, and unnecessary inventory losses.',
+        },
+        {
+            title: 'Better decisions',
+            text: 'Get clear inventory insights to make faster and smarter business decisions.',
+        },
     ],
 }

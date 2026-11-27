@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 import Container from '../../invenka/components/LandingContainer'
 import NavigationBar from '../../invenka/components/NavigationBar'
 import LandingFooter from '../../invenka/components/LandingFooter'
-import { solutionItems } from '../../invenka/data/landingData'
+import { allSolutionItems } from '../../invenka/data/landingData'
 import {
     getSolutionIcon,
     solutionsHero,
@@ -29,7 +29,7 @@ type Solution = {
     slug: string
 }
 
-const solutions: Solution[] = solutionItems
+const solutions: Solution[] = allSolutionItems
 
 const SolutionsLanding = () => {
     const router = useRouter()
@@ -43,7 +43,7 @@ const SolutionsLanding = () => {
             <section className="bg-gray-50 pb-14 pt-28 sm:pb-16 md:pb-20 md:pt-32 lg:pb-24 lg:pt-36">
                 <Container>
                     <motion.div
-                        className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20"
+                        className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-14"
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
@@ -86,12 +86,12 @@ const SolutionsLanding = () => {
                                 initial={{ opacity: 0, x: 40 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: 0.15 }}
-                                className="relative w-full max-w-[760px] lg:-mr-8 xl:-mr-16"
+                                className="relative w-full max-w-[700px] lg:-mr-4 xl:-mr-8"
                             >
                                 <Image
                                     src={solutionsHero.image}
                                     alt={solutionsHero.imageAlt}
-                                    width={1400}
+                                    width={2300}
                                     height={900}
                                     priority
                                     className="h-auto w-full object-contain"
@@ -124,7 +124,7 @@ const SolutionsLanding = () => {
                         {/* SOLUTION CARDS */}
                         <ul
                             role="list"
-                            className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6"
+                            className="mx-auto mt-10 grid max-w-12xl grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6 "
                         >
                             {solutions.map(
                                 ({ title, description, slug }, index) => {
@@ -136,7 +136,7 @@ const SolutionsLanding = () => {
                                             <motion.article
                                                 whileHover={{ y: -4 }}
                                                 transition={{ duration: 0.16 }}
-                                                className="group relative flex h-full w-full flex-col items-center justify-between gap-7 rounded-sm bg-white px-6 pb-9 pt-6 text-center sm:px-7"
+                                                className="group relative flex h-full w-full flex-col items-center justify-between gap-7 rounded-xl bg-white px-6 pb-9 pt-6 text-center shadow-sm transition-shadow duration-200 hover:shadow-md sm:px-7"
                                             >
                                                 {/* Top-right accent bar */}
                                                 <span
@@ -194,7 +194,7 @@ const SolutionsLanding = () => {
                                                                 `/${slug}`,
                                                             )
                                                         }
-                                                        className="inline-flex min-h-10 items-center justify-center rounded-full bg-primary px-7 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                                                        className="inline-flex min-h-10 items-center justify-center rounded-2xl bg-primary px-7 py-2.5 text-sm font-semibold text-white transition-colors duration-150 hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                                                     >
                                                         Learn More
                                                     </button>
